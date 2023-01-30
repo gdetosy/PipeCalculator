@@ -16,6 +16,7 @@
 		96B6C5FB2985A93600787122 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6C5FA2985A93600787122 /* MainViewController.swift */; };
 		96B6C6042986ED8B00787122 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 96B6C6032986ED8B00787122 /* Alamofire */; };
 		96B6C6072986EDAC00787122 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 96B6C6062986EDAC00787122 /* SwiftyJSON */; };
+		96B6C60929880F5700787122 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6C60829880F5700787122 /* Manager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		96B6C5F02985951F00787122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96B6C5F22985951F00787122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B6C5FA2985A93600787122 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		96B6C60829880F5700787122 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 		96B6C5D82985951A00787122 = {
 			isa = PBXGroup;
 			children = (
+				96B6C60829880F5700787122 /* Manager.swift */,
 				96B6C5E32985951A00787122 /* PipeCalculator */,
 				96B6C5E22985951A00787122 /* Products */,
 			);
@@ -173,6 +176,7 @@
 				96B6C5E52985951A00787122 /* AppDelegate.swift in Sources */,
 				96B6C5E72985951A00787122 /* SceneDelegate.swift in Sources */,
 				96B6C5FB2985A93600787122 /* MainViewController.swift in Sources */,
+				96B6C60929880F5700787122 /* Manager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

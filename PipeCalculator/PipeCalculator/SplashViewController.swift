@@ -11,22 +11,21 @@ import UIKit
 
 class SplashViewController: UIViewController {
     @IBOutlet var label: UILabel!
-
-    let url = "http://numbersapi.com/2/29/date?json"
+    let urlDate = string()
    
     override func viewDidLoad() {
-        getQoute(url: url)
+        getQoute(url: urlDate)
         super.viewDidLoad()
-
-        //       MARK: -  Splash with qoute and easy animation transition 2 next view
+        
+        // MARK: - Intro splash with qoute and easy animation transition 2 next view
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
             self.performSegue(withIdentifier: "Splash", sender: nil)
         }
     }
-
-    // MARK: - random fact on this date
-
+    
+    // MARK: - paring func for random facts on this date
+    
     func getQoute(url: String) {
         AF.request(url).responseJSON { [weak self] response in switch response.result {
         case .success(let value):
