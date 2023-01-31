@@ -19,7 +19,7 @@ class SplashViewController: UIViewController {
         
         // MARK: - Intro splash with qoute and easy animation transition 2 next view
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
             self.performSegue(withIdentifier: "Splash", sender: nil)
         }
     }
