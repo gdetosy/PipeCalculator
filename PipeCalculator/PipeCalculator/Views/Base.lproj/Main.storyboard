@@ -34,7 +34,7 @@
                     </view>
                     <connections>
                         <outlet property="label" destination="lSc-yp-YZy" id="JuB-dD-Oy1"/>
-                        <segue destination="i4b-LU-7hj" kind="presentation" identifier="Splash" modalPresentationStyle="overFullScreen" id="0Vk-kD-XFp"/>
+                        <segue destination="i4b-LU-7hj" kind="presentation" identifier="Splash" modalPresentationStyle="overFullScreen" modalTransitionStyle="flipHorizontal" id="0Vk-kD-XFp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,7 +88,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zu-DV-SgY">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zu-DV-SgY">
                                 <rect key="frame" x="30" y="471" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Расчитать цену"/>
