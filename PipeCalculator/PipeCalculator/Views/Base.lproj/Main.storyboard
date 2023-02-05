@@ -55,10 +55,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaW-mF-PiK">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" disabledBackground="carat.png" translatesAutoresizingMaskIntoConstraints="NO" id="SaW-mF-PiK">
                                 <rect key="frame" x="25" y="149" width="97" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <action selector="Diametr:" destination="i4b-LU-7hj" eventType="editingDidBegin" id="7T8-ve-oFE"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Толщина, mm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVu-jD-c1T">
                                 <rect key="frame" x="25" y="198" width="153" height="30"/>
@@ -69,7 +73,10 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ePB-7w-fV0">
                                 <rect key="frame" x="25" y="238" width="97" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="tolshina:" destination="i4b-LU-7hj" eventType="editingDidEnd" id="2np-dD-NiV"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Длинна, m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJb-Ue-qLx">
                                 <rect key="frame" x="25.000000000000007" y="287" width="123.66666666666669" height="30"/>
@@ -80,7 +87,10 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYS-ms-TPA">
                                 <rect key="frame" x="25" y="327" width="97" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="dlina:" destination="i4b-LU-7hj" eventType="editingDidEnd" id="NTf-HO-df3"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вес, тн" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHS-T5-0r2">
                                 <rect key="frame" x="175" y="416" width="57" height="21"/>
@@ -88,11 +98,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zu-DV-SgY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zu-DV-SgY">
                                 <rect key="frame" x="30" y="471" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Расчитать цену"/>
+                                <connections>
+                                    <action selector="raschet:" destination="i4b-LU-7hj" eventType="touchUpInside" id="IfW-w1-rdG"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-1I-j9K">
+                                <rect key="frame" x="70" y="403" width="97" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="massa:" destination="i4b-LU-7hj" eventType="editingDidEnd" id="huA-gC-WSu"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k14-MY-CoE"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
@@ -115,15 +136,25 @@
                             <constraint firstItem="hYS-ms-TPA" firstAttribute="leading" secondItem="EVu-jD-c1T" secondAttribute="leading" id="VHc-oT-oIf"/>
                             <constraint firstItem="hYS-ms-TPA" firstAttribute="leading" secondItem="YJb-Ue-qLx" secondAttribute="leading" id="X3a-Hx-Itb"/>
                             <constraint firstItem="SaW-mF-PiK" firstAttribute="top" secondItem="gke-dF-daL" secondAttribute="bottom" constant="10" id="Yx3-1b-4jG"/>
+                            <constraint firstItem="wHS-T5-0r2" firstAttribute="leading" secondItem="igZ-1I-j9K" secondAttribute="trailing" constant="8" symbolic="YES" id="dPu-70-JlV"/>
                             <constraint firstItem="wHS-T5-0r2" firstAttribute="top" secondItem="k14-MY-CoE" secondAttribute="top" constant="357" id="fFa-2u-VyF"/>
+                            <constraint firstItem="igZ-1I-j9K" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="70" id="fSf-8s-70a"/>
                             <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="gke-dF-daL" secondAttribute="trailing" constant="295" id="fZ8-w9-IVj"/>
                             <constraint firstItem="hYS-ms-TPA" firstAttribute="top" secondItem="YJb-Ue-qLx" secondAttribute="bottom" constant="10" id="gbV-Xt-hYW"/>
                             <constraint firstItem="wHS-T5-0r2" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="175" id="jBJ-Nm-nG0"/>
+                            <constraint firstItem="2Zu-DV-SgY" firstAttribute="top" secondItem="igZ-1I-j9K" secondAttribute="bottom" constant="34" id="klF-hQ-VaM"/>
                             <constraint firstItem="k14-MY-CoE" firstAttribute="bottom" secondItem="2Zu-DV-SgY" secondAttribute="bottom" constant="312" id="wBD-mY-CPJ"/>
                             <constraint firstItem="SaW-mF-PiK" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="25" id="wV5-32-AvW"/>
                             <constraint firstItem="gke-dF-daL" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="25" id="x9r-Lx-s5o"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="diametrTextField" destination="SaW-mF-PiK" id="e5E-ju-m9F"/>
+                        <outlet property="dlinaTextField" destination="hYS-ms-TPA" id="BFt-8Y-9mN"/>
+                        <outlet property="heightTextField" destination="igZ-1I-j9K" id="fY4-K8-864"/>
+                        <outlet property="nextButton" destination="2Zu-DV-SgY" id="l94-Vs-Bec"/>
+                        <outlet property="tolshinaTextField" destination="ePB-7w-fV0" id="9AF-U3-l6G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sil-TT-MI9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,6 +162,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="carat.png" width="16" height="28"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
