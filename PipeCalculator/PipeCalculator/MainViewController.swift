@@ -28,7 +28,8 @@ class MainViewController: UIViewController {
             nextButton.isEnabled = true
         }
   
-        guard let diametr = Double(diametrTextField.text!)
+        guard let diametr = Double(diametrTextField.text!),
+              Double(diametrTextField.text!) ?? 0 >= 21.3
         else { diametrTextField.text?.removeAll()
             return
         }

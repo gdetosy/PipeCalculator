@@ -61,7 +61,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 <connections>
-                                    <action selector="Diametr:" destination="i4b-LU-7hj" eventType="editingChanged" id="Oa6-GL-cgA"/>
+                                    <action selector="Diametr:" destination="i4b-LU-7hj" eventType="editingDidEnd" id="l5M-94-UE5"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Толщина, mm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVu-jD-c1T">
@@ -76,6 +76,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="Diametr:" destination="i4b-LU-7hj" eventType="editingDidEnd" id="Sc2-fB-I4F"/>
+                                    <action selector="tolshina:" destination="i4b-LU-7hj" eventType="editingDidEnd" id="10l-ca-xgs"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Длинна, m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJb-Ue-qLx">
@@ -90,6 +91,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="Diametr:" destination="i4b-LU-7hj" eventType="editingDidEnd" id="JFX-3G-pRW"/>
+                                    <action selector="dlina:" destination="i4b-LU-7hj" eventType="editingDidEnd" id="DbY-oq-aI3"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вес, тн" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHS-T5-0r2">
