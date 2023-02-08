@@ -19,8 +19,6 @@ class MainViewController: UIViewController {
     @IBOutlet var nextButton: UIButton!
 
     @IBAction func Diametr(_ sender: UITextField) {
-       
-
         guard let diametr = Float(diametrTextField.text!),
               Float(diametrTextField.text!) ?? 0 >= 0
         else { diametrTextField.text?.removeAll()
@@ -32,7 +30,7 @@ class MainViewController: UIViewController {
 
     @IBAction func tolshina(_ sender: UITextField) {
         guard let tolshina = Float(tolshinaTextField.text!), Float(tolshinaTextField.text!) ?? 0 < Float(diametrTextField.text!) ?? 0
-//               let text = sender.text
+
 
         else {
             tolshinaTextField.text?.removeAll()
@@ -49,19 +47,20 @@ class MainViewController: UIViewController {
         massa()
         print(dlina)
     }
+
     @IBAction func height(_ sender: UITextField) {
         if
-        diametrTextField.text!.isEmpty || tolshinaTextField.text!.isEmpty || dlinaTextField.text!.isEmpty {
-           
+            diametrTextField.text!.isEmpty || tolshinaTextField.text!.isEmpty || dlinaTextField.text!.isEmpty
+        {
             nextButton.isEnabled = false
         }
 
         else {
-//            massa()
+
             nextButton.isEnabled = true
         }
     }
-    
+
     // MARK: - raschet po kursu
 
     @IBAction func raschet(_ sender: UIButton) {}
