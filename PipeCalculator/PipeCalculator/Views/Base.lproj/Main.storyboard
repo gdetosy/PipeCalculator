@@ -61,7 +61,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 <connections>
-                                    <action selector="Diametr:" destination="i4b-LU-7hj" eventType="editingDidEnd" id="l5M-94-UE5"/>
+                                    <action selector="Diametr:" destination="i4b-LU-7hj" eventType="editingChanged" id="5CJ-mb-s5v"/>
+                                    <action selector="toggleBoldface:" destination="igZ-1I-j9K" eventType="editingChanged" id="Yi1-22-Ny6"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Толщина, mm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVu-jD-c1T">
@@ -75,8 +76,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
-                                    <action selector="Diametr:" destination="i4b-LU-7hj" eventType="editingDidEnd" id="Sc2-fB-I4F"/>
-                                    <action selector="tolshina:" destination="i4b-LU-7hj" eventType="editingDidEnd" id="10l-ca-xgs"/>
+                                    <action selector="toggleBoldface:" destination="igZ-1I-j9K" eventType="editingChanged" id="Jfs-fU-MHU"/>
+                                    <action selector="tolshina:" destination="i4b-LU-7hj" eventType="editingChanged" id="HmE-Ya-nRb"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Длинна, m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJb-Ue-qLx">
@@ -90,8 +91,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
-                                    <action selector="Diametr:" destination="i4b-LU-7hj" eventType="editingDidEnd" id="JFX-3G-pRW"/>
-                                    <action selector="dlina:" destination="i4b-LU-7hj" eventType="editingDidEnd" id="DbY-oq-aI3"/>
+                                    <action selector="dlina:" destination="i4b-LU-7hj" eventType="editingChanged" id="TAz-vd-byi"/>
+                                    <action selector="toggleBoldface:" destination="igZ-1I-j9K" eventType="editingChanged" id="9IH-0y-gxO"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вес, тн" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHS-T5-0r2">
@@ -112,10 +113,14 @@
                                 <rect key="frame" x="70" y="403" width="97" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="height:" destination="i4b-LU-7hj" eventType="editingChanged" id="RaS-GW-T9m"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k14-MY-CoE"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="2Zu-DV-SgY" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="30" id="0M0-Ia-kJd"/>
                             <constraint firstItem="k14-MY-CoE" firstAttribute="bottom" secondItem="wHS-T5-0r2" secondAttribute="bottom" constant="381" id="32w-0E-CUO"/>

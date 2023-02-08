@@ -18,18 +18,11 @@ class MainViewController: UIViewController {
 
     @IBOutlet var nextButton: UIButton!
 
-    @IBAction func Diametr(_ sender: Any) {
-        if diametrTextField.text!.isEmpty || tolshinaTextField.text!.isEmpty || dlinaTextField.text!.isEmpty {
-            nextButton.isEnabled = false
-
-        } else {
-            massa()
-
-            nextButton.isEnabled = true
-        }
+    @IBAction func Diametr(_ sender: UITextField) {
+       
 
         guard let diametr = Float(diametrTextField.text!),
-              Float(diametrTextField.text!) ?? 0 >= 21.3
+              Float(diametrTextField.text!) ?? 0 >= 0
         else { diametrTextField.text?.removeAll()
             return
         }
@@ -37,13 +30,15 @@ class MainViewController: UIViewController {
         print(diametr)
     }
 
-//
     @IBAction func tolshina(_ sender: UITextField) {
         guard let tolshina = Float(tolshinaTextField.text!), Float(tolshinaTextField.text!) ?? 0 < Float(diametrTextField.text!) ?? 0
+//               let text = sender.text
 
-        else { tolshinaTextField.text?.removeAll()
+        else {
+            tolshinaTextField.text?.removeAll()
             return
         }
+        massa()
         print(tolshina)
     }
 
@@ -51,9 +46,22 @@ class MainViewController: UIViewController {
         guard let dlina = Float(dlinaTextField.text!) else { dlinaTextField.text?.removeAll()
             return
         }
+        massa()
         print(dlina)
     }
+    @IBAction func height(_ sender: UITextField) {
+        if
+        diametrTextField.text!.isEmpty || tolshinaTextField.text!.isEmpty || dlinaTextField.text!.isEmpty {
+           
+            nextButton.isEnabled = false
+        }
 
+        else {
+//            massa()
+            nextButton.isEnabled = true
+        }
+    }
+    
     // MARK: - raschet po kursu
 
     @IBAction func raschet(_ sender: UIButton) {}
@@ -74,6 +82,17 @@ class MainViewController: UIViewController {
         print(massa1)
     }
 
+    func lenght() {
+        guard let diametr = Float(diametrTextField.text!),
+              let stenka = Float(tolshinaTextField.text!),
+//              let metraj = Float(dlinaTextField.text!),
+              let massa = Float(heightTextField.text!)
+        else { return }
+//        let  = ((diametr - stenka) * stenka * 0.02466 * metraj) / 1000
+        let metraj1 = massa * 1000 / (diametr - stenka) * 0.0246
+        heightTextField.text = "\(round(metraj1 * 100000) / 100000)"
+        print(metraj1)
+    }
     /*
      // MARK: - Navigation
 
