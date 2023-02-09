@@ -24,7 +24,7 @@ class MainViewController: UIViewController {
         else { diametrTextField.text?.removeAll()
             return
         }
-
+massa()
         print(diametr)
     }
 
