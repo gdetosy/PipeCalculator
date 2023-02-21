@@ -91,7 +91,7 @@ class MainViewController: UIViewController {
         heightTextField.text = "\(round(metraj1 * 100000) / 100000)"
         print(metraj1)
     }
-    /*
+    
      // MARK: - Navigation
 
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -99,5 +99,5 @@ class MainViewController: UIViewController {
          // Get the new view controller using segue.destination.
          // Pass the selected object to the new view controller.
      }
-     */
+     
 }

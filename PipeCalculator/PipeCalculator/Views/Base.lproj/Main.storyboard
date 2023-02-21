@@ -41,7 +41,7 @@
             </objects>
             <point key="canvasLocation" x="78.625954198473281" y="-292.25352112676057"/>
         </scene>
-        <!--rrrr-->
+        <!--Calculator-->
         <scene sceneID="bcW-gc-pzc">
             <objects>
                 <viewController id="i4b-LU-7hj" customClass="MainViewController" customModule="PipeCalculator" customModuleProvider="target" sceneMemberID="viewController">
@@ -107,7 +107,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Расчитать цену"/>
                                 <connections>
                                     <action selector="raschet:" destination="i4b-LU-7hj" eventType="touchUpInside" id="IfW-w1-rdG"/>
-                                    <segue destination="4Zb-if-NxN" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="bHj-B5-amh"/>
+                                    <segue destination="4Zb-if-NxN" kind="show" id="bc4-3E-MPL"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-1I-j9K">
@@ -153,7 +153,7 @@
                             <constraint firstItem="gke-dF-daL" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="25" id="x9r-Lx-s5o"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="rrrr" id="cGQ-vw-rcF"/>
+                    <navigationItem key="navigationItem" title="Calculator" id="cGQ-vw-rcF"/>
                     <connections>
                         <outlet property="diametrTextField" destination="SaW-mF-PiK" id="e5E-ju-m9F"/>
                         <outlet property="dlinaTextField" destination="hYS-ms-TPA" id="BFt-8Y-9mN"/>
@@ -177,11 +177,9 @@
                         <viewLayoutGuide key="safeArea" id="ti4-cV-GAY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem id="VB9-vT-elM"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Currency" leftItemsSupplementBackButton="YES" id="76u-RK-wjf">
-                        <barButtonItem key="backBarButtonItem" style="done" id="0LT-bT-9o8"/>
+                        <barButtonItem key="backBarButtonItem" title="back" style="done" id="0LT-bT-9o8"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
