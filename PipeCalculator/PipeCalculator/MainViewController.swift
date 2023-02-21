@@ -24,7 +24,7 @@ class MainViewController: UIViewController {
         else { diametrTextField.text?.removeAll()
             return
         }
-massa()
+        massa()
         print(diametr)
     }
 
@@ -56,7 +56,6 @@ massa()
         }
 
         else {
-
             nextButton.isEnabled = true
         }
     }
