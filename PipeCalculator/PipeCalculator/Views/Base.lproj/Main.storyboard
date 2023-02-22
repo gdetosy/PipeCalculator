@@ -107,7 +107,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Расчитать цену"/>
                                 <connections>
                                     <action selector="raschet:" destination="i4b-LU-7hj" eventType="touchUpInside" id="IfW-w1-rdG"/>
-                                    <segue destination="4Zb-if-NxN" kind="show" id="bc4-3E-MPL"/>
+                                    <segue destination="4Zb-if-NxN" kind="show" identifier="curency" id="bc4-3E-MPL"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-1I-j9K">
@@ -164,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sil-TT-MI9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750.3816793893129" y="-292.25352112676057"/>
+            <point key="canvasLocation" x="1555" y="-292"/>
         </scene>
         <!--Currency-->
         <scene sceneID="OID-j3-fY0">
@@ -194,6 +194,9 @@
                                     <segment title="USD"/>
                                     <segment title="EUR"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentControl:" destination="4Zb-if-NxN" eventType="valueChanged" id="3jM-Vh-lA1"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZi-9b-v6j">
                                 <rect key="frame" x="150" y="275" width="93" height="21"/>
@@ -204,7 +207,10 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Цена за тн" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kBo-rz-znL">
                                 <rect key="frame" x="150" y="226" width="93" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="priceTextField:" destination="4Zb-if-NxN" eventType="editingChanged" id="eL0-9n-Zcq"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ti4-cV-GAY"/>
@@ -232,9 +238,16 @@
                         <barButtonItem key="backBarButtonItem" title="back" style="done" id="0LT-bT-9o8"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="lenghtHeightLabel" destination="k0F-5f-5yg" id="88z-NP-gJN"/>
+                        <outlet property="pipeLabel" destination="XYo-Js-ceK" id="Zgb-9b-zZ9"/>
+                        <outlet property="priceTextField" destination="kBo-rz-znL" id="zss-v5-Cgp"/>
+                        <outlet property="segmentConrol" destination="F6s-T6-7jc" id="j6m-jn-pya"/>
+                        <outlet property="totalPriceLabel" destination="WZi-9b-v6j" id="ixE-wF-44z"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2562.5954198473282" y="-292.25352112676057"/>
+            <point key="canvasLocation" x="2283" y="-292"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OID-vF-Gbb">
