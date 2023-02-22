@@ -169,26 +169,25 @@
         <!--Currency-->
         <scene sceneID="OID-j3-fY0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jTd-2g-VNk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="4Zb-if-NxN" customClass="CurrencyViewController" customModule="PipeCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jLe-pz-B8B">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Труба  21.3 x 2.8 mm Сталь 3пс" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYo-Js-ceK">
-                                <rect key="frame" x="25" y="128" width="343" height="21"/>
+                                <rect key="frame" x="25" y="127.99999999999999" width="343" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Длинна 1 m, вес 0.05 тн" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-5f-5yg">
-                                <rect key="frame" x="25" y="185" width="343" height="21"/>
+                                <rect key="frame" x="25" y="184.33333333333334" width="343" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="F6s-T6-7jc">
-                                <rect key="frame" x="140" y="311" width="113" height="32"/>
+                                <rect key="frame" x="140" y="309" width="113" height="32"/>
                                 <segments>
                                     <segment title="BYN"/>
                                     <segment title="USD"/>
@@ -199,28 +198,42 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZi-9b-v6j">
-                                <rect key="frame" x="150" y="275" width="93" height="21"/>
+                                <rect key="frame" x="150" y="273.66666666666669" width="93" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Цена за тн" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kBo-rz-znL">
-                                <rect key="frame" x="150" y="226" width="93" height="34"/>
+                                <rect key="frame" x="150" y="224.66666666666666" width="93" height="33.999999999999972"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="priceTextField:" destination="4Zb-if-NxN" eventType="editingChanged" id="eL0-9n-Zcq"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy3-Ey-cH7">
+                                <rect key="frame" x="50" y="365" width="293" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ob-ua-DiC">
+                                <rect key="frame" x="50" y="411" width="293" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ti4-cV-GAY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="WZi-9b-v6j" secondAttribute="trailing" constant="150" id="7nv-Ss-V1f"/>
                             <constraint firstItem="WZi-9b-v6j" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="150" id="8h8-Wz-mDQ"/>
+                            <constraint firstItem="qy3-Ey-cH7" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="50" id="BAX-FH-wBI"/>
                             <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="F6s-T6-7jc" secondAttribute="trailing" constant="140" id="G4A-Zw-dF9"/>
                             <constraint firstItem="F6s-T6-7jc" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="140" id="Gqz-en-see"/>
                             <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="XYo-Js-ceK" secondAttribute="trailing" constant="25" id="HH6-JE-3Ew"/>
+                            <constraint firstItem="3ob-ua-DiC" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="50" id="Hvi-Oi-hH0"/>
                             <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="kBo-rz-znL" secondAttribute="trailing" constant="150" id="JYo-AB-4IW"/>
                             <constraint firstItem="XYo-Js-ceK" firstAttribute="top" secondItem="ti4-cV-GAY" secondAttribute="top" constant="25" id="OmE-SW-T7X"/>
                             <constraint firstItem="kBo-rz-znL" firstAttribute="top" secondItem="k0F-5f-5yg" secondAttribute="bottom" constant="20" id="PS6-HU-ceK"/>
@@ -228,7 +241,11 @@
                             <constraint firstItem="XYo-Js-ceK" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="25" id="Xq5-G1-xfs"/>
                             <constraint firstItem="k0F-5f-5yg" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="25" id="ZqA-ET-auj"/>
                             <constraint firstItem="WZi-9b-v6j" firstAttribute="top" secondItem="kBo-rz-znL" secondAttribute="bottom" constant="15" id="b1a-vc-xbY"/>
+                            <constraint firstItem="qy3-Ey-cH7" firstAttribute="top" secondItem="F6s-T6-7jc" secondAttribute="bottom" constant="25" id="edf-08-Tcd"/>
+                            <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="qy3-Ey-cH7" secondAttribute="trailing" constant="50" id="gfG-C9-glM"/>
                             <constraint firstItem="k0F-5f-5yg" firstAttribute="top" secondItem="XYo-Js-ceK" secondAttribute="bottom" constant="36" id="iOw-YQ-BRM"/>
+                            <constraint firstItem="3ob-ua-DiC" firstAttribute="top" secondItem="qy3-Ey-cH7" secondAttribute="bottom" constant="25" id="lh0-pw-kUf"/>
+                            <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="3ob-ua-DiC" secondAttribute="trailing" constant="50" id="qQy-4y-FeW"/>
                             <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="k0F-5f-5yg" secondAttribute="trailing" constant="25" id="uQQ-gJ-CIc"/>
                             <constraint firstItem="kBo-rz-znL" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="150" id="vnh-wM-HW7"/>
                         </constraints>
@@ -239,15 +256,18 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="eurLabel" destination="3ob-ua-DiC" id="QBC-I1-Oa5"/>
                         <outlet property="lenghtHeightLabel" destination="k0F-5f-5yg" id="88z-NP-gJN"/>
                         <outlet property="pipeLabel" destination="XYo-Js-ceK" id="Zgb-9b-zZ9"/>
                         <outlet property="priceTextField" destination="kBo-rz-znL" id="zss-v5-Cgp"/>
                         <outlet property="segmentConrol" destination="F6s-T6-7jc" id="j6m-jn-pya"/>
                         <outlet property="totalPriceLabel" destination="WZi-9b-v6j" id="ixE-wF-44z"/>
+                        <outlet property="usdLabel" destination="qy3-Ey-cH7" id="twS-6N-rRG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jTd-2g-VNk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2283" y="-292"/>
+            <point key="canvasLocation" x="2281.679389312977" y="-292.25352112676057"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OID-vF-Gbb">
