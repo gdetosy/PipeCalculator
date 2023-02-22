@@ -36,7 +36,11 @@ class CurrencyViewController: UIViewController {
         getParametrs()
     }
     
-    @IBAction func priceTextField(_ sender: UITextField) {}
+    @IBAction func priceTextField(_ sender: UITextField) {
+        guard let price = Float(priceTextField.text!) else { return }
+        let totalPrice = (round((height * price) * 1000) / 1000)
+        totalPriceLabel.text = "Цена \(totalPrice) рублей без НДС"
+    }
     
     @IBAction func segmentControl(_ sender: Any) {}
   
