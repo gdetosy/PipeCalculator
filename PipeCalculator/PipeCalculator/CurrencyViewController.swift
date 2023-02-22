@@ -33,7 +33,7 @@ class CurrencyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getPrice(url: url)
-        // Do any additional setup after loading the view.
+        getParametrs()
     }
     
     @IBAction func priceTextField(_ sender: UITextField) {}
@@ -54,4 +54,10 @@ class CurrencyViewController: UIViewController {
         }
     }
 
+   private func getParametrs() {
+        pipeLabel.text = " Труба \(diametr) x \(tolshina) мм Сталь 3пс"
+        
+        lenghtHeightLabel.text = "Длинна \(dlina)м, вес  \(height)тн"
+    }
+    
 }
