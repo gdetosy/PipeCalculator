@@ -91,8 +91,9 @@ class MainViewController: UIViewController {
         heightTextField.text = "\(round(metraj1 * 100000) / 100000)"
         print(metraj1)
     }
-    
-     // MARK: - Navigation
+
+    // MARK: - Navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "curency":
@@ -104,7 +105,13 @@ class MainViewController: UIViewController {
         guard let destinationController = segue.destination as? CurrencyViewController else {
             return
         }
-        destinationController.updatingData = diametrTextField.text ?? ""
+        destinationController.diametr = Float(diametrTextField.text!)!
+
+        destinationController.tolshina = Float(tolshinaTextField.text!)!
+
+        destinationController.dlina = Float(dlinaTextField.text!)!
+
+        destinationController.height = Float(heightTextField.text!)!
     }
 
 }

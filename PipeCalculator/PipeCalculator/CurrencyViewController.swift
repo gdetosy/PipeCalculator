@@ -8,8 +8,10 @@
 import UIKit
 
 class CurrencyViewController: UIViewController {
-    var updatingData: String = ""
-  
+    var diametr: Float = 0
+    var tolshina: Float = 0
+    var dlina: Float = 0
+    var height: Float = 0
     @IBOutlet var pipeLabel: UILabel!
     
     @IBOutlet var lenghtHeightLabel: UILabel!
@@ -22,7 +24,7 @@ class CurrencyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+print(height)
         // Do any additional setup after loading the view.
     }
     
