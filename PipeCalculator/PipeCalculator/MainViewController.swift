@@ -5,9 +5,17 @@
 //  Created by tosy on 28.01.23.
 //
 
+import Alamofire
+import SwiftyJSON
 import UIKit
 
+
 class MainViewController: UIViewController {
+   
+    var usd: String = ""
+    var eur: String = ""
+    let url = "https://www.nbrb.by/api/exrates/rates?periodicity=0"
+
     @IBOutlet var diametrTextField: UITextField!
 
     @IBOutlet var tolshinaTextField: UITextField!
@@ -66,6 +74,7 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getPrice(url:url)
     }
 
     // MARK: - formula rascheta massa
@@ -83,10 +92,10 @@ class MainViewController: UIViewController {
     func lenght() {
         guard let diametr = Float(diametrTextField.text!),
               let stenka = Float(tolshinaTextField.text!),
-//              let metraj = Float(dlinaTextField.text!),
+
               let massa = Float(heightTextField.text!)
         else { return }
-//        let  = ((diametr - stenka) * stenka * 0.02466 * metraj) / 1000
+
         let metraj1 = massa * 1000 / (diametr - stenka) * 0.0246
         heightTextField.text = "\(round(metraj1 * 100000) / 100000)"
         print(metraj1)
@@ -106,12 +115,35 @@ class MainViewController: UIViewController {
             return
         }
         destinationController.diametr = Float(diametrTextField.text!)!
-
+        
         destinationController.tolshina = Float(tolshinaTextField.text!)!
-
+        
         destinationController.dlina = Float(dlinaTextField.text!)!
-
+        
         destinationController.height = Float(heightTextField.text!)!
+        
+        destinationController.usd = usd
+   
+        destinationController.eur = eur
     }
+   
+    func getPrice(url: String) {
+        AF.request(url).responseJSON { [weak self] response in switch response.result {
+        case .success(let value):
+            let json = JSON(value)
 
+            self?.usd = "\(json[7, "Cur_OfficialRate"])"
+            self?.eur = "\(json[9, "Cur_OfficialRate"])"
+
+        case .failure:
+            print("error")
+        }
+        }
+    }
+    
+    
+    
+    
+    
+    
 }
