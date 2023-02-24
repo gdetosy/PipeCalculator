@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9624BC9829A4FB2600644288 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624BC9729A4FB2600644288 /* CurrencyViewController.swift */; };
+		96AF1ADC29A8DD8100AD1CB3 /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF1ADB29A8DD8100AD1CB3 /* PriceViewController.swift */; };
 		96B6C5E52985951A00787122 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6C5E42985951A00787122 /* AppDelegate.swift */; };
 		96B6C5E72985951A00787122 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6C5E62985951A00787122 /* SceneDelegate.swift */; };
 		96B6C5E92985951A00787122 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6C5E82985951A00787122 /* SplashViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		9624BC9729A4FB2600644288 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
+		96AF1ADB29A8DD8100AD1CB3 /* PriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
 		96B6C5E12985951A00787122 /* PipeCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PipeCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B6C5E42985951A00787122 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96B6C5E62985951A00787122 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				96B6C5E82985951A00787122 /* SplashViewController.swift */,
 				96B6C5FA2985A93600787122 /* MainViewController.swift */,
 				9624BC9729A4FB2600644288 /* CurrencyViewController.swift */,
+				96AF1ADB29A8DD8100AD1CB3 /* PriceViewController.swift */,
 				96B6C5F92985959600787122 /* Views */,
 				96B6C5ED2985951F00787122 /* Assets.xcassets */,
 				96B6C5F82985956D00787122 /* Delegates */,
@@ -181,6 +184,7 @@
 				96B6C5E72985951A00787122 /* SceneDelegate.swift in Sources */,
 				96B6C5FB2985A93600787122 /* MainViewController.swift in Sources */,
 				96B6C60929880F5700787122 /* Manager.swift in Sources */,
+				96AF1ADC29A8DD8100AD1CB3 /* PriceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

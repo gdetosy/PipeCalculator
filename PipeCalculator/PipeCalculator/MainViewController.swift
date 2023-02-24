@@ -9,9 +9,8 @@ import Alamofire
 import SwiftyJSON
 import UIKit
 
-
 class MainViewController: UIViewController {
-   
+    var array: [String] = []
     var usd: String = ""
     var eur: String = ""
     let url = "https://www.nbrb.by/api/exrates/rates?periodicity=0"
@@ -33,18 +32,19 @@ class MainViewController: UIViewController {
             return
         }
         massa()
+
         print(diametr)
     }
 
     @IBAction func tolshina(_ sender: UITextField) {
         guard let tolshina = Float(tolshinaTextField.text!), Float(tolshinaTextField.text!) ?? 0 < Float(diametrTextField.text!) ?? 0
 
-
         else {
             tolshinaTextField.text?.removeAll()
             return
         }
         massa()
+
         print(tolshina)
     }
 
@@ -53,6 +53,7 @@ class MainViewController: UIViewController {
             return
         }
         massa()
+
         print(dlina)
     }
 
@@ -61,20 +62,41 @@ class MainViewController: UIViewController {
             diametrTextField.text!.isEmpty || tolshinaTextField.text!.isEmpty || dlinaTextField.text!.isEmpty
         {
             nextButton.isEnabled = false
-        }
-
-        else {
+        } else {
             nextButton.isEnabled = true
         }
     }
 
     // MARK: - raschet po kursu
 
-    @IBAction func raschet(_ sender: UIButton) {}
+    @IBAction func raschet(_ sender: UIButton) {
+        if array.count == 2 {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let editScreen = storyboard.instantiateViewController(withIdentifier:
+                "CurrencyViewController") as! CurrencyViewController
+            editScreen.diametr = Float(diametrTextField.text!)!
+            editScreen.tolshina = Float(tolshinaTextField.text!)!
+            editScreen.dlina = Float(dlinaTextField.text!)!
+            editScreen.height = Float(heightTextField.text!)!
+            editScreen.usd = usd
+            editScreen.eur = eur
+
+            self.navigationController?.pushViewController(editScreen, animated: true)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let editScreen = storyboard.instantiateViewController(withIdentifier:
+                "PriceViewController") as! PriceViewController
+            editScreen.diametr = Float(diametrTextField.text!)!
+            editScreen.tolshina = Float(tolshinaTextField.text!)!
+            editScreen.dlina = Float(dlinaTextField.text!)!
+            editScreen.height = Float(heightTextField.text!)!
+            self.navigationController?.pushViewController(editScreen, animated: true)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPrice(url:url)
+        getPrice(url: url)
     }
 
     // MARK: - formula rascheta massa
@@ -101,32 +123,6 @@ class MainViewController: UIViewController {
         print(metraj1)
     }
 
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "curency":
-            prepareEditScreen(segue) default: break
-        }
-    }
-
-    private func prepareEditScreen(_ segue: UIStoryboardSegue) {
-        guard let destinationController = segue.destination as? CurrencyViewController else {
-            return
-        }
-        destinationController.diametr = Float(diametrTextField.text!)!
-        
-        destinationController.tolshina = Float(tolshinaTextField.text!)!
-        
-        destinationController.dlina = Float(dlinaTextField.text!)!
-        
-        destinationController.height = Float(heightTextField.text!)!
-        
-        destinationController.usd = usd
-   
-        destinationController.eur = eur
-    }
-   
     func getPrice(url: String) {
         AF.request(url).responseJSON { [weak self] response in switch response.result {
         case .success(let value):
@@ -134,16 +130,11 @@ class MainViewController: UIViewController {
 
             self?.usd = "\(json[7, "Cur_OfficialRate"])"
             self?.eur = "\(json[9, "Cur_OfficialRate"])"
-
+            self?.array.append("\(json[7, "Cur_OfficialRate"])")
+            self?.array.append("\(json[9, "Cur_OfficialRate"])")
         case .failure:
             print("error")
         }
         }
     }
-    
-    
-    
-    
-    
-    
 }

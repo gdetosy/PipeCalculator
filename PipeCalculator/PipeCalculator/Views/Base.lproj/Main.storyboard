@@ -55,7 +55,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" disabledBackground="carat.png" translatesAutoresizingMaskIntoConstraints="NO" id="SaW-mF-PiK">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" disabledBackground="carat.png" translatesAutoresizingMaskIntoConstraints="NO" id="SaW-mF-PiK">
                                 <rect key="frame" x="25" y="193" width="97" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -63,6 +63,7 @@
                                 <connections>
                                     <action selector="Diametr:" destination="i4b-LU-7hj" eventType="editingChanged" id="5CJ-mb-s5v"/>
                                     <action selector="toggleBoldface:" destination="igZ-1I-j9K" eventType="editingChanged" id="Yi1-22-Ny6"/>
+                                    <action selector="toggleBoldface:" destination="hYS-ms-TPA" eventType="editingDidEndOnExit" id="wxH-sR-p6u"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Толщина, mm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVu-jD-c1T">
@@ -77,6 +78,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="toggleBoldface:" destination="igZ-1I-j9K" eventType="editingChanged" id="Jfs-fU-MHU"/>
+                                    <action selector="toggleBoldface:" destination="hYS-ms-TPA" eventType="editingDidEndOnExit" id="rfh-rb-SAR"/>
                                     <action selector="tolshina:" destination="i4b-LU-7hj" eventType="editingChanged" id="HmE-Ya-nRb"/>
                                 </connections>
                             </textField>
@@ -107,15 +109,15 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Расчитать цену"/>
                                 <connections>
                                     <action selector="raschet:" destination="i4b-LU-7hj" eventType="touchUpInside" id="IfW-w1-rdG"/>
-                                    <segue destination="4Zb-if-NxN" kind="show" identifier="curency" id="bc4-3E-MPL"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-1I-j9K">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-1I-j9K">
                                 <rect key="frame" x="70" y="447" width="97" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="height:" destination="i4b-LU-7hj" eventType="editingChanged" id="RaS-GW-T9m"/>
+                                    <action selector="toggleBoldface:" destination="hYS-ms-TPA" eventType="editingDidEndOnExit" id="lRa-wn-Dth"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -166,28 +168,91 @@
             </objects>
             <point key="canvasLocation" x="1555" y="-292"/>
         </scene>
+        <!--Price View Controller-->
+        <scene sceneID="szI-rI-O7E">
+            <objects>
+                <viewController storyboardIdentifier="PriceViewController" id="33E-Z6-QUh" customClass="PriceViewController" customModule="PipeCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lB4-Fk-dg6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Труба  21.3 x 2.8 mm Сталь 3пс" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpu-oa-JYy">
+                                <rect key="frame" x="25" y="84" width="343" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Длинна 1 m, вес 0.05 тн" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79N-Ti-c04">
+                                <rect key="frame" x="25" y="129.33333333333334" width="343" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Цена за тн" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lTb-rG-gye">
+                                <rect key="frame" x="140" y="249" width="113" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="priceTextField:" destination="33E-Z6-QUh" eventType="editingChanged" id="Ein-Gv-3jP"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rap-aX-HfI">
+                                <rect key="frame" x="25" y="210" width="343" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="r17-wh-RCP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rap-aX-HfI" firstAttribute="leading" secondItem="r17-wh-RCP" secondAttribute="leading" constant="25" id="Hcv-Ww-tGR"/>
+                            <constraint firstItem="79N-Ti-c04" firstAttribute="top" secondItem="qpu-oa-JYy" secondAttribute="bottom" constant="25" id="ODq-eP-6D6"/>
+                            <constraint firstItem="lTb-rG-gye" firstAttribute="leading" secondItem="r17-wh-RCP" secondAttribute="leading" constant="140" id="OE5-UL-MxX"/>
+                            <constraint firstItem="r17-wh-RCP" firstAttribute="trailing" secondItem="Rap-aX-HfI" secondAttribute="trailing" constant="25" id="Rgo-0Z-7fG"/>
+                            <constraint firstItem="lTb-rG-gye" firstAttribute="top" secondItem="Rap-aX-HfI" secondAttribute="bottom" constant="39" id="VkT-wW-teT"/>
+                            <constraint firstItem="qpu-oa-JYy" firstAttribute="leading" secondItem="r17-wh-RCP" secondAttribute="leading" constant="25" id="WjQ-rg-G08"/>
+                            <constraint firstItem="r17-wh-RCP" firstAttribute="trailing" secondItem="79N-Ti-c04" secondAttribute="trailing" constant="25" id="bOP-jE-dYT"/>
+                            <constraint firstItem="Rap-aX-HfI" firstAttribute="top" secondItem="79N-Ti-c04" secondAttribute="bottom" constant="60.329999999999998" id="ncs-5m-i9O"/>
+                            <constraint firstItem="r17-wh-RCP" firstAttribute="trailing" secondItem="qpu-oa-JYy" secondAttribute="trailing" constant="25" id="nk8-RD-jSi"/>
+                            <constraint firstItem="79N-Ti-c04" firstAttribute="leading" secondItem="r17-wh-RCP" secondAttribute="leading" constant="25" id="t46-8j-SJk"/>
+                            <constraint firstItem="r17-wh-RCP" firstAttribute="trailing" secondItem="lTb-rG-gye" secondAttribute="trailing" constant="140" id="w85-xw-gob"/>
+                            <constraint firstItem="qpu-oa-JYy" firstAttribute="top" secondItem="r17-wh-RCP" secondAttribute="top" constant="25" id="yad-Pd-dcH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lenghtHeightLabel" destination="79N-Ti-c04" id="tb1-rY-No9"/>
+                        <outlet property="pipeLabel" destination="qpu-oa-JYy" id="d4j-T2-iKl"/>
+                        <outlet property="priceTextField" destination="lTb-rG-gye" id="sed-pr-MzU"/>
+                        <outlet property="totalPriceLabel" destination="Rap-aX-HfI" id="bYf-ft-vkB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iPy-j6-Xeg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2969" y="-292"/>
+        </scene>
         <!--Currency-->
         <scene sceneID="OID-j3-fY0">
             <objects>
-                <viewController id="4Zb-if-NxN" customClass="CurrencyViewController" customModule="PipeCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrencyViewController" id="4Zb-if-NxN" customClass="CurrencyViewController" customModule="PipeCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jLe-pz-B8B">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Труба  21.3 x 2.8 mm Сталь 3пс" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYo-Js-ceK">
-                                <rect key="frame" x="25" y="127.99999999999999" width="343" height="20.333333333333329"/>
+                                <rect key="frame" x="25" y="84" width="343" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Длинна 1 m, вес 0.05 тн" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-5f-5yg">
-                                <rect key="frame" x="25" y="184.33333333333334" width="343" height="20.333333333333343"/>
+                                <rect key="frame" x="25" y="140.33333333333334" width="343" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="F6s-T6-7jc">
-                                <rect key="frame" x="140" y="288.66666666666669" width="113" height="32"/>
+                                <rect key="frame" x="140" y="244.66666666666663" width="113" height="32"/>
                                 <segments>
                                     <segment title="BYN"/>
                                     <segment title="USD"/>
@@ -198,13 +263,13 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZi-9b-v6j">
-                                <rect key="frame" x="50" y="273.66666666666669" width="293" height="0.0"/>
+                                <rect key="frame" x="50" y="229.66666666666666" width="293" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Цена за тн" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kBo-rz-znL">
-                                <rect key="frame" x="150" y="224.66666666666666" width="93" height="33.999999999999972"/>
+                                <rect key="frame" x="150" y="180.66666666666666" width="93" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
@@ -212,13 +277,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy3-Ey-cH7">
-                                <rect key="frame" x="50" y="344.66666666666669" width="293" height="21"/>
+                                <rect key="frame" x="50" y="300.66666666666669" width="293" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ob-ua-DiC">
-                                <rect key="frame" x="50" y="390.66666666666669" width="293" height="21"/>
+                                <rect key="frame" x="50" y="346.66666666666669" width="293" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
