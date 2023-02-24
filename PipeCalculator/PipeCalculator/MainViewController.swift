@@ -5,9 +5,17 @@
 //  Created by tosy on 28.01.23.
 //
 
+import Alamofire
+import SwiftyJSON
 import UIKit
 
+
 class MainViewController: UIViewController {
+   
+    var usd: String = ""
+    var eur: String = ""
+    let url = "https://www.nbrb.by/api/exrates/rates?periodicity=0"
+
     @IBOutlet var diametrTextField: UITextField!
 
     @IBOutlet var tolshinaTextField: UITextField!
@@ -19,20 +27,18 @@ class MainViewController: UIViewController {
     @IBOutlet var nextButton: UIButton!
 
     @IBAction func Diametr(_ sender: UITextField) {
-       
-
         guard let diametr = Float(diametrTextField.text!),
               Float(diametrTextField.text!) ?? 0 >= 0
         else { diametrTextField.text?.removeAll()
             return
         }
-
+        massa()
         print(diametr)
     }
 
     @IBAction func tolshina(_ sender: UITextField) {
         guard let tolshina = Float(tolshinaTextField.text!), Float(tolshinaTextField.text!) ?? 0 < Float(diametrTextField.text!) ?? 0
-//               let text = sender.text
+
 
         else {
             tolshinaTextField.text?.removeAll()
@@ -49,25 +55,26 @@ class MainViewController: UIViewController {
         massa()
         print(dlina)
     }
+
     @IBAction func height(_ sender: UITextField) {
         if
-        diametrTextField.text!.isEmpty || tolshinaTextField.text!.isEmpty || dlinaTextField.text!.isEmpty {
-           
+            diametrTextField.text!.isEmpty || tolshinaTextField.text!.isEmpty || dlinaTextField.text!.isEmpty
+        {
             nextButton.isEnabled = false
         }
 
         else {
-//            massa()
             nextButton.isEnabled = true
         }
     }
-    
+
     // MARK: - raschet po kursu
 
     @IBAction func raschet(_ sender: UIButton) {}
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getPrice(url:url)
     }
 
     // MARK: - formula rascheta massa
@@ -85,21 +92,58 @@ class MainViewController: UIViewController {
     func lenght() {
         guard let diametr = Float(diametrTextField.text!),
               let stenka = Float(tolshinaTextField.text!),
-//              let metraj = Float(dlinaTextField.text!),
+
               let massa = Float(heightTextField.text!)
         else { return }
-//        let  = ((diametr - stenka) * stenka * 0.02466 * metraj) / 1000
+
         let metraj1 = massa * 1000 / (diametr - stenka) * 0.0246
         heightTextField.text = "\(round(metraj1 * 100000) / 100000)"
         print(metraj1)
     }
-    /*
-     // MARK: - Navigation
 
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "curency":
+            prepareEditScreen(segue) default: break
+        }
+    }
+
+    private func prepareEditScreen(_ segue: UIStoryboardSegue) {
+        guard let destinationController = segue.destination as? CurrencyViewController else {
+            return
+        }
+        destinationController.diametr = Float(diametrTextField.text!)!
+        
+        destinationController.tolshina = Float(tolshinaTextField.text!)!
+        
+        destinationController.dlina = Float(dlinaTextField.text!)!
+        
+        destinationController.height = Float(heightTextField.text!)!
+        
+        destinationController.usd = usd
+   
+        destinationController.eur = eur
+    }
+   
+    func getPrice(url: String) {
+        AF.request(url).responseJSON { [weak self] response in switch response.result {
+        case .success(let value):
+            let json = JSON(value)
+
+            self?.usd = "\(json[7, "Cur_OfficialRate"])"
+            self?.eur = "\(json[9, "Cur_OfficialRate"])"
+
+        case .failure:
+            print("error")
+        }
+        }
+    }
+    
+    
+    
+    
+    
+    
 }
