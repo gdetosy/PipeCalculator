@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 let calendar = Calendar.current
 var date = Date()
 let day = calendar.dateComponents([.day], from: date).day!

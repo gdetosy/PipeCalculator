@@ -25,6 +25,8 @@ class MainViewController: UIViewController {
 
     @IBOutlet var nextButton: UIButton!
 
+    @IBOutlet var heightMetr: UILabel!
+
     @IBAction func Diametr(_ sender: UITextField) {
         guard let diametr = Float(diametrTextField.text!),
               Float(diametrTextField.text!) ?? 0 >= 0
@@ -107,8 +109,9 @@ class MainViewController: UIViewController {
               let metraj = Float(dlinaTextField.text!)
         else { return }
         let massa1 = ((diametr - stenka) * stenka * 0.02466 * metraj) / 1000
+        let heightMetrs = ((diametr - stenka) * stenka * 0.02466 * 1) / 1000
         heightTextField.text = "\(round(massa1 * 100000) / 100000)"
-        print(massa1)
+        heightMetr.text = "Вес 1 метра = \(round(heightMetrs * 100000) / 100000) тн. = \((round(heightMetrs * 100000) / 100000) * 1000) кг."
     }
 
     func lenght() {

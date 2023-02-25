@@ -112,7 +112,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-1I-j9K">
-                                <rect key="frame" x="70" y="447" width="97" height="34"/>
+                                <rect key="frame" x="70" y="440.66666666666669" width="97" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
@@ -120,11 +120,18 @@
                                     <action selector="toggleBoldface:" destination="hYS-ms-TPA" eventType="editingDidEndOnExit" id="lRa-wn-Dth"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вес 1 метра = " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGH-j3-9rR">
+                                <rect key="frame" x="25" y="484.66666666666669" width="343" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k14-MY-CoE"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="EGH-j3-9rR" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="25" id="06O-vJ-g9r"/>
                             <constraint firstItem="2Zu-DV-SgY" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="30" id="0M0-Ia-kJd"/>
                             <constraint firstItem="k14-MY-CoE" firstAttribute="bottom" secondItem="wHS-T5-0r2" secondAttribute="bottom" constant="381" id="32w-0E-CUO"/>
                             <constraint firstItem="YJb-Ue-qLx" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="25" id="3xi-CE-1Gk"/>
@@ -139,8 +146,11 @@
                             <constraint firstItem="gke-dF-daL" firstAttribute="top" secondItem="k14-MY-CoE" secondAttribute="top" constant="50" id="PP5-mu-LHw"/>
                             <constraint firstItem="hYS-ms-TPA" firstAttribute="top" secondItem="YJb-Ue-qLx" secondAttribute="bottom" constant="10" id="QUj-ra-Isx"/>
                             <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="2Zu-DV-SgY" secondAttribute="trailing" constant="30" id="QqG-AB-n1n"/>
+                            <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="EGH-j3-9rR" secondAttribute="trailing" constant="25" id="S5h-ge-wli"/>
                             <constraint firstItem="ePB-7w-fV0" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="25" id="Sbs-fG-PAI"/>
+                            <constraint firstItem="2Zu-DV-SgY" firstAttribute="top" secondItem="EGH-j3-9rR" secondAttribute="bottom" constant="10" id="Ufj-rg-EYe"/>
                             <constraint firstItem="hYS-ms-TPA" firstAttribute="leading" secondItem="EVu-jD-c1T" secondAttribute="leading" id="VHc-oT-oIf"/>
+                            <constraint firstItem="EGH-j3-9rR" firstAttribute="top" secondItem="igZ-1I-j9K" secondAttribute="bottom" constant="10" id="Vv7-y9-Ob1"/>
                             <constraint firstItem="hYS-ms-TPA" firstAttribute="leading" secondItem="YJb-Ue-qLx" secondAttribute="leading" id="X3a-Hx-Itb"/>
                             <constraint firstItem="SaW-mF-PiK" firstAttribute="top" secondItem="gke-dF-daL" secondAttribute="bottom" constant="10" id="Yx3-1b-4jG"/>
                             <constraint firstItem="wHS-T5-0r2" firstAttribute="leading" secondItem="igZ-1I-j9K" secondAttribute="trailing" constant="8" symbolic="YES" id="dPu-70-JlV"/>
@@ -149,7 +159,6 @@
                             <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="gke-dF-daL" secondAttribute="trailing" constant="295" id="fZ8-w9-IVj"/>
                             <constraint firstItem="hYS-ms-TPA" firstAttribute="top" secondItem="YJb-Ue-qLx" secondAttribute="bottom" constant="10" id="gbV-Xt-hYW"/>
                             <constraint firstItem="wHS-T5-0r2" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="175" id="jBJ-Nm-nG0"/>
-                            <constraint firstItem="2Zu-DV-SgY" firstAttribute="top" secondItem="igZ-1I-j9K" secondAttribute="bottom" constant="34" id="klF-hQ-VaM"/>
                             <constraint firstItem="k14-MY-CoE" firstAttribute="bottom" secondItem="2Zu-DV-SgY" secondAttribute="bottom" constant="290" id="wBD-mY-CPJ"/>
                             <constraint firstItem="SaW-mF-PiK" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="25" id="wV5-32-AvW"/>
                             <constraint firstItem="gke-dF-daL" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="25" id="x9r-Lx-s5o"/>
@@ -159,6 +168,7 @@
                     <connections>
                         <outlet property="diametrTextField" destination="SaW-mF-PiK" id="e5E-ju-m9F"/>
                         <outlet property="dlinaTextField" destination="hYS-ms-TPA" id="BFt-8Y-9mN"/>
+                        <outlet property="heightMetr" destination="EGH-j3-9rR" id="2NH-hB-L27"/>
                         <outlet property="heightTextField" destination="igZ-1I-j9K" id="fY4-K8-864"/>
                         <outlet property="nextButton" destination="2Zu-DV-SgY" id="l94-Vs-Bec"/>
                         <outlet property="tolshinaTextField" destination="ePB-7w-fV0" id="9AF-U3-l6G"/>
