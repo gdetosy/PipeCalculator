@@ -15,6 +15,9 @@ class MainViewController: UIViewController {
     var eur: String = ""
     let url = "https://www.nbrb.by/api/exrates/rates?periodicity=0"
 
+    
+    
+    
     @IBOutlet var diametrTextField: UITextField!
 
     @IBOutlet var tolshinaTextField: UITextField!
@@ -28,6 +31,9 @@ class MainViewController: UIViewController {
     @IBOutlet var heightMetr: UILabel!
 
     @IBAction func Diametr(_ sender: UITextField) {
+   
+        
+        
         guard let diametr = Float(diametrTextField.text!),
               Float(diametrTextField.text!) ?? 0 >= 0
         else { diametrTextField.text?.removeAll()
@@ -94,6 +100,15 @@ class MainViewController: UIViewController {
             editScreen.height = Float(heightTextField.text!)!
             self.navigationController?.pushViewController(editScreen, animated: true)
         }
+    }
+
+    @IBAction func about(_ sender: Any) {
+        let alert = UIAlertController(title: "Формула расчета", message: "Трубный калькулятор  производит расчет веса круглой электросварной трубы по формуле:                                      Масса = ((Диаметр - Стенка) х Стенка х 0.02466 х метраж) / 1000",
+                                      preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
