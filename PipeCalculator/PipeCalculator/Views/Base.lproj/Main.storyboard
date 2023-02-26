@@ -49,46 +49,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="D, mm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gke-dF-daL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D, mm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gke-dF-daL">
                                 <rect key="frame" x="25" y="153" width="73" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" disabledBackground="carat.png" translatesAutoresizingMaskIntoConstraints="NO" id="SaW-mF-PiK">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" disabledBackground="carat.png" translatesAutoresizingMaskIntoConstraints="NO" id="SaW-mF-PiK">
                                 <rect key="frame" x="25" y="193" width="97" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 <connections>
-                                    <action selector="Diametr:" destination="i4b-LU-7hj" eventType="editingChanged" id="5CJ-mb-s5v"/>
+                                    <action selector="diametr:" destination="i4b-LU-7hj" eventType="editingChanged" id="oBU-BP-GI4"/>
                                     <action selector="toggleBoldface:" destination="igZ-1I-j9K" eventType="editingChanged" id="Yi1-22-Ny6"/>
-                                    <action selector="toggleBoldface:" destination="hYS-ms-TPA" eventType="editingDidEndOnExit" id="wxH-sR-p6u"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Толщина, mm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVu-jD-c1T">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Толщина, mm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVu-jD-c1T">
                                 <rect key="frame" x="25" y="242" width="153" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ePB-7w-fV0">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ePB-7w-fV0">
                                 <rect key="frame" x="25" y="282" width="97" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="toggleBoldface:" destination="igZ-1I-j9K" eventType="editingChanged" id="Jfs-fU-MHU"/>
-                                    <action selector="toggleBoldface:" destination="hYS-ms-TPA" eventType="editingDidEndOnExit" id="rfh-rb-SAR"/>
                                     <action selector="tolshina:" destination="i4b-LU-7hj" eventType="editingChanged" id="HmE-Ya-nRb"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=" Длинна, m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJb-Ue-qLx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Длинна, m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJb-Ue-qLx">
                                 <rect key="frame" x="25.000000000000007" y="331" width="123.66666666666669" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYS-ms-TPA">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYS-ms-TPA">
                                 <rect key="frame" x="25" y="371" width="97" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -97,7 +95,7 @@
                                     <action selector="toggleBoldface:" destination="igZ-1I-j9K" eventType="editingChanged" id="9IH-0y-gxO"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zu-DV-SgY">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zu-DV-SgY">
                                 <rect key="frame" x="30" y="493" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Расчитать цену"/>
@@ -105,7 +103,7 @@
                                     <action selector="raschet:" destination="i4b-LU-7hj" eventType="touchUpInside" id="IfW-w1-rdG"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-1I-j9K">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-1I-j9K">
                                 <rect key="frame" x="25" y="419" width="102" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -114,13 +112,13 @@
                                     <action selector="toggleBoldface:" destination="hYS-ms-TPA" eventType="editingDidEndOnExit" id="lRa-wn-Dth"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Вес 1 метра = " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGH-j3-9rR">
-                                <rect key="frame" x="25" y="462.66666666666674" width="343" height="20.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Вес 1 метра = " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGH-j3-9rR">
+                                <rect key="frame" x="25" y="463" width="343" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meQ-Av-dwS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meQ-Av-dwS">
                                 <rect key="frame" x="141" y="418" width="37" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=" ?"/>
@@ -128,6 +126,16 @@
                                     <action selector="about:" destination="i4b-LU-7hj" eventType="touchUpInside" id="xFt-nk-u6L"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JfE-Rv-ZRl">
+                                <rect key="frame" x="141" y="195" width="131" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControll:" destination="i4b-LU-7hj" eventType="valueChanged" id="Mr7-P9-czj"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k14-MY-CoE"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
@@ -137,10 +145,12 @@
                             <constraint firstItem="2Zu-DV-SgY" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="30" id="0M0-Ia-kJd"/>
                             <constraint firstItem="igZ-1I-j9K" firstAttribute="top" secondItem="hYS-ms-TPA" secondAttribute="bottom" constant="14" id="2df-MW-1hi"/>
                             <constraint firstItem="YJb-Ue-qLx" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="25" id="3xi-CE-1Gk"/>
-                            <constraint firstItem="meQ-Av-dwS" firstAttribute="leading" secondItem="igZ-1I-j9K" secondAttribute="trailing" constant="14" id="5JY-7V-GQd"/>
+                            <constraint firstItem="meQ-Av-dwS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="igZ-1I-j9K" secondAttribute="trailing" constant="8" symbolic="YES" id="5JY-7V-GQd"/>
                             <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="meQ-Av-dwS" secondAttribute="trailing" constant="215" id="A15-6v-1HU"/>
                             <constraint firstItem="ePB-7w-fV0" firstAttribute="top" secondItem="EVu-jD-c1T" secondAttribute="bottom" constant="10" id="BEt-EV-XkV"/>
                             <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="SaW-mF-PiK" secondAttribute="trailing" constant="271" id="BlY-zx-VGw"/>
+                            <constraint firstItem="JfE-Rv-ZRl" firstAttribute="top" secondItem="k14-MY-CoE" secondAttribute="top" constant="92" id="CLo-hG-n9y"/>
+                            <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="JfE-Rv-ZRl" secondAttribute="trailing" constant="121" id="G9K-fv-008"/>
                             <constraint firstItem="YJb-Ue-qLx" firstAttribute="top" secondItem="ePB-7w-fV0" secondAttribute="bottom" constant="15" id="GIf-SC-UyD"/>
                             <constraint firstItem="hYS-ms-TPA" firstAttribute="trailing" secondItem="ePB-7w-fV0" secondAttribute="trailing" id="KX4-au-Pfv"/>
                             <constraint firstItem="EVu-jD-c1T" firstAttribute="top" secondItem="SaW-mF-PiK" secondAttribute="bottom" constant="15" id="NsM-a7-Jty"/>
@@ -156,10 +166,13 @@
                             <constraint firstItem="EGH-j3-9rR" firstAttribute="top" secondItem="igZ-1I-j9K" secondAttribute="bottom" constant="10" id="Vv7-y9-Ob1"/>
                             <constraint firstItem="hYS-ms-TPA" firstAttribute="leading" secondItem="YJb-Ue-qLx" secondAttribute="leading" id="X3a-Hx-Itb"/>
                             <constraint firstItem="SaW-mF-PiK" firstAttribute="top" secondItem="gke-dF-daL" secondAttribute="bottom" constant="10" id="Yx3-1b-4jG"/>
+                            <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EVu-jD-c1T" secondAttribute="trailing" symbolic="YES" id="dg6-gq-s5o"/>
                             <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="gke-dF-daL" secondAttribute="trailing" constant="295" id="fZ8-w9-IVj"/>
                             <constraint firstItem="hYS-ms-TPA" firstAttribute="top" secondItem="YJb-Ue-qLx" secondAttribute="bottom" constant="10" id="gbV-Xt-hYW"/>
                             <constraint firstItem="igZ-1I-j9K" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="25" id="lQC-uV-lBA"/>
+                            <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YJb-Ue-qLx" secondAttribute="trailing" symbolic="YES" id="ndG-IH-BA9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="igZ-1I-j9K" secondAttribute="trailing" constant="250" id="oG8-H4-x9T"/>
+                            <constraint firstItem="JfE-Rv-ZRl" firstAttribute="leading" secondItem="SaW-mF-PiK" secondAttribute="trailing" constant="19" id="tXr-6O-hTd"/>
                             <constraint firstItem="k14-MY-CoE" firstAttribute="bottom" secondItem="2Zu-DV-SgY" secondAttribute="bottom" constant="290" id="wBD-mY-CPJ"/>
                             <constraint firstItem="SaW-mF-PiK" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="25" id="wV5-32-AvW"/>
                             <constraint firstItem="gke-dF-daL" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="25" id="x9r-Lx-s5o"/>
@@ -168,6 +181,7 @@
                     <navigationItem key="navigationItem" title="Calculator" id="cGQ-vw-rcF"/>
                     <connections>
                         <outlet property="diametrTextField" destination="SaW-mF-PiK" id="e5E-ju-m9F"/>
+                        <outlet property="dlinaLabel" destination="YJb-Ue-qLx" id="auy-Jp-J9s"/>
                         <outlet property="dlinaTextField" destination="hYS-ms-TPA" id="BFt-8Y-9mN"/>
                         <outlet property="heightMetr" destination="EGH-j3-9rR" id="2NH-hB-L27"/>
                         <outlet property="heightTextField" destination="igZ-1I-j9K" id="fY4-K8-864"/>
@@ -270,7 +284,7 @@
                                     <segment title="EUR"/>
                                 </segments>
                                 <connections>
-                                    <action selector="segmentControl:" destination="4Zb-if-NxN" eventType="valueChanged" id="3jM-Vh-lA1"/>
+                                    <action selector="segmentControl:" destination="4Zb-if-NxN" eventType="valueChanged" id="p4k-I2-SvF"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZi-9b-v6j">

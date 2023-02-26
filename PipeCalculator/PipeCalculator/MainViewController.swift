@@ -15,9 +15,8 @@ class MainViewController: UIViewController {
     var eur: String = ""
     let url = "https://www.nbrb.by/api/exrates/rates?periodicity=0"
 
-    
-    
-    
+    @IBOutlet var dlinaLabel: UILabel!
+
     @IBOutlet var diametrTextField: UITextField!
 
     @IBOutlet var tolshinaTextField: UITextField!
@@ -30,17 +29,16 @@ class MainViewController: UIViewController {
 
     @IBOutlet var heightMetr: UILabel!
 
-    @IBAction func Diametr(_ sender: UITextField) {
-   
-        
-        
+    @IBAction func diametr(_ sender: UITextField) {
         guard let diametr = Float(diametrTextField.text!),
               Float(diametrTextField.text!) ?? 0 >= 0
         else { diametrTextField.text?.removeAll()
             return
         }
-        massa()
-
+        if dlinaLabel.text == "Длинна, m" {
+            massa()
+        } else
+        { lenght() }
         print(diametr)
     }
 
@@ -51,8 +49,10 @@ class MainViewController: UIViewController {
             tolshinaTextField.text?.removeAll()
             return
         }
-        massa()
-
+        if dlinaLabel.text == "Длинна, m" {
+            massa()
+        } else
+        { lenght() }
         print(tolshina)
     }
 
@@ -60,7 +60,10 @@ class MainViewController: UIViewController {
         guard let dlina = Float(dlinaTextField.text!) else { dlinaTextField.text?.removeAll()
             return
         }
-        massa()
+        if dlinaLabel.text == "Длинна, m" {
+            massa()
+        } else
+        { lenght() }
 
         print(dlina)
     }
@@ -111,6 +114,24 @@ class MainViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
+    @IBAction func segmentControll(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            dlinaLabel.text = "Длинна, m"
+            diametrTextField.text?.removeAll()
+            tolshinaTextField.text?.removeAll()
+            dlinaTextField.text?.removeAll()
+            heightTextField.text?.removeAll()
+        case 1:
+            dlinaLabel.text = "Вес, тн"
+            diametrTextField.text?.removeAll()
+            tolshinaTextField.text?.removeAll()
+            dlinaTextField.text?.removeAll()
+            heightTextField.text?.removeAll()
+        default: print("lol")
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         getPrice(url: url)
@@ -132,12 +153,12 @@ class MainViewController: UIViewController {
     func lenght() {
         guard let diametr = Float(diametrTextField.text!),
               let stenka = Float(tolshinaTextField.text!),
-
-              let massa = Float(heightTextField.text!)
+              let massa = Float(dlinaTextField.text!)
         else { return }
 
-        let metraj1 = massa * 1000 / (diametr - stenka) * 0.0246
-        heightTextField.text = "\(round(metraj1 * 100000) / 100000)"
+        let metraj1 = massa * 1000 / ((diametr - stenka) * 0.0246 * stenka)
+        heightTextField.text = "\(round(metraj1 * 1000) / 1000)"
+
         print(metraj1)
     }
 
