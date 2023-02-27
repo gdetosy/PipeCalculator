@@ -40,12 +40,13 @@ class CurrencyViewController: UIViewController {
     
     @IBAction func priceTextField(_ sender: UITextField) {
         if priceTextField.text?.isEmpty == true {
-            finishPrice = 0
+//            finishPrice = 0
+            totalPriceLabel.text = "Введите цену в BYN"
         } else {
             guard let price = Float(priceTextField.text!) else { return }
             let totalPrice = (round((height * price) * 1000) / 1000)
             finishPrice = totalPrice
-            totalPriceLabel.text = "Цена \(totalPrice) рублей без НДС"
+            totalPriceLabel.text = "Цена \(finishPrice) рублей без НДС"
         }
     }
 

@@ -134,6 +134,7 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        dlinaLabel.text = "Длинна, m"
         getPrice(url: url)
     }
 
@@ -155,10 +156,10 @@ class MainViewController: UIViewController {
               let stenka = Float(tolshinaTextField.text!),
               let massa = Float(dlinaTextField.text!)
         else { return }
-
         let metraj1 = massa * 1000 / ((diametr - stenka) * 0.0246 * stenka)
+        let heightMetrs = ((diametr - stenka) * stenka * 0.02466 * 1) / 1000
         heightTextField.text = "\(round(metraj1 * 1000) / 1000)"
-
+        heightMetr.text = "Вес 1 метра = \(round(heightMetrs * 100000) / 100000) тн. = \((round(heightMetrs * 100000) / 100000) * 1000) кг."
         print(metraj1)
     }
 
