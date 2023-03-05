@@ -162,6 +162,10 @@ final class MainViewController: UIViewController {
         } else {
             nextButton.isEnabled = true
         }
+        guard Float(heightTextField.text!) != nil else { heightTextField.text?.removeAll()
+            nextButton.isEnabled = false
+            return
+        }
     }
     
     private func about() {
@@ -201,6 +205,7 @@ final class MainViewController: UIViewController {
         tolshinaTextField.text?.removeAll()
         dlinaTextField.text?.removeAll()
         heightTextField.text?.removeAll()
+        height()
     }
 
     private func segmentCaseTwo() {
@@ -210,6 +215,7 @@ final class MainViewController: UIViewController {
         tolshinaTextField.text?.removeAll()
         dlinaTextField.text?.removeAll()
         heightTextField.text?.removeAll()
+        height()
     }
 
     private func alert() {
@@ -230,3 +236,4 @@ final class MainViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+

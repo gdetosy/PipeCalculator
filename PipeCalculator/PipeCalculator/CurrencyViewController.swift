@@ -74,13 +74,15 @@ final class CurrencyViewController: UIViewController {
     }
 
     private func priceTfAction() {
-        if priceTextField.text?.isEmpty == true {
+        guard let price = Float(priceTextField.text!) else { priceTextField.text?.removeAll()
             totalPriceLabel.text = "Введите цену в BYN"
-        } else {
-            guard let price = Float(priceTextField.text!) else { return }
-            let totalPrice = (round((currency.height * price) * 1000) / 1000)
-            currency.finishPrice = totalPrice
-            segmention()
+            currency.finishPrice = 0
+            return
         }
+        let totalPrice = (round((currency.height * price) * 1000) / 1000)
+        currency.finishPrice = totalPrice
+        segmention()
     }
+       
 }
+

@@ -24,19 +24,22 @@ class PriceViewController: UIViewController {
     }
     
     @IBAction func priceTextField(_ sender: UITextField) {
-        if priceTextField.text?.isEmpty == true {
-            currency.finishPrice = 0
-        } else {
-            guard let price = Float(priceTextField.text!) else { return }
-            let totalPrice = (round((currency.height * price) * 1000) / 1000)
-            currency.finishPrice = totalPrice
-            totalPriceLabel.text = "Цена \(totalPrice) рублей без НДС"
-        }
+       priceTF()
     }
 
     private func getParametrs() {
         pipeLabel.text = " Труба \(currency.diametr) x \(currency.tolshina) мм Сталь 3пс"
         
         lenghtHeightLabel.text = "Длинна \(currency.dlina)м, вес  \(currency.height)тн"
+    }
+
+    private func priceTF() {
+        guard let price = Float(priceTextField.text!) else { priceTextField.text?.removeAll()
+            currency.finishPrice = 0
+            return
+        }
+        let totalPrice = (round((currency.height * price) * 1000) / 1000)
+        currency.finishPrice = totalPrice
+        totalPriceLabel.text = "Цена \(totalPrice) рублей без НДС"
     }
 }
