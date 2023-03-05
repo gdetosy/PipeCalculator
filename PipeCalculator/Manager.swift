@@ -21,6 +21,20 @@ func string() -> String {
     print(day)
     print(date)
     print(url)
-  return url
+    return url
 }
 
+struct Url {
+    let url = "https://www.nbrb.by/api/exrates/rates?periodicity=0"
+}
+
+struct Currency {
+    var diametr: Float = 0
+    var tolshina: Float = 0
+    var dlina: Float = 0
+    var height: Float = 0
+    var usd: String = ""
+    var eur: String = ""
+    var finishPrice: Float = 0
+    var segmentos = 0
+}

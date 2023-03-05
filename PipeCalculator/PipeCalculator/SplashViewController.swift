@@ -9,7 +9,7 @@ import Alamofire
 import SwiftyJSON
 import UIKit
 
-class SplashViewController: UIViewController {
+final class SplashViewController: UIViewController {
     @IBOutlet var label: UILabel!
     let urlDate = string()
    

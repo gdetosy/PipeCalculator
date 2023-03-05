@@ -8,12 +8,12 @@
 import UIKit
 
 class PriceViewController: UIViewController {
-    var diametr: Float = 0
-    var tolshina: Float = 0
-    var dlina: Float = 0
-    var height: Float = 0
-    var finishPrice: Float = 0
-    
+//    var diametr: Float = 0
+//    var tolshina: Float = 0
+//    var dlina: Float = 0
+//    var height: Float = 0
+//    var finishPrice: Float = 0
+    var currency = Currency()
     @IBOutlet var pipeLabel: UILabel!
     
     @IBOutlet var lenghtHeightLabel: UILabel!
@@ -30,18 +30,18 @@ class PriceViewController: UIViewController {
     
     @IBAction func priceTextField(_ sender: UITextField) {
         if priceTextField.text?.isEmpty == true {
-            finishPrice = 0
+            currency.finishPrice = 0
         } else {
             guard let price = Float(priceTextField.text!) else { return }
-            let totalPrice = (round((height * price) * 1000) / 1000)
-            finishPrice = totalPrice
+            let totalPrice = (round((currency.height * price) * 1000) / 1000)
+            currency.finishPrice = totalPrice
             totalPriceLabel.text = "Цена \(totalPrice) рублей без НДС"
         }
     }
 
     private func getParametrs() {
-        pipeLabel.text = " Труба \(diametr) x \(tolshina) мм Сталь 3пс"
+        pipeLabel.text = " Труба \(currency.diametr) x \(currency.tolshina) мм Сталь 3пс"
         
-        lenghtHeightLabel.text = "Длинна \(dlina)м, вес  \(height)тн"
+        lenghtHeightLabel.text = "Длинна \(currency.dlina)м, вес  \(currency.height)тн"
     }
 }

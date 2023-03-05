@@ -9,15 +9,9 @@ import Alamofire
 import SwiftyJSON
 import UIKit
 
-class CurrencyViewController: UIViewController {
-    var diametr: Float = 0
-    var tolshina: Float = 0
-    var dlina: Float = 0
-    var height: Float = 0
-    var usd: String = ""
-    var eur: String = ""
-    var finishPrice: Float = 0
-    var segmentos = 0
+final class CurrencyViewController: UIViewController {
+    var currency = Currency()
+    
     @IBOutlet var pipeLabel: UILabel!
     
     @IBOutlet var lenghtHeightLabel: UILabel!
@@ -34,32 +28,23 @@ class CurrencyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        totalPriceLabel.text = "Введите цену в BYN"
         getParametrs()
     }
     
-    @IBAction func priceTextField(_ sender: UITextField) {
-        if priceTextField.text?.isEmpty == true {
-            //            finishPrice = 0
-            totalPriceLabel.text = "Введите цену в BYN"
-        } else {
-            guard let price = Float(priceTextField.text!) else { return }
-            let totalPrice = (round((height * price) * 1000) / 1000)
-            finishPrice = totalPrice
-            segmention()
-        }
+    @IBAction private func priceTextField(_ sender: UITextField) {
+        priceTfAction()
     }
     
-    @IBAction func segmentControl(_ sender: UISegmentedControl) {
+    @IBAction private func segmentControl(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            segmentos = 0
+            currency.segmentos = 0
             segmention()
         case 1:
-            segmentos = 1
+            currency.segmentos = 1
             segmention()
         case 2:
-            segmentos = 2
+            currency.segmentos = 2
             segmention()
         default:
             print("lol")
@@ -67,23 +52,34 @@ class CurrencyViewController: UIViewController {
     }
     
     private func getParametrs() {
-        pipeLabel.text = " Труба \(diametr) x \(tolshina) мм Сталь 3пс"
+        pipeLabel.text = " Труба \(currency.diametr) x \(currency.tolshina) мм Сталь 3пс"
         
-        lenghtHeightLabel.text = "Длинна \(dlina)м, вес  \(height)тн"
+        lenghtHeightLabel.text = "Длинна \(currency.dlina)м, вес  \(currency.height)тн"
         
-        usdLabel.text = "1 USD = \(usd) руб"
-        eurLabel.text = "1 EUR = \(eur) руб"
+        usdLabel.text = "1 USD = \(currency.usd) руб"
+        eurLabel.text = "1 EUR = \(currency.eur) руб"
     }
 
-    func segmention() {
-        if segmentos == 0 {
-            totalPriceLabel.text = "Цена \(finishPrice) рублей без НДС"
+    private func segmention() {
+        if currency.segmentos == 0 {
+            totalPriceLabel.text = "Цена \(currency.finishPrice) рублей без НДС"
         }
-        if segmentos == 1 {
-            totalPriceLabel.text = "Цена \(finishPrice * Float(usd)!) USD без НДС"
+        if currency.segmentos == 1 {
+            totalPriceLabel.text = "Цена \(currency.finishPrice * Float(currency.usd)!) USD без НДС"
         }
-        if segmentos == 2 {
-            totalPriceLabel.text = "Цена \(finishPrice * Float(eur)!) EUR без НДС"
+        if currency.segmentos == 2 {
+            totalPriceLabel.text = "Цена \(currency.finishPrice * Float(currency.eur)!) EUR без НДС"
+        }
+    }
+
+    private func priceTfAction() {
+        if priceTextField.text?.isEmpty == true {
+            totalPriceLabel.text = "Введите цену в BYN"
+        } else {
+            guard let price = Float(priceTextField.text!) else { return }
+            let totalPrice = (round((currency.height * price) * 1000) / 1000)
+            currency.finishPrice = totalPrice
+            segmention()
         }
     }
 }
