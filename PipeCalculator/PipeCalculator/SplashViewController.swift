@@ -10,9 +10,10 @@ import SwiftyJSON
 import UIKit
 
 final class SplashViewController: UIViewController {
-    @IBOutlet var label: UILabel!
     let urlDate = string()
-   
+    
+    @IBOutlet var label: UILabel!
+
     override func viewDidLoad() {
         getQoute(url: urlDate)
         super.viewDidLoad()

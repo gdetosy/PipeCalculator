@@ -8,12 +8,8 @@
 import UIKit
 
 class PriceViewController: UIViewController {
-//    var diametr: Float = 0
-//    var tolshina: Float = 0
-//    var dlina: Float = 0
-//    var height: Float = 0
-//    var finishPrice: Float = 0
     var currency = Currency()
+    
     @IBOutlet var pipeLabel: UILabel!
     
     @IBOutlet var lenghtHeightLabel: UILabel!
@@ -24,7 +20,6 @@ class PriceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         getParametrs()
     }
     

@@ -61,14 +61,15 @@ final class CurrencyViewController: UIViewController {
     }
 
     private func segmention() {
-        if currency.segmentos == 0 {
+        switch currency.segmentos {
+        case 0:
             totalPriceLabel.text = "Цена \(currency.finishPrice) рублей без НДС"
-        }
-        if currency.segmentos == 1 {
+        case 1:
             totalPriceLabel.text = "Цена \(currency.finishPrice * Float(currency.usd)!) USD без НДС"
-        }
-        if currency.segmentos == 2 {
+        case 2:
             totalPriceLabel.text = "Цена \(currency.finishPrice * Float(currency.eur)!) EUR без НДС"
+        default:
+            print("lol")
         }
     }
 

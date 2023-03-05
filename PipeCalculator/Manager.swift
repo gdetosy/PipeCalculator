@@ -21,6 +21,7 @@ func string() -> String {
     print(day)
     print(date)
     print(url)
+    print(month)
     return url
 }
 
