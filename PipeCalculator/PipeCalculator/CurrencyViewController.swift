@@ -83,6 +83,4 @@ final class CurrencyViewController: UIViewController {
         currency.finishPrice = totalPrice
         segmention()
     }
-       
 }
-

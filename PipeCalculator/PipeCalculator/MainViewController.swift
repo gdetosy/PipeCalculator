@@ -9,12 +9,13 @@ import Alamofire
 import SwiftyJSON
 import UIKit
 
-final class MainViewController: UIViewController {
+final class MainViewController: UIViewController, UITextFieldDelegate {
     var array: [String] = []
 
     let url = Url()
-  
+   
     var currency = Currency()
+    
     @IBOutlet var heightLabel: UILabel!
    
     @IBOutlet var dlinaLabel: UILabel!
@@ -33,6 +34,7 @@ final class MainViewController: UIViewController {
     
     @IBAction private func diametr(_ sender: UITextField) {
         diametr()
+//        diametrTextField.text?.removeAll()
     }
     
     @IBAction private func tolshina(_ sender: UITextField) {
@@ -133,6 +135,7 @@ final class MainViewController: UIViewController {
                 
         else {
             tolshinaTextField.text?.removeAll()
+            nextButton.isEnabled = false
             return
         }
         if dlinaLabel.text == "Длинна, m" {
@@ -236,4 +239,3 @@ final class MainViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
-
