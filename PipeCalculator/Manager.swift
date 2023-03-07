@@ -39,3 +39,29 @@ struct Currency {
     var finishPrice: Float = 0
     var segmentos = 0
 }
+
+protocol alert {
+    func alert()
+    func alert1()
+    
+}
+
+extension MainViewController: alert {
+    func alert() {
+        let alert = UIAlertController(title: "Формула расчета", message: "Трубный калькулятор  производит расчет веса круглой электросварной трубы по формуле:                                      Масса трубы = ((диаметр трубы  - толщина стенки) х толщина стенки х 0.02466 х метраж) / 1000",
+                                      preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    func alert1() {
+        let alert = UIAlertController(title: "Формула расчета", message: "Трубный калькулятор  производит расчет веса круглой электросварной трубы по формуле:                                     Длинна трубы = масса * 1000 / ((диаметр трубы - толщина стенки) * 0.0246 * толщина стенки)",
+                                      preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
+    }
+}

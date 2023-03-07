@@ -11,7 +11,7 @@ import UIKit
 
 final class MainViewController: UIViewController, UITextFieldDelegate {
     var array: [String] = []
-
+ 
     let url = Url()
    
     var currency = Currency()
@@ -208,6 +208,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         tolshinaTextField.text?.removeAll()
         dlinaTextField.text?.removeAll()
         heightTextField.text?.removeAll()
+        heightMetr.text = "Вес 1 метра ="
         height()
     }
 
@@ -218,24 +219,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         tolshinaTextField.text?.removeAll()
         dlinaTextField.text?.removeAll()
         heightTextField.text?.removeAll()
+        heightMetr.text = "Вес 1 метра ="
         height()
-    }
-
-    private func alert() {
-        let alert = UIAlertController(title: "Формула расчета", message: "Трубный калькулятор  производит расчет веса круглой электросварной трубы по формуле:                                      Масса трубы = ((диаметр трубы  - толщина стенки) х толщина стенки х 0.02466 х метраж) / 1000",
-                                      preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-
-    private func alert1() {
-        let alert = UIAlertController(title: "Формула расчета", message: "Трубный калькулятор  производит расчет веса круглой электросварной трубы по формуле:                                     Длинна трубы = масса * 1000 / ((диаметр трубы - толщина стенки) * 0.0246 * толщина стенки)",
-                                      preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
     }
 }
