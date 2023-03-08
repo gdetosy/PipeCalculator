@@ -16,10 +16,6 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
    
     var currency = Currency()
     
-    @IBOutlet weak var diametrLbl: UILabel!
-    
-    @IBOutlet weak var thicknessLbl: UILabel!
-    
     @IBOutlet var heightLabel: UILabel!
    
     @IBOutlet var dlinaLabel: UILabel!
@@ -38,6 +34,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction private func diametr(_ sender: UITextField) {
         diametr()
+//        diametrTextField.text?.removeAll()
     }
     
     @IBAction private func tolshina(_ sender: UITextField) {
@@ -70,19 +67,10 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         default: print("lol")
         }
     }
-    @IBOutlet var mainView: UIView!
     
-    @IBOutlet weak var stackView: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
         getPrice(url: url.url)
-   
-        viewSettings()
-      
-        
-        
-        
-        
     }
     
     // MARK: - formula rascheta massa
@@ -95,7 +83,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         let massa1 = ((diametr - stenka) * stenka * 0.02466 * metraj) / 1000
         let heightMetrs = ((diametr - stenka) * stenka * 0.02466 * 1) / 1000
         heightTextField.text = "\(round(massa1 * 100000) / 100000)"
-        heightMetr.text = "1 m weight = \(round(heightMetrs * 100000) / 100000) t = \((round(heightMetrs * 100000) / 100000) * 1000) kg."
+        heightMetr.text = "Вес 1 метра = \(round(heightMetrs * 100000) / 100000) тн. = \((round(heightMetrs * 100000) / 100000) * 1000) кг."
     }
     
     private func lenght() {
@@ -106,7 +94,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         let metraj1 = massa * 1000 / ((diametr - stenka) * 0.0246 * stenka)
         let heightMetrs = ((diametr - stenka) * stenka * 0.02466 * 1) / 1000
         heightTextField.text = "\(round(metraj1 * 1000) / 1000)"
-        heightMetr.text = "1 m weight = \(round(heightMetrs * 100000) / 100000) t = \((round(heightMetrs * 100000) / 100000) * 1000) kg."
+        heightMetr.text = "Вес 1 метра = \(round(heightMetrs * 100000) / 100000) тн. = \((round(heightMetrs * 100000) / 100000) * 1000) кг."
         print(metraj1)
     }
 
@@ -135,7 +123,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         else { diametrTextField.text?.removeAll()
             return
         }
-        if dlinaLabel.text == "Lenght, m" {
+        if dlinaLabel.text == "Длинна, m" {
             massa()
         } else
         { lenght() }
@@ -148,10 +136,9 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         else {
             tolshinaTextField.text?.removeAll()
             nextButton.isEnabled = false
-            heightTextField.text?.removeAll()
             return
         }
-        if dlinaLabel.text == "Lenght, m" {
+        if dlinaLabel.text == "Длинна, m" {
             massa()
         } else
         { lenght() }
@@ -162,7 +149,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         guard let dlina = Float(dlinaTextField.text!) else { dlinaTextField.text?.removeAll()
             return
         }
-        if dlinaLabel.text == "Lenght, m" {
+        if dlinaLabel.text == "Длинна, m" {
             massa()
         } else
         { lenght() }
@@ -185,7 +172,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func about() {
-        if dlinaLabel.text == "Lenght, m" { alert() }
+        if dlinaLabel.text == "Длинна, m" { alert() }
         else { alert1() }
     }
     
@@ -215,38 +202,24 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func segmentCaseOne() {
-        dlinaLabel.text = "Lenght, m"
-        heightLabel.text = "Weight, t"
+        dlinaLabel.text = "Длинна, m"
+        heightLabel.text = "Вес, тн"
         diametrTextField.text?.removeAll()
         tolshinaTextField.text?.removeAll()
         dlinaTextField.text?.removeAll()
         heightTextField.text?.removeAll()
-        heightMetr.text = "1 m weight ="
+        heightMetr.text = "Вес 1 метра ="
         height()
     }
 
     private func segmentCaseTwo() {
-        dlinaLabel.text = "Weight, t"
-        heightLabel.text = "Lenght, m"
+        dlinaLabel.text = "Вес, тн"
+        heightLabel.text = "Длинна, m"
         diametrTextField.text?.removeAll()
         tolshinaTextField.text?.removeAll()
         dlinaTextField.text?.removeAll()
         heightTextField.text?.removeAll()
-        heightMetr.text = "1 m weight ="
+        heightMetr.text = "Вес 1 метра ="
         height()
     }
-    private func viewSettings(){
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background")
-        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
-        diametrTextField.font = UIFont(name: "8-bit-Arcade-In", size: 28)
-        diametrLbl.font = UIFont(name: "8-bit-Arcade-In", size: 28)
-        
-        thicknessLbl.font = UIFont(name: "8-bit-Arcade-In", size: 28)
-        dlinaLabel.font = UIFont(name: "8-bit-Arcade-In", size: 28)
-        heightLabel.font = UIFont(name: "8-bit-Arcade-In", size: 28)
-        heightMetr.font = UIFont(name: "8-bit-Arcade-In", size: 28)
-    }
-    
 }
