@@ -16,9 +16,9 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
    
     var currency = Currency()
     
-    @IBOutlet weak var diametrLbl: UILabel!
+    @IBOutlet var diametrLbl: UILabel!
     
-    @IBOutlet weak var thicknessLbl: UILabel!
+    @IBOutlet var thicknessLbl: UILabel!
     
     @IBOutlet var heightLabel: UILabel!
    
@@ -235,18 +235,22 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         heightMetr.text = "1 m weight ="
         height()
     }
-    private func viewSettings(){
+
+    private func viewSettings() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "background")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
-        diametrTextField.font = UIFont(name: "8-bit-Arcade-In", size: 28)
-        diametrLbl.font = UIFont(name: "8-bit-Arcade-In", size: 28)
+        diametrTextField.font = UIFont(name: "Minecrafter", size: 20)
+        diametrLbl.font = UIFont(name: "Minecrafter", size: 20)
+        thicknessLbl.font = UIFont(name: "Minecrafter", size: 20)
+        dlinaLabel.font = UIFont(name: "Minecrafter", size: 20)
+        heightLabel.font = UIFont(name: "Minecrafter", size: 20)
+        heightMetr.font = UIFont(name: "Minecrafter", size: 20)
         
-        thicknessLbl.font = UIFont(name: "8-bit-Arcade-In", size: 28)
-        dlinaLabel.font = UIFont(name: "8-bit-Arcade-In", size: 28)
-        heightLabel.font = UIFont(name: "8-bit-Arcade-In", size: 28)
-        heightMetr.font = UIFont(name: "8-bit-Arcade-In", size: 28)
+        var attr = [NSAttributedString.Key.font: UIFont(name: "Minecrafter", size: 12.0)!]
+        UISegmentedControl.appearance().setTitleTextAttributes(attr, for: UIControl.State.normal)
+        
     }
     
 }

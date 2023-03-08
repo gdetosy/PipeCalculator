@@ -7,6 +7,7 @@
 		<string>8bitfont.TTF</string>
 		<string>8-bit Arcade In.ttf</string>
 		<string>8-bit Arcade Out.ttf</string>
+		<string>Minecrafter.Reg.ttf</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
