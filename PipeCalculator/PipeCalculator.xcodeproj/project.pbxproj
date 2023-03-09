@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9624BC9829A4FB2600644288 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624BC9729A4FB2600644288 /* CurrencyViewController.swift */; };
+		96AF1ADC29A8DD8100AD1CB3 /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF1ADB29A8DD8100AD1CB3 /* PriceViewController.swift */; };
+		96AF1B1F29B8FB4C00AD1CB3 /* 8bitfont.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 96AF1B1E29B8FB4C00AD1CB3 /* 8bitfont.TTF */; };
+		96AF1B2129B9004400AD1CB3 /* 8-bit Arcade In.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96AF1B2029B9004400AD1CB3 /* 8-bit Arcade In.ttf */; };
+		96AF1B2329B9004E00AD1CB3 /* 8-bit Arcade Out.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96AF1B2229B9004D00AD1CB3 /* 8-bit Arcade Out.ttf */; };
+		96AF1B2529B90B1300AD1CB3 /* Minecrafter.Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96AF1B2429B90B1200AD1CB3 /* Minecrafter.Reg.ttf */; };
 		96B6C5E52985951A00787122 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6C5E42985951A00787122 /* AppDelegate.swift */; };
 		96B6C5E72985951A00787122 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6C5E62985951A00787122 /* SceneDelegate.swift */; };
 		96B6C5E92985951A00787122 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6C5E82985951A00787122 /* SplashViewController.swift */; };
@@ -22,6 +27,11 @@
 
 /* Begin PBXFileReference section */
 		9624BC9729A4FB2600644288 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
+		96AF1ADB29A8DD8100AD1CB3 /* PriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
+		96AF1B1E29B8FB4C00AD1CB3 /* 8bitfont.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = 8bitfont.TTF; path = ../../../../../Downloads/04b_30/8bitfont.TTF; sourceTree = "<group>"; };
+		96AF1B2029B9004400AD1CB3 /* 8-bit Arcade In.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "8-bit Arcade In.ttf"; path = "../../../../../Downloads/8_bit_arcade/8-bit Arcade In.ttf"; sourceTree = "<group>"; };
+		96AF1B2229B9004D00AD1CB3 /* 8-bit Arcade Out.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "8-bit Arcade Out.ttf"; path = "../../../../../Downloads/8_bit_arcade/8-bit Arcade Out.ttf"; sourceTree = "<group>"; };
+		96AF1B2429B90B1200AD1CB3 /* Minecrafter.Reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Minecrafter.Reg.ttf; path = ../../../../../Downloads/minecrafter/Minecrafter.Reg.ttf; sourceTree = "<group>"; };
 		96B6C5E12985951A00787122 /* PipeCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PipeCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B6C5E42985951A00787122 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96B6C5E62985951A00787122 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,8 +80,13 @@
 				96B6C5E82985951A00787122 /* SplashViewController.swift */,
 				96B6C5FA2985A93600787122 /* MainViewController.swift */,
 				9624BC9729A4FB2600644288 /* CurrencyViewController.swift */,
+				96AF1ADB29A8DD8100AD1CB3 /* PriceViewController.swift */,
 				96B6C5F92985959600787122 /* Views */,
 				96B6C5ED2985951F00787122 /* Assets.xcassets */,
+				96AF1B2429B90B1200AD1CB3 /* Minecrafter.Reg.ttf */,
+				96AF1B1E29B8FB4C00AD1CB3 /* 8bitfont.TTF */,
+				96AF1B2029B9004400AD1CB3 /* 8-bit Arcade In.ttf */,
+				96AF1B2229B9004D00AD1CB3 /* 8-bit Arcade Out.ttf */,
 				96B6C5F82985956D00787122 /* Delegates */,
 				96B6C5F22985951F00787122 /* Info.plist */,
 			);
@@ -164,6 +179,10 @@
 			files = (
 				96B6C5F12985951F00787122 /* LaunchScreen.storyboard in Resources */,
 				96B6C5EE2985951F00787122 /* Assets.xcassets in Resources */,
+				96AF1B2329B9004E00AD1CB3 /* 8-bit Arcade Out.ttf in Resources */,
+				96AF1B1F29B8FB4C00AD1CB3 /* 8bitfont.TTF in Resources */,
+				96AF1B2129B9004400AD1CB3 /* 8-bit Arcade In.ttf in Resources */,
+				96AF1B2529B90B1300AD1CB3 /* Minecrafter.Reg.ttf in Resources */,
 				96B6C5EC2985951A00787122 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,6 +200,7 @@
 				96B6C5E72985951A00787122 /* SceneDelegate.swift in Sources */,
 				96B6C5FB2985A93600787122 /* MainViewController.swift in Sources */,
 				96B6C60929880F5700787122 /* Manager.swift in Sources */,
+				96AF1ADC29A8DD8100AD1CB3 /* PriceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

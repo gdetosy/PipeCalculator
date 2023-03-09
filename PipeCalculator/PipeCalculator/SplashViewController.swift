@@ -9,10 +9,11 @@ import Alamofire
 import SwiftyJSON
 import UIKit
 
-class SplashViewController: UIViewController {
-    @IBOutlet var label: UILabel!
+final class SplashViewController: UIViewController {
     let urlDate = string()
-   
+    
+    @IBOutlet var label: UILabel!
+
     override func viewDidLoad() {
         getQoute(url: urlDate)
         super.viewDidLoad()
