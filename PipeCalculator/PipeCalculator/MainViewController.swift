@@ -78,13 +78,8 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         getPrice(url: url.url)
    
         viewSettings()
-      
-        
-        
-        
-        
     }
-    
+   
     // MARK: - formula rascheta massa
     
     private func massa() {
@@ -94,8 +89,9 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         else { return }
         let massa1 = ((diametr - stenka) * stenka * 0.02466 * metraj) / 1000
         let heightMetrs = ((diametr - stenka) * stenka * 0.02466 * 1) / 1000
+        let kg = ((diametr - stenka) * stenka * 0.02466 * 1)
         heightTextField.text = "\(round(massa1 * 100000) / 100000)"
-        heightMetr.text = "1 m weight = \(round(heightMetrs * 100000) / 100000) t = \((round(heightMetrs * 100000) / 100000) * 1000) kg."
+        heightMetr.text = "1 m weight = \(round(heightMetrs * 100000) / 100000) t = \(kg) kg."
     }
     
     private func lenght() {
@@ -105,9 +101,9 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         else { return }
         let metraj1 = massa * 1000 / ((diametr - stenka) * 0.0246 * stenka)
         let heightMetrs = ((diametr - stenka) * stenka * 0.02466 * 1) / 1000
+        let kg = ((diametr - stenka) * stenka * 0.02466 * 1)
         heightTextField.text = "\(round(metraj1 * 1000) / 1000)"
-        heightMetr.text = "1 m weight = \(round(heightMetrs * 100000) / 100000) t = \((round(heightMetrs * 100000) / 100000) * 1000) kg."
-        print(metraj1)
+        heightMetr.text = "1 m weight = \(round(heightMetrs * 100000) / 100000) t = \(kg) kg."
     }
 
     //  MARK: - Zapros kursov valut
@@ -247,7 +243,10 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         dlinaLabel.font = UIFont(name: "Minecrafter", size: 20)
         heightLabel.font = UIFont(name: "Minecrafter", size: 20)
         heightMetr.font = UIFont(name: "Minecrafter", size: 20)
-        
+        dlinaTextField.font = UIFont(name: "Minecrafter", size: 20)
+        heightTextField.font = UIFont(name: "Minecrafter", size: 20)
+        tolshinaTextField.font = UIFont(name: "Minecrafter", size: 20)
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont(name: "Minecrafter", size: 20) as Any ]
         var attr = [NSAttributedString.Key.font: UIFont(name: "Minecrafter", size: 12.0)!]
         UISegmentedControl.appearance().setTitleTextAttributes(attr, for: UIControl.State.normal)
         
