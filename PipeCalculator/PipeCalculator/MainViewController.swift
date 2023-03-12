@@ -90,8 +90,8 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         let massa1 = ((diametr - stenka) * stenka * 0.02466 * metraj) / 1000
         let heightMetrs = ((diametr - stenka) * stenka * 0.02466 * 1) / 1000
         let kg = (diametr - stenka) * stenka * 0.02466
-        heightTextField.text = "\(round(massa1 * 100000) / 100000)"
         heightMetr.text = "1 m weight = \(round(heightMetrs * 100000) / 100000) t = \(kg) kg."
+        heightTextField.text = "\(round(massa1 * 100000) / 100000)"
     }
     
     private func lenght() {
@@ -128,7 +128,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     private func diametr() {
         guard let diametr = Float(diametrTextField.text!),
               Float(diametrTextField.text!) ?? 0 >= 0
-        else { diametrTextField.text?.removeAll()
+        else { diametrTextField.text?.removeAll(); heightMetr.text = "1 m weight ="
             return
         }
         if dlinaLabel.text == "Lenght, m" {
@@ -145,6 +145,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             tolshinaTextField.text?.removeAll()
             nextButton.isEnabled = false
             heightTextField.text?.removeAll()
+            heightMetr.text = "1 m weight ="
             return
         }
         if dlinaLabel.text == "Lenght, m" {
@@ -237,16 +238,16 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         backgroundImage.image = UIImage(named: "background")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
-        diametrTextField.font = UIFont(name: "Minecrafter", size: 20)
-        diametrLbl.font = UIFont(name: "Minecrafter", size: 20)
-        thicknessLbl.font = UIFont(name: "Minecrafter", size: 20)
-        dlinaLabel.font = UIFont(name: "Minecrafter", size: 20)
-        heightLabel.font = UIFont(name: "Minecrafter", size: 20)
-        heightMetr.font = UIFont(name: "Minecrafter", size: 20)
-        dlinaTextField.font = UIFont(name: "Minecrafter", size: 20)
-        heightTextField.font = UIFont(name: "Minecrafter", size: 20)
-        tolshinaTextField.font = UIFont(name: "Minecrafter", size: 20)
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont(name: "Minecrafter", size: 15) as Any ]
+        diametrTextField.font = UIFont(name: "Minecrafter", size: 25)
+        diametrLbl.font = UIFont(name: "Minecrafter", size: 25)
+        thicknessLbl.font = UIFont(name: "Minecrafter", size: 25)
+        dlinaLabel.font = UIFont(name: "Minecrafter", size: 25)
+        heightLabel.font = UIFont(name: "Minecrafter", size: 25)
+        heightMetr.font = UIFont(name: "Minecrafter", size: 25)
+        dlinaTextField.font = UIFont(name: "Minecrafter", size: 25)
+        heightTextField.font = UIFont(name: "Minecrafter", size: 25)
+        tolshinaTextField.font = UIFont(name: "Minecrafter", size: 25)
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont(name: "Minecrafter", size: 14) as Any]
         let segment = [NSAttributedString.Key.font: UIFont(name: "Minecrafter", size: 12.0)!]
         UISegmentedControl.appearance().setTitleTextAttributes(segment, for: UIControl.State.normal)
      

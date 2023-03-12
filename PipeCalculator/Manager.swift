@@ -66,4 +66,18 @@ extension MainViewController: alert {
     }
 }
 
- 
+enum Qoute: String, CaseIterable {
+    case one = "Don't let the noise of others' opinions drown out your own inner voice."
+    case two = "Have the courage to follow your heart and intuition."
+    case three = "I would trade all of my technology for an afternoon with Socrates."
+    case four = "If you haven't found it yet, keep looking."
+    case five = "Innovation distinguishes between a leader and a follower."
+    case six = "Some people aren't used to an environment where excellence is expected."
+    case seven = "Sometimes life's going to hit you in the head with a brick."
+    case eight = "Stay hungry, stay foolish."
+    case nine = "Things don't have to change the world to be important."
+    case ten = "Why join the navy if you can be a pirate?"
+    case eleven = "You have to trust in something - your gut, destiny, life, karma, whatever."
+    case twelve = "Your time is limited, so don't waste it living someone else's life."
+}
+
