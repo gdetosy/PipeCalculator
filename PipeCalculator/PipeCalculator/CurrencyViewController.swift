@@ -25,10 +25,11 @@ final class CurrencyViewController: UIViewController {
     @IBOutlet var usdLabel: UILabel!
     
     @IBOutlet var eurLabel: UILabel!
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         getParametrs()
+        currencyViewSetting()
     }
     
     @IBAction private func priceTextField(_ sender: UITextField) {
@@ -83,4 +84,16 @@ final class CurrencyViewController: UIViewController {
         currency.finishPrice = totalPrice
         segmention()
     }
+    private func currencyViewSetting() {
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "background1")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+    }
+    
+    
+    
 }
+
+
+
