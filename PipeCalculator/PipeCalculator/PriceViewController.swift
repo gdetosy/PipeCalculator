@@ -21,6 +21,7 @@ class PriceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getParametrs()
+        self.hideKeyboardWhenTappedAround() 
     }
     
     @IBAction func priceTextField(_ sender: UITextField) {

@@ -15,6 +15,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     let url = Url()
    
     var currency = Currency()
+    @IBOutlet weak var but: UIButton!
     
     @IBOutlet var diametrLbl: UILabel!
     
@@ -70,13 +71,14 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         default: print("lol")
         }
     }
+
     @IBOutlet var mainView: UIView!
     
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet var stackView: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
         getPrice(url: url.url)
-   
+        self.hideKeyboardWhenTappedAround() 
         viewSettings()
     }
    
@@ -143,7 +145,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
                 
         else {
             tolshinaTextField.text?.removeAll()
-            nextButton.isEnabled = false
+            but.isEnabled = false
             heightTextField.text?.removeAll()
             heightMetr.text = "1 m weight ="
             return
@@ -157,6 +159,8 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
    
     private func dlina() {
         guard let dlina = Float(dlinaTextField.text!) else { dlinaTextField.text?.removeAll()
+            heightTextField.text?.removeAll()
+            
             return
         }
         if dlinaLabel.text == "Lenght, m" {
@@ -171,12 +175,12 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         if
             diametrTextField.text!.isEmpty || tolshinaTextField.text!.isEmpty || dlinaTextField.text!.isEmpty
         {
-            nextButton.isEnabled = false
+            but.isEnabled = false
         } else {
-            nextButton.isEnabled = true
+            but.isEnabled = true
         }
         guard Float(heightTextField.text!) != nil else { heightTextField.text?.removeAll()
-            nextButton.isEnabled = false
+            but.isEnabled = false
             return
         }
     }
@@ -235,7 +239,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
 
     private func viewSettings() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background")
+        backgroundImage.image = UIImage(named: "backgroundw")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         diametrTextField.font = UIFont(name: "Minecrafter", size: 25)
@@ -250,7 +254,12 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont(name: "Minecrafter", size: 14) as Any]
         let segment = [NSAttributedString.Key.font: UIFont(name: "Minecrafter", size: 12.0)!]
         UISegmentedControl.appearance().setTitleTextAttributes(segment, for: UIControl.State.normal)
-     
+        but.tintColor = UIColor.black
+        but.backgroundColor = UIColor.white
+        let attributedText = NSAttributedString(string: "Calculate the price", attributes: [NSAttributedString.Key.font: UIFont(name: "Minecrafter", size: 10)!])
+       but.setAttributedTitle(attributedText, for: .normal)
+        
+        
+        but.titleLabel?.font =  UIFont(name: "Minecrafter", size: 10)
     }
-    
 }

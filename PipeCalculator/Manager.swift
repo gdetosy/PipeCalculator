@@ -48,7 +48,7 @@ protocol alert {
 
 extension MainViewController: alert {
     func alert() {
-        let alert = UIAlertController(title: "Формула расчета", message: "Трубный калькулятор  производит расчет веса круглой электросварной трубы по формуле:                                      Масса трубы = ((диаметр трубы  - толщина стенки) х толщина стенки х 0.02466 х метраж) / 1000",
+        let alert = UIAlertController(title: "Сalculation formula", message: "ТThe pipe calculator calculates the weight of a round electric-welded pipe using the formula:                                      Pipe weight = ((pipe diameter - wall thickness) x wall thickness x 0.02466 x footage) / 1000",
                                       preferredStyle: UIAlertController.Style.alert)
 
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -57,7 +57,7 @@ extension MainViewController: alert {
     }
 
     func alert1() {
-        let alert = UIAlertController(title: "Формула расчета", message: "Трубный калькулятор  производит расчет веса круглой электросварной трубы по формуле:                                     Длинна трубы = масса * 1000 / ((диаметр трубы - толщина стенки) * 0.0246 * толщина стенки)",
+        let alert = UIAlertController(title: "calculation formula", message: "The pipe calculator calculates the weight of a round electric-welded pipe using the formula:                                     Pipe length = mass * 1000 / ((pipe diameter - wall thickness) * 0.0246 * wall thickness)",
                                       preferredStyle: UIAlertController.Style.alert)
 
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -80,4 +80,15 @@ enum Qoute: String, CaseIterable {
     case eleven = "You have to trust in something - your gut, destiny, life, karma, whatever."
     case twelve = "Your time is limited, so don't waste it living someone else's life."
 }
-
+ 
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
