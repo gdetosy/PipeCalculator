@@ -58,7 +58,7 @@ final class CurrencyViewController: UIViewController {
         
         lenghtHeightLabel.text = "Thickness \(currency.dlina)m, weight  \(currency.height)tn"
         
-        usdLabel.text = "1 USD = \(currency.usd) BYN"
+        usdLabel.text = "1 USD = \(currency.usd) BYN \(currMinus())"
         eurLabel.text = "1 EUR = \(currency.eur) BYN"
     }
 
@@ -67,9 +67,9 @@ final class CurrencyViewController: UIViewController {
         case 0:
             totalPriceLabel.text = "Price \(currency.finishPrice) BYN"
         case 1:
-            totalPriceLabel.text = "Price \(currency.finishPrice * Float(currency.usd)!) USD"
+            totalPriceLabel.text = "Price \(currency.finishPrice / Float(currency.usd)!) USD"
         case 2:
-            totalPriceLabel.text = "Price \(currency.finishPrice * Float(currency.eur)!) EUR"
+            totalPriceLabel.text = "Price \(currency.finishPrice / Float(currency.eur)!) EUR"
         default:
             print("lol")
         }
@@ -97,7 +97,10 @@ final class CurrencyViewController: UIViewController {
         eurLabel.font = UIFont(name: "Minecrafter", size: 25)
         priceTextField.font = UIFont(name: "Minecrafter", size: 25)
     }
-    
+    func currMinus()->String {
+       let xxx = String(round((Float(currency.usd)! - Float(currency.usdBeforeDay)!) * 10000) / 10000)
+   return xxx
+    }
     
     
 }

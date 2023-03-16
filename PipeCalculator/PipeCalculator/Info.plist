@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Moon Flower.ttf</string>
 		<string>8bitfont.TTF</string>
 		<string>8-bit Arcade In.ttf</string>
 		<string>8-bit Arcade Out.ttf</string>

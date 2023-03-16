@@ -20,7 +20,7 @@ final class SplashViewController: UIViewController {
         
         // MARK: - Intro splash with qoute and easy animation transition 2 next view
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4.5) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 6) {
             self.performSegue(withIdentifier: "Splash", sender: nil)
         }
     }
@@ -41,7 +41,7 @@ final class SplashViewController: UIViewController {
     }
 
     func viewSetting() {
-        label.font = UIFont(name: "Minecrafter", size: 40)
+        label.font = UIFont(name: "MoonFlower", size: 50)
     }
 
 }

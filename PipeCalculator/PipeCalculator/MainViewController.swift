@@ -11,11 +11,12 @@ import UIKit
 
 final class MainViewController: UIViewController, UITextFieldDelegate {
     var array: [String] = []
- 
+    var arrayBefore: [String] = []
     let url = Url()
    
     var currency = Currency()
-    @IBOutlet weak var but: UIButton!
+    @IBOutlet var ok: UIImageView!
+    @IBOutlet var but: UIButton!
     
     @IBOutlet var diametrLbl: UILabel!
     
@@ -32,8 +33,6 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var dlinaTextField: UITextField!
     
     @IBOutlet var heightTextField: UITextField!
-    
-    @IBOutlet var nextButton: UIButton!
     
     @IBOutlet var heightMetr: UILabel!
     
@@ -78,7 +77,8 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         getPrice(url: url.url)
-        self.hideKeyboardWhenTappedAround() 
+        getPriceBefore(url: url.urlBeforeDay)
+        self.hideKeyboardWhenTappedAround()
         viewSettings()
     }
    
@@ -114,17 +114,38 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         AF.request(url).responseJSON { [weak self] response in switch response.result {
         case .success(let value):
             let json = JSON(value)
-            
             self?.currency.usd = "\(json[7, "Cur_OfficialRate"])"
             self?.currency.eur = "\(json[9, "Cur_OfficialRate"])"
             self?.array.append("\(json[7, "Cur_OfficialRate"])")
             self?.array.append("\(json[9, "Cur_OfficialRate"])")
+            print(self!.array)
         case .failure:
             print("error")
         }
         }
     }
-
+    private func getPriceBefore(url: String) {
+        AF.request(url).responseJSON { [weak self] response in switch response.result {
+        case .success(let value):
+            let json = JSON(value)
+            self?.currency.usdBeforeDay = "\(json[7, "Cur_OfficialRate"])"
+            self?.currency.eurBeforeDay = "\(json[9, "Cur_OfficialRate"])"
+            self?.arrayBefore.append("\(json[7, "Cur_OfficialRate"])")
+            self?.arrayBefore.append("\(json[9, "Cur_OfficialRate"])")
+            print(self!.arrayBefore)
+        case .failure:
+            print("error")
+        }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 //    MARK: - func for IBActions
    
     private func diametr() {
@@ -134,6 +155,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             return
         }
         if dlinaLabel.text == "Lenght, m" {
+            ok.alpha = 1
             massa()
         } else
         { lenght() }
@@ -201,7 +223,8 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             editScreen.currency.height = Float(heightTextField.text!)!
             editScreen.currency.usd = currency.usd
             editScreen.currency.eur = currency.eur
-            
+            editScreen.currency.eurBeforeDay = currency.eurBeforeDay
+            editScreen.currency.usdBeforeDay = currency.usdBeforeDay
             self.navigationController?.pushViewController(editScreen, animated: true)
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -242,21 +265,21 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         backgroundImage.image = UIImage(named: "backgroundw")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
-        diametrTextField.font = UIFont(name: "Minecrafter", size: 25)
-        diametrLbl.font = UIFont(name: "Minecrafter", size: 25)
-        thicknessLbl.font = UIFont(name: "Minecrafter", size: 25)
-        dlinaLabel.font = UIFont(name: "Minecrafter", size: 25)
-        heightLabel.font = UIFont(name: "Minecrafter", size: 25)
-        heightMetr.font = UIFont(name: "Minecrafter", size: 25)
-        dlinaTextField.font = UIFont(name: "Minecrafter", size: 25)
-        heightTextField.font = UIFont(name: "Minecrafter", size: 25)
-        tolshinaTextField.font = UIFont(name: "Minecrafter", size: 25)
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont(name: "Minecrafter", size: 14) as Any]
-        let segment = [NSAttributedString.Key.font: UIFont(name: "Minecrafter", size: 12.0)!]
+        diametrTextField.font = UIFont(name: "MoonFlower", size: 30)
+        diametrLbl.font = UIFont(name: "MoonFlower", size: 50)
+        thicknessLbl.font = UIFont(name: "MoonFlower", size: 50)
+        dlinaLabel.font = UIFont(name: "MoonFlower", size: 50)
+        heightLabel.font = UIFont(name: "MoonFlower", size: 50)
+        heightMetr.font = UIFont(name: "MoonFlower", size: 30)
+        dlinaTextField.font = UIFont(name: "MoonFlower", size: 30)
+        heightTextField.font = UIFont(name: "MoonFlower", size: 30)
+        tolshinaTextField.font = UIFont(name: "MoonFlower", size: 30)
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont(name: "MoonFlower", size: 30) as Any]
+        let segment = [NSAttributedString.Key.font: UIFont(name: "MoonFlower", size: 25)!]
         UISegmentedControl.appearance().setTitleTextAttributes(segment, for: UIControl.State.normal)
         but.tintColor = UIColor.black
         but.backgroundColor = UIColor.white
-        let attributedText = NSAttributedString(string: "Calculate the price", attributes: [NSAttributedString.Key.font: UIFont(name: "Minecrafter", size: 10)!])
+        let attributedText = NSAttributedString(string: "Calculate the price", attributes: [NSAttributedString.Key.font: UIFont(name: "MoonFlower", size: 20)!])
        but.setAttributedTitle(attributedText, for: .normal)
         
         

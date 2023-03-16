@@ -27,6 +27,7 @@ func string() -> String {
 
 struct Url {
     let url = "https://www.nbrb.by/api/exrates/rates?periodicity=0"
+    let urlBeforeDay = "https://www.nbrb.by/api/exrates/rates?ondate=\(year)-\(monthBefore)-\(beforeDay)&periodicity=0"
 }
 
 struct Currency {
@@ -36,6 +37,8 @@ struct Currency {
     var height: Float = 0
     var usd: String = ""
     var eur: String = ""
+    var eurBeforeDay = ""
+    var usdBeforeDay = ""
     var finishPrice: Float = 0
     var segmentos = 0
 }
@@ -92,3 +95,14 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+
+extension Date {
+    var dayBefore: Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: self)!
+    }
+}
+
+let yesterday = Date().dayBefore
+let beforeDay = calendar.dateComponents([.day], from: yesterday).day!
+let monthBefore = calendar.dateComponents([.month], from: yesterday).month!
+let year = calendar.dateComponents([.year], from: date).year!
