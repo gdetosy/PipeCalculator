@@ -12,6 +12,8 @@ import UIKit
 final class CurrencyViewController: UIViewController {
     var currency = Currency()
     
+    @IBOutlet weak var usdArrow: UIImageView!
+    @IBOutlet weak var eurArrow: UIImageView!
     @IBOutlet var pipeLabel: UILabel!
     
     @IBOutlet var lenghtHeightLabel: UILabel!
@@ -25,12 +27,12 @@ final class CurrencyViewController: UIViewController {
     @IBOutlet var usdLabel: UILabel!
     
     @IBOutlet var eurLabel: UILabel!
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getParametrs()
         currencyViewSetting()
-        self.hideKeyboardWhenTappedAround() 
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction private func priceTextField(_ sender: UITextField) {
@@ -58,10 +60,10 @@ final class CurrencyViewController: UIViewController {
         
         lenghtHeightLabel.text = "Thickness \(currency.dlina)m, weight  \(currency.height)tn"
         
-        usdLabel.text = "1 USD = \(currency.usd) BYN \(currMinus())"
+        usdLabel.text = "1 USD = \(currency.usd) BYN"
         eurLabel.text = "1 EUR = \(currency.eur) BYN"
     }
-
+    
     private func segmention() {
         switch currency.segmentos {
         case 0:
@@ -74,7 +76,7 @@ final class CurrencyViewController: UIViewController {
             print("lol")
         }
     }
-
+    
     private func priceTfAction() {
         guard let price = Float(priceTextField.text!) else { priceTextField.text?.removeAll()
             totalPriceLabel.text = "Enter price in BYN"
@@ -85,25 +87,51 @@ final class CurrencyViewController: UIViewController {
         currency.finishPrice = totalPrice
         segmention()
     }
+    
     private func currencyViewSetting() {
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background1")
-        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
-        totalPriceLabel.font = UIFont(name: "Minecrafter", size: 25)
-        pipeLabel.font = UIFont(name: "Minecrafter", size: 25)
-        lenghtHeightLabel.font = UIFont(name: "Minecrafter", size: 25)
-        usdLabel.font = UIFont(name: "Minecrafter", size: 25)
-        eurLabel.font = UIFont(name: "Minecrafter", size: 25)
-        priceTextField.font = UIFont(name: "Minecrafter", size: 25)
+    currMinusEur()
+        totalPriceLabel.font = UIFont(name: "MoonFlower", size: 35)
+        pipeLabel.font = UIFont(name: "MoonFlower", size: 35)
+        lenghtHeightLabel.font = UIFont(name: "MoonFlower", size: 35)
+        usdLabel.font = UIFont(name: "MoonFlower", size: 35)
+        eurLabel.font = UIFont(name: "MoonFlower", size: 35)
+        priceTextField.font = UIFont(name: "MoonFlower", size: 35)
+        currMinusUsd()
     }
-    func currMinus()->String {
-       let xxx = String(round((Float(currency.usd)! - Float(currency.usdBeforeDay)!) * 10000) / 10000)
-   return xxx
+    
+    private func currMinusUsd() {
+        let usd = round((Float(currency.usd)! - Float(currency.usdBeforeDay)!) * 10000) / 10000
+        if usd == 0 {
+            usdArrow.alpha = 0
+        }
+        if usd > 0 {
+            usdArrow.tintColor = .green
+        }
+        
+        if usd < 0 {
+            usdArrow.tintColor = .red
+            usdArrow.transform = usdArrow.transform.rotated(by: .pi)
+        }
     }
     
     
+    
+    
+    
+    
+    
+    private func currMinusEur() {
+        let eur = round((Float(currency.eur)! - Float(currency.eurBeforeDay)!) * 10000) / 10000
+        if eur == 0 {
+            eurArrow.alpha = 0
+        }
+        if eur > 0 {
+            eurArrow.tintColor = .green
+        }
+        
+        if eur < 0 {
+            eurArrow.tintColor = .red
+            eurArrow.transform = eurArrow.transform.rotated(by: .pi)
+        }
+    }
 }
-
-
-

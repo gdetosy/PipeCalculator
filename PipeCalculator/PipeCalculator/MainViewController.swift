@@ -15,6 +15,12 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     let url = Url()
    
     var currency = Currency()
+    
+    @IBOutlet weak var okThick: UIImageView!
+    
+    @IBOutlet weak var okLenght: UIImageView!
+    
+    
     @IBOutlet var ok: UIImageView!
     @IBOutlet var but: UIButton!
     
@@ -152,39 +158,44 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         guard let diametr = Float(diametrTextField.text!),
               Float(diametrTextField.text!) ?? 0 >= 0
         else { diametrTextField.text?.removeAll(); heightMetr.text = "1 m weight ="
+            ok.alpha = 0
             return
         }
+        ok.alpha = 1
         if dlinaLabel.text == "Lenght, m" {
-            ok.alpha = 1
+           
             massa()
         } else
         { lenght() }
-        print(diametr)
+       
     }
     
     private func tolshina() {
         guard let tolshina = Float(tolshinaTextField.text!), Float(tolshinaTextField.text!) ?? 0 < Float(diametrTextField.text!) ?? 0
                 
         else {
+            okThick.alpha = 0
             tolshinaTextField.text?.removeAll()
             but.isEnabled = false
             heightTextField.text?.removeAll()
             heightMetr.text = "1 m weight ="
             return
         }
+        okThick.alpha = 1
         if dlinaLabel.text == "Lenght, m" {
             massa()
+            
         } else
         { lenght() }
-        print(tolshina)
     }
    
     private func dlina() {
         guard let dlina = Float(dlinaTextField.text!) else { dlinaTextField.text?.removeAll()
             heightTextField.text?.removeAll()
-            
+            okLenght.alpha  = 0
             return
         }
+        okLenght.alpha = 1
         if dlinaLabel.text == "Lenght, m" {
             massa()
         } else
@@ -247,9 +258,15 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         heightTextField.text?.removeAll()
         heightMetr.text = "1 m weight ="
         height()
+        ok.alpha = 0
+        okThick.alpha = 0
+        okLenght.alpha = 0
     }
 
     private func segmentCaseTwo() {
+        ok.alpha = 0
+        okThick.alpha = 0
+        okLenght.alpha = 0
         dlinaLabel.text = "Weight, t"
         heightLabel.text = "Lenght, m"
         diametrTextField.text?.removeAll()
