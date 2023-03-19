@@ -31,7 +31,6 @@ final class SplashViewController: UIViewController {
         AF.request(url).responseJSON { [weak self] response in switch response.result {
         case .success(let value):
             let json = JSON(value)
-            print(json)
             self?.label.text = "\(json["text"])"
             
         case .failure:

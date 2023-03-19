@@ -20,6 +20,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var okLenght: UIImageView!
     
+    @IBOutlet weak var okWeght: UIImageView!
     
     @IBOutlet var ok: UIImageView!
     @IBOutlet var but: UIButton!
@@ -77,9 +78,6 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    @IBOutlet var mainView: UIView!
-    
-    @IBOutlet var stackView: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
         getPrice(url: url.url)
@@ -100,6 +98,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         let kg = (diametr - stenka) * stenka * 0.02466
         heightMetr.text = "1 m weight = \(round(heightMetrs * 100000) / 100000) t = \(kg) kg."
         heightTextField.text = "\(round(massa1 * 100000) / 100000)"
+        
     }
     
     private func lenght() {
@@ -163,34 +162,34 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         }
         ok.alpha = 1
         if dlinaLabel.text == "Lenght, m" {
-           
             massa()
         } else
         { lenght() }
-       
     }
     
     private func tolshina() {
-        guard let tolshina = Float(tolshinaTextField.text!), Float(tolshinaTextField.text!) ?? 0 < Float(diametrTextField.text!) ?? 0
+        guard Float(tolshinaTextField.text!) ?? 0 < Float(diametrTextField.text!) ?? 0
                 
         else {
             okThick.alpha = 0
             tolshinaTextField.text?.removeAll()
             but.isEnabled = false
+            okWeght.alpha = 0
             heightTextField.text?.removeAll()
             heightMetr.text = "1 m weight ="
             return
         }
+        
         okThick.alpha = 1
+        
         if dlinaLabel.text == "Lenght, m" {
             massa()
-            
         } else
         { lenght() }
     }
    
     private func dlina() {
-        guard let dlina = Float(dlinaTextField.text!) else { dlinaTextField.text?.removeAll()
+        guard (Float(dlinaTextField.text!) != nil) else { dlinaTextField.text?.removeAll()
             heightTextField.text?.removeAll()
             okLenght.alpha  = 0
             return
@@ -201,19 +200,21 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         } else
         { lenght() }
         
-        print(dlina)
     }
     
     private func height() {
         if
             diametrTextField.text!.isEmpty || tolshinaTextField.text!.isEmpty || dlinaTextField.text!.isEmpty
         {
+            okWeght.alpha = 0
             but.isEnabled = false
         } else {
             but.isEnabled = true
+            okWeght.alpha = 1
         }
         guard Float(heightTextField.text!) != nil else { heightTextField.text?.removeAll()
             but.isEnabled = false
+            okWeght.alpha = 0
             return
         }
     }
@@ -294,12 +295,10 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont(name: "MoonFlower", size: 30) as Any]
         let segment = [NSAttributedString.Key.font: UIFont(name: "MoonFlower", size: 25)!]
         UISegmentedControl.appearance().setTitleTextAttributes(segment, for: UIControl.State.normal)
-        but.tintColor = UIColor.black
-        but.backgroundColor = UIColor.white
-        let attributedText = NSAttributedString(string: "Calculate the price", attributes: [NSAttributedString.Key.font: UIFont(name: "MoonFlower", size: 20)!])
-       but.setAttributedTitle(attributedText, for: .normal)
-        
-        
-        but.titleLabel?.font =  UIFont(name: "Minecrafter", size: 10)
+   
+       
+        let attributedText = NSAttributedString(string: "Calculate the price", attributes: [NSAttributedString.Key.font: UIFont(name: "Minecrafter", size: 13)!])
+        but.setAttributedTitle(attributedText, for: .normal)
+      
     }
 }
