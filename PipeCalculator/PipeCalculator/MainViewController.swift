@@ -287,8 +287,8 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         heightTextField.font = UIFont(name: "MoonFlower", size: 30)
         tolshinaTextField.font = UIFont(name: "MoonFlower", size: 30)
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont(name: "MoonFlower", size: 30) as Any]
-        let segment = [NSAttributedString.Key.font: UIFont(name: "MoonFlower", size: 25)!]
-        UISegmentedControl.appearance().setTitleTextAttributes(segment, for: UIControl.State.normal)
+        let segment = [NSAttributedString.Key.font: UIFont(name: "MoonFlower", size: 25), NSAttributedString.Key.backgroundColor: UIColor.black]
+        UISegmentedControl.appearance().setTitleTextAttributes(segment as [NSAttributedString.Key : Any], for: UIControl.State.normal)
    
         let attributedText = NSAttributedString(string: "Calculate the price", attributes: [NSAttributedString.Key.font: UIFont(name: "Minecrafter", size: 13)!])
         but.setAttributedTitle(attributedText, for: .normal)

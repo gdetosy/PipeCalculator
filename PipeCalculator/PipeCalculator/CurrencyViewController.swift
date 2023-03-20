@@ -93,8 +93,8 @@ final class CurrencyViewController: UIViewController {
         totalPriceLabel.font = UIFont(name: "MoonFlower", size: 35)
         pipeLabel.font = UIFont(name: "MoonFlower", size: 35)
         lenghtHeightLabel.font = UIFont(name: "MoonFlower", size: 35)
-        usdLabel.font = UIFont(name: "MoonFlower", size: 35)
-        eurLabel.font = UIFont(name: "MoonFlower", size: 35)
+        usdLabel.font = UIFont(name: "MoonFlower", size: 30)
+        eurLabel.font = UIFont(name: "MoonFlower", size: 30)
         priceTextField.font = UIFont(name: "MoonFlower", size: 35)
         currMinusUsd()
     }
