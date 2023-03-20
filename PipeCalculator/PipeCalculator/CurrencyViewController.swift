@@ -60,8 +60,8 @@ final class CurrencyViewController: UIViewController {
         
         lenghtHeightLabel.text = "Thickness \(currency.dlina)m, weight  \(currency.height)tn"
         
-        usdLabel.text = "1 USD = \(currency.usd) BYN"
-        eurLabel.text = "1 EUR = \(currency.eur) BYN"
+        usdLabel.text = "1 USD = \(currency.usd) BYN | \(round((Float(currency.usd)! - Float(currency.usdBeforeDay)!) * 10000) / 10000)"
+        eurLabel.text = "1 EUR = \(currency.eur) BYN | \(round((Float(currency.eur)! - Float(currency.eurBeforeDay)!) * 10000) / 10000)"
     }
     
     private func segmention() {
@@ -113,12 +113,6 @@ final class CurrencyViewController: UIViewController {
             usdArrow.transform = usdArrow.transform.rotated(by: .pi)
         }
     }
-    
-    
-    
-    
-    
-    
     
     private func currMinusEur() {
         let eur = round((Float(currency.eur)! - Float(currency.eurBeforeDay)!) * 10000) / 10000

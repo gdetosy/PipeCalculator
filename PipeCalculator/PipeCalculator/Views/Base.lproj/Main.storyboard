@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="78.625954198473281" y="-292.25352112676057"/>
         </scene>
-        <!--Main View Controller-->
+        <!--pipe calculator-->
         <scene sceneID="bcW-gc-pzc">
             <objects>
                 <viewController id="i4b-LU-7hj" customClass="MainViewController" customModule="PipeCalculator" customModuleProvider="target" sceneMemberID="viewController">
@@ -95,9 +95,9 @@
                                         <rect key="frame" x="235" y="0.66666666666665719" width="118" height="34"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <connections>
-                                            <action selector="toggleBoldface:" destination="igZ-1I-j9K" eventType="editingChanged" id="84K-Zq-wLu"/>
+                                            <action selector="toggleBoldface:" destination="igZ-1I-j9K" eventType="editingChanged" id="wsR-uB-cF4"/>
                                             <action selector="tolshina:" destination="i4b-LU-7hj" eventType="editingChanged" id="HmE-Ya-nRb"/>
                                         </connections>
                                     </textField>
@@ -122,7 +122,7 @@
                                         <rect key="frame" x="257.66666666666669" y="0.66666666666665719" width="95.333333333333314" height="34"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <connections>
                                             <action selector="dlina:" destination="i4b-LU-7hj" eventType="editingChanged" id="TAz-vd-byi"/>
                                             <action selector="toggleBoldface:" destination="igZ-1I-j9K" eventType="editingChanged" id="9IH-0y-gxO"/>
@@ -131,22 +131,22 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4tS-45-F9s">
-                                <rect key="frame" x="120" y="411.33333333333331" width="153" height="34.333333333333314"/>
+                                <rect key="frame" x="130" y="411.33333333333331" width="164" height="34.333333333333314"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JfE-Rv-ZRl">
-                                        <rect key="frame" x="0.0" y="1.6666666666666856" width="116.33333333333333" height="32"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JfE-Rv-ZRl">
+                                        <rect key="frame" x="0.0" y="1.6666666666666856" width="127.33333333333333" height="32"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <segments>
                                             <segment title="Weight"/>
                                             <segment title="Lenght"/>
                                         </segments>
-                                        <color key="selectedSegmentTintColor" systemColor="tertiarySystemBackgroundColor"/>
+                                        <color key="selectedSegmentTintColor" red="0.14694450589999999" green="1" blue="0.25623345879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="segmentControll:" destination="i4b-LU-7hj" eventType="valueChanged" id="Mr7-P9-czj"/>
                                         </connections>
                                     </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meQ-Av-dwS">
-                                        <rect key="frame" x="116.33333333333336" y="0.0" width="36.666666666666671" height="34.333333333333336"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meQ-Av-dwS">
+                                        <rect key="frame" x="127.33333333333333" y="0.0" width="36.666666666666671" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title=" ?"/>
                                         <connections>
@@ -170,7 +170,7 @@
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
-                                    <textField opaque="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-1I-j9K">
+                                    <textField opaque="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-1I-j9K">
                                         <rect key="frame" x="228.66666666666666" y="20.666666666666686" width="124.33333333333334" height="34"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -190,8 +190,12 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCr-l0-4tk">
                                 <rect key="frame" x="80" y="465.66666666666669" width="233" height="34.333333333333314"/>
+                                <color key="tintColor" red="0.14694450589999999" green="1" blue="0.25623345879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button">
+                                    <color key="baseForegroundColor" systemColor="tintColor"/>
+                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="raschet:" destination="i4b-LU-7hj" eventType="touchUpInside" id="wVl-EU-0O2"/>
                                 </connections>
@@ -205,10 +209,10 @@
                             <constraint firstItem="qEZ-i2-SjZ" firstAttribute="top" secondItem="avJ-xS-U3a" secondAttribute="bottom" constant="20" id="HmK-pp-zAx"/>
                             <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="4fi-aE-PVh" secondAttribute="trailing" constant="20" id="HrC-rf-Xc0"/>
                             <constraint firstItem="6rK-VI-eVW" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="20" id="LAa-lI-KH1"/>
-                            <constraint firstItem="4tS-45-F9s" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="120" id="Mwu-41-b9z"/>
+                            <constraint firstItem="4tS-45-F9s" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="130" id="Mwu-41-b9z"/>
                             <constraint firstItem="4tS-45-F9s" firstAttribute="top" secondItem="EGH-j3-9rR" secondAttribute="bottom" constant="20" id="RTV-nG-q1J"/>
                             <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="oCr-l0-4tk" secondAttribute="trailing" constant="80" id="TRo-WD-2NI"/>
-                            <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="4tS-45-F9s" secondAttribute="trailing" constant="120" id="UL1-RK-XPd"/>
+                            <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="4tS-45-F9s" secondAttribute="trailing" constant="99" id="UL1-RK-XPd"/>
                             <constraint firstItem="avJ-xS-U3a" firstAttribute="top" secondItem="6rK-VI-eVW" secondAttribute="bottom" constant="20" id="UPZ-TZ-QAv"/>
                             <constraint firstItem="4fi-aE-PVh" firstAttribute="top" secondItem="k14-MY-CoE" secondAttribute="top" constant="20" id="Wod-h8-V00"/>
                             <constraint firstItem="oCr-l0-4tk" firstAttribute="top" secondItem="4tS-45-F9s" secondAttribute="bottom" constant="20" id="WvM-ON-moQ"/>
@@ -224,7 +228,7 @@
                             <constraint firstItem="EGH-j3-9rR" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="20" id="wMM-5A-BwE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cGQ-vw-rcF"/>
+                    <navigationItem key="navigationItem" title="pipe calculator" id="cGQ-vw-rcF"/>
                     <connections>
                         <outlet property="but" destination="oCr-l0-4tk" id="SE5-qX-ie5"/>
                         <outlet property="diametrLbl" destination="gke-dF-daL" id="jOK-kR-dZd"/>
@@ -309,10 +313,10 @@
             </objects>
             <point key="canvasLocation" x="2969" y="-292"/>
         </scene>
-        <!--Currency View Controller-->
+        <!--Currency-->
         <scene sceneID="OID-j3-fY0">
             <objects>
-                <viewController storyboardIdentifier="CurrencyViewController" modalTransitionStyle="crossDissolve" id="4Zb-if-NxN" customClass="CurrencyViewController" customModule="PipeCalculator" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrencyViewController" title="Currency" modalTransitionStyle="crossDissolve" id="4Zb-if-NxN" customClass="CurrencyViewController" customModule="PipeCalculator" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jLe-pz-B8B">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -339,8 +343,7 @@
                                     <segment title="USD"/>
                                     <segment title="EUR"/>
                                 </segments>
-                                <color key="tintColor" red="0.90431923479999998" green="0.45425441750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="selectedSegmentTintColor" systemColor="systemPurpleColor"/>
+                                <color key="tintColor" red="0.14694450589999999" green="1" blue="0.25623345879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="segmentControl:" destination="4Zb-if-NxN" eventType="valueChanged" id="p4k-I2-SvF"/>
                                 </connections>
@@ -361,8 +364,8 @@
                                     <action selector="priceTextField:" destination="4Zb-if-NxN" eventType="editingChanged" id="eL0-9n-Zcq"/>
                                 </connections>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tYo-zx-28I">
-                                <rect key="frame" x="100" y="307.66666666666669" width="193" height="20.333333333333314"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tYo-zx-28I">
+                                <rect key="frame" x="40" y="307.66666666666669" width="313" height="20.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 USD = 2.3434 BYN" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy3-Ey-cH7">
                                         <rect key="frame" x="0.0" y="0.0" width="158.33333333333334" height="20.333333333333332"/>
@@ -372,13 +375,13 @@
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="g1f-E3-qW3">
-                                        <rect key="frame" x="163.33333333333331" y="1.3333333333333321" width="29.666666666666657" height="18"/>
+                                        <rect key="frame" x="296.33333333333331" y="1.3333333333333321" width="16.666666666666686" height="18"/>
                                         <color key="tintColor" red="0.14694450589999999" green="1" blue="0.25623345879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3pW-xh-xTr">
-                                <rect key="frame" x="100" y="353" width="193" height="20.333333333333314"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3pW-xh-xTr">
+                                <rect key="frame" x="40" y="353" width="313" height="20.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 EUR = 2.3445 BYN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ob-ua-DiC">
                                         <rect key="frame" x="0.0" y="0.0" width="156" height="20.333333333333332"/>
@@ -388,7 +391,7 @@
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EGp-bT-oTP">
-                                        <rect key="frame" x="166" y="1.3333333333333321" width="27" height="18"/>
+                                        <rect key="frame" x="296.33333333333331" y="1.3333333333333321" width="16.666666666666686" height="18"/>
                                         <color key="tintColor" red="0.14694450589999999" green="1" blue="0.25623345879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </imageView>
                                 </subviews>
@@ -403,7 +406,7 @@
                             <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="F6s-T6-7jc" secondAttribute="trailing" constant="140" id="G4A-Zw-dF9"/>
                             <constraint firstItem="F6s-T6-7jc" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="140" id="Gqz-en-see"/>
                             <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="XYo-Js-ceK" secondAttribute="trailing" constant="19" id="HH6-JE-3Ew"/>
-                            <constraint firstItem="tYo-zx-28I" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="100" id="Htt-g2-lYN"/>
+                            <constraint firstItem="tYo-zx-28I" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="40" id="Htt-g2-lYN"/>
                             <constraint firstItem="WZi-9b-v6j" firstAttribute="top" secondItem="kBo-rz-znL" secondAttribute="bottom" constant="15" id="IkK-j7-f1a"/>
                             <constraint firstItem="WZi-9b-v6j" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="50" id="JGl-GQ-zId"/>
                             <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="kBo-rz-znL" secondAttribute="trailing" constant="150" id="JYo-AB-4IW"/>
@@ -413,15 +416,17 @@
                             <constraint firstItem="XYo-Js-ceK" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="20" id="Xq5-G1-xfs"/>
                             <constraint firstItem="k0F-5f-5yg" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="25" id="ZqA-ET-auj"/>
                             <constraint firstItem="k0F-5f-5yg" firstAttribute="top" secondItem="XYo-Js-ceK" secondAttribute="bottom" constant="30" id="iOw-YQ-BRM"/>
-                            <constraint firstItem="3pW-xh-xTr" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="100" id="nNy-g0-9gy"/>
-                            <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="tYo-zx-28I" secondAttribute="trailing" constant="100" id="u3z-lT-7QR"/>
+                            <constraint firstItem="3pW-xh-xTr" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="40" id="nNy-g0-9gy"/>
+                            <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="tYo-zx-28I" secondAttribute="trailing" constant="40" id="u3z-lT-7QR"/>
                             <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="k0F-5f-5yg" secondAttribute="trailing" constant="25" id="uQQ-gJ-CIc"/>
-                            <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="3pW-xh-xTr" secondAttribute="trailing" constant="100" id="uyn-jo-6xg"/>
+                            <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="3pW-xh-xTr" secondAttribute="trailing" constant="40" id="uyn-jo-6xg"/>
                             <constraint firstItem="kBo-rz-znL" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="150" id="vnh-wM-HW7"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="76u-RK-wjf"/>
+                    <navigationItem key="navigationItem" title="currency" leftItemsSupplementBackButton="YES" id="76u-RK-wjf">
+                        <barButtonItem key="backBarButtonItem" title="back" id="zb1-hJ-V8a"/>
+                    </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -465,14 +470,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiarySystemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -16,13 +16,14 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
    
     var currency = Currency()
     
-    @IBOutlet weak var okThick: UIImageView!
+    @IBOutlet var okThick: UIImageView!
     
-    @IBOutlet weak var okLenght: UIImageView!
+    @IBOutlet var okLenght: UIImageView!
     
-    @IBOutlet weak var okWeght: UIImageView!
+    @IBOutlet var okWeght: UIImageView!
     
     @IBOutlet var ok: UIImageView!
+   
     @IBOutlet var but: UIButton!
     
     @IBOutlet var diametrLbl: UILabel!
@@ -98,7 +99,6 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         let kg = (diametr - stenka) * stenka * 0.02466
         heightMetr.text = "1 m weight = \(round(heightMetrs * 100000) / 100000) t = \(kg) kg."
         heightTextField.text = "\(round(massa1 * 100000) / 100000)"
-        
     }
     
     private func lenght() {
@@ -129,6 +129,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         }
         }
     }
+
     private func getPriceBefore(url: String) {
         AF.request(url).responseJSON { [weak self] response in switch response.result {
         case .success(let value):
@@ -144,18 +145,11 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
 //    MARK: - func for IBActions
    
     private func diametr() {
         guard let diametr = Float(diametrTextField.text!),
-              Float(diametrTextField.text!) ?? 0 >= 0
+              Float(diametrTextField.text!) ?? 0 > 0
         else { diametrTextField.text?.removeAll(); heightMetr.text = "1 m weight ="
             ok.alpha = 0
             return
@@ -168,7 +162,8 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func tolshina() {
-        guard Float(tolshinaTextField.text!) ?? 0 < Float(diametrTextField.text!) ?? 0
+        guard Float(tolshinaTextField.text!) ?? 0 < Float(diametrTextField.text!) ?? 0,
+              Float(tolshinaTextField.text!) != nil
                 
         else {
             okThick.alpha = 0
@@ -189,9 +184,9 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
    
     private func dlina() {
-        guard (Float(dlinaTextField.text!) != nil) else { dlinaTextField.text?.removeAll()
+        guard Float(dlinaTextField.text!) != nil else { dlinaTextField.text?.removeAll()
             heightTextField.text?.removeAll()
-            okLenght.alpha  = 0
+            okLenght.alpha = 0
             return
         }
         okLenght.alpha = 1
@@ -199,7 +194,6 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             massa()
         } else
         { lenght() }
-        
     }
     
     private func height() {
@@ -212,11 +206,11 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             but.isEnabled = true
             okWeght.alpha = 1
         }
-        guard Float(heightTextField.text!) != nil else { heightTextField.text?.removeAll()
-            but.isEnabled = false
-            okWeght.alpha = 0
-            return
-        }
+//        guard Float(heightTextField.text!) != nil else { heightTextField.text?.removeAll()
+//            but.isEnabled = false
+//            okWeght.alpha = 0
+//            return
+//        }
     }
     
     private func about() {
@@ -296,9 +290,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         let segment = [NSAttributedString.Key.font: UIFont(name: "MoonFlower", size: 25)!]
         UISegmentedControl.appearance().setTitleTextAttributes(segment, for: UIControl.State.normal)
    
-       
         let attributedText = NSAttributedString(string: "Calculate the price", attributes: [NSAttributedString.Key.font: UIFont(name: "Minecrafter", size: 13)!])
         but.setAttributedTitle(attributedText, for: .normal)
-      
     }
 }
