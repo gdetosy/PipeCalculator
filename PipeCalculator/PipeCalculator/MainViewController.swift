@@ -13,7 +13,9 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     var array: [String] = []
     var arrayBefore: [String] = []
     let url = Url()
-   
+    @IBOutlet weak var smallView: UIView!
+    
+    @IBOutlet weak var bigView: UIView!
     var currency = Currency()
     
     @IBOutlet var okThick: UIImageView!
@@ -148,6 +150,9 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
 //    MARK: - func for IBActions
    
     private func diametr() {
+
+        
+        
         guard let diametr = Float(diametrTextField.text!),
               Float(diametrTextField.text!) ?? 0 > 0
         else { diametrTextField.text?.removeAll(); heightMetr.text = "1 m weight ="
@@ -273,24 +278,29 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
 
     private func viewSettings() {
+        bigView.layer.cornerRadius = 10
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "backgroundw")
+        backgroundImage.image = UIImage(named: "background2")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
-        diametrTextField.font = UIFont(name: "MoonFlower", size: 30)
-        diametrLbl.font = UIFont(name: "MoonFlower", size: 50)
-        thicknessLbl.font = UIFont(name: "MoonFlower", size: 50)
-        dlinaLabel.font = UIFont(name: "MoonFlower", size: 50)
-        heightLabel.font = UIFont(name: "MoonFlower", size: 50)
-        heightMetr.font = UIFont(name: "MoonFlower", size: 30)
-        dlinaTextField.font = UIFont(name: "MoonFlower", size: 30)
-        heightTextField.font = UIFont(name: "MoonFlower", size: 30)
-        tolshinaTextField.font = UIFont(name: "MoonFlower", size: 30)
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont(name: "MoonFlower", size: 30) as Any]
-        let segment = [NSAttributedString.Key.font: UIFont(name: "MoonFlower", size: 25), NSAttributedString.Key.backgroundColor: UIColor.black]
-        UISegmentedControl.appearance().setTitleTextAttributes(segment as [NSAttributedString.Key : Any], for: UIControl.State.normal)
-   
-        let attributedText = NSAttributedString(string: "Calculate the price", attributes: [NSAttributedString.Key.font: UIFont(name: "Minecrafter", size: 13)!])
-        but.setAttributedTitle(attributedText, for: .normal)
+//        diametrTextField.font = UIFont(name: "MoonFlower", size: 30)
+//        diametrLbl.font = UIFont(name: "MoonFlower", size: 50)
+//        thicknessLbl.font = UIFont(name: "MoonFlower", size: 50)
+//        dlinaLabel.font = UIFont(name: "MoonFlower", size: 50)
+//        heightLabel.font = UIFont(name: "MoonFlower", size: 50)
+//        heightMetr.font = UIFont(name: "MoonFlower", size: 30)
+//        dlinaTextField.font = UIFont(name: "MoonFlower", size: 30)
+//        heightTextField.font = UIFont(name: "MoonFlower", size: 30)
+//        tolshinaTextField.font = UIFont(name: "MoonFlower", size: 30)
+//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont(name: "MoonFlower", size: 30) as Any]
+//        let segment = [NSAttributedString.Key.font: UIFont(name: "MoonFlower", size: 25)]
+//        UISegmentedControl.appearance().setTitleTextAttributes(segment as [NSAttributedString.Key : Any], for: UIControl.State.normal)
+//
+//        let attributedText = NSAttributedString(string: "Calculate the price", attributes: [NSAttributedString.Key.font: UIFont(name: "Minecrafter", size: 13)!])
+//        but.setAttributedTitle(attributedText, for: .normal)
     }
 }
+
+
+
+

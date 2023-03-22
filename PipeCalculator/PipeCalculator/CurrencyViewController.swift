@@ -12,8 +12,9 @@ import UIKit
 final class CurrencyViewController: UIViewController {
     var currency = Currency()
     
-    @IBOutlet weak var usdArrow: UIImageView!
-    @IBOutlet weak var eurArrow: UIImageView!
+    @IBOutlet var views: UIView!
+    @IBOutlet var usdArrow: UIImageView!
+    @IBOutlet var eurArrow: UIImageView!
     @IBOutlet var pipeLabel: UILabel!
     
     @IBOutlet var lenghtHeightLabel: UILabel!
@@ -56,9 +57,9 @@ final class CurrencyViewController: UIViewController {
     }
     
     private func getParametrs() {
-        pipeLabel.text = " Pipe \(currency.diametr) x \(currency.tolshina) mm steel 3ps"
+        pipeLabel.text = "Pipe: \(currency.diametr) x \(currency.tolshina) mm"
         
-        lenghtHeightLabel.text = "Thickness \(currency.dlina)m, weight  \(currency.height)tn"
+        lenghtHeightLabel.text = "Thickness = \(currency.dlina)m, weight = \(currency.height) tn"
         
         usdLabel.text = "1 USD = \(currency.usd) BYN | \(round((Float(currency.usd)! - Float(currency.usdBeforeDay)!) * 10000) / 10000)"
         eurLabel.text = "1 EUR = \(currency.eur) BYN | \(round((Float(currency.eur)! - Float(currency.eurBeforeDay)!) * 10000) / 10000)"
@@ -69,9 +70,9 @@ final class CurrencyViewController: UIViewController {
         case 0:
             totalPriceLabel.text = "Price \(currency.finishPrice) BYN"
         case 1:
-            totalPriceLabel.text = "Price \(currency.finishPrice / Float(currency.usd)!) USD"
+            totalPriceLabel.text = "Price \(round(currency.finishPrice / Float(currency.usd)! * 10000) / 10000) USD"
         case 2:
-            totalPriceLabel.text = "Price \(currency.finishPrice / Float(currency.eur)!) EUR"
+            totalPriceLabel.text = "Price \(round(currency.finishPrice / Float(currency.eur)! * 10000) / 10000) EUR"
         default:
             print("lol")
         }
@@ -89,13 +90,18 @@ final class CurrencyViewController: UIViewController {
     }
     
     private func currencyViewSetting() {
-    currMinusEur()
-        totalPriceLabel.font = UIFont(name: "MoonFlower", size: 35)
-        pipeLabel.font = UIFont(name: "MoonFlower", size: 35)
-        lenghtHeightLabel.font = UIFont(name: "MoonFlower", size: 35)
-        usdLabel.font = UIFont(name: "MoonFlower", size: 30)
-        eurLabel.font = UIFont(name: "MoonFlower", size: 30)
-        priceTextField.font = UIFont(name: "MoonFlower", size: 35)
+        views.layer.cornerRadius = 10
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "backggrjpg")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+        currMinusEur()
+//        totalPriceLabel.font = UIFont(name: "MoonFlower", size: 35)
+//        pipeLabel.font = UIFont(name: "MoonFlower", size: 35)
+//        lenghtHeightLabel.font = UIFont(name: "MoonFlower", size: 35)
+//        usdLabel.font = UIFont(name: "MoonFlower", size: 30)
+//        eurLabel.font = UIFont(name: "MoonFlower", size: 30)
+//        priceTextField.font = UIFont(name: "MoonFlower", size: 35)
         currMinusUsd()
     }
     
