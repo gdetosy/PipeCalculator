@@ -12,6 +12,10 @@ import UIKit
 final class CurrencyViewController: UIViewController {
     var currency = Currency()
     
+    @IBOutlet weak var back: UIBarButtonItem!
+    
+    @IBOutlet weak var pipeParam: UILabel!
+    
     @IBOutlet var views: UIView!
     @IBOutlet var usdArrow: UIImageView!
     @IBOutlet var eurArrow: UIImageView!
@@ -57,10 +61,12 @@ final class CurrencyViewController: UIViewController {
     }
     
     private func getParametrs() {
-        pipeLabel.text = "Pipe: \(currency.diametr) x \(currency.tolshina) mm"
-        
-        lenghtHeightLabel.text = "Thickness = \(currency.dlina)m, weight = \(currency.height) tn"
-        
+        pipeLabel.text = "Steel pipe: \(currency.diametr) x \(currency.tolshina) mm"        
+        lenghtHeightLabel.text =
+        """
+      Thickness = \(currency.dlina)m
+      weight = \(currency.height) tn
+      """
         usdLabel.text = "1 USD = \(currency.usd) BYN | \(round((Float(currency.usd)! - Float(currency.usdBeforeDay)!) * 10000) / 10000)"
         eurLabel.text = "1 EUR = \(currency.eur) BYN | \(round((Float(currency.eur)! - Float(currency.eurBeforeDay)!) * 10000) / 10000)"
     }
@@ -90,18 +96,19 @@ final class CurrencyViewController: UIViewController {
     }
     
     private func currencyViewSetting() {
+        back.title = "back"
         views.layer.cornerRadius = 10
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "backggrjpg")
+        backgroundImage.image = UIImage(named: "new")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         currMinusEur()
-//        totalPriceLabel.font = UIFont(name: "MoonFlower", size: 35)
-//        pipeLabel.font = UIFont(name: "MoonFlower", size: 35)
-//        lenghtHeightLabel.font = UIFont(name: "MoonFlower", size: 35)
-//        usdLabel.font = UIFont(name: "MoonFlower", size: 30)
-//        eurLabel.font = UIFont(name: "MoonFlower", size: 30)
-//        priceTextField.font = UIFont(name: "MoonFlower", size: 35)
+        totalPriceLabel.font = UIFont(name: "MoonFlower", size: 48)
+        pipeLabel.font = UIFont(name: "MoonFlower", size: 43)
+        lenghtHeightLabel.font = UIFont(name: "MoonFlower", size: 43)
+        usdLabel.font = UIFont(name: "MoonFlower", size: 43)
+        eurLabel.font = UIFont(name: "MoonFlower", size: 43)
+        priceTextField.font = UIFont(name: "MoonFlower", size: 43)
         currMinusUsd()
     }
     

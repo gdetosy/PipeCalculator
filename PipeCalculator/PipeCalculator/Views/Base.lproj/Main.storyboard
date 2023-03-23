@@ -19,7 +19,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSc-yp-YZy">
                                 <rect key="frame" x="20" y="448" width="374" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="78.625954198473281" y="-292.25352112676057"/>
         </scene>
-        <!--pipe calculator-->
+        <!--Pipe calculator-->
         <scene sceneID="bcW-gc-pzc">
             <objects>
                 <viewController id="i4b-LU-7hj" customClass="MainViewController" customModule="PipeCalculator" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,7 +93,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="749" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hps-GB-aua">
                                                         <rect key="frame" x="0.0" y="9.5" width="9" height="16.5"/>
-                                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                                        <color key="tintColor" red="0.14694450589999999" green="1" blue="0.25623345879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diameter, mm" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gke-dF-daL">
                                                         <rect key="frame" x="24" y="0.0" width="186.5" height="35"/>
@@ -102,7 +102,7 @@
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118.33333333333334" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaW-mF-PiK">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118.33333333333334" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaW-mF-PiK">
                                                         <rect key="frame" x="225.5" y="0.5" width="118.5" height="34"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,7 +120,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="749" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uWc-Bz-eMw">
                                                         <rect key="frame" x="0.0" y="9.5" width="5" height="16.5"/>
-                                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                                        <color key="tintColor" red="0.14694450589999999" green="1" blue="0.25623345879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thickness, mm" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVu-jD-c1T">
                                                         <rect key="frame" x="14" y="0.0" width="203" height="35"/>
@@ -129,7 +129,7 @@
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ePB-7w-fV0">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ePB-7w-fV0">
                                                         <rect key="frame" x="226" y="0.5" width="118" height="34"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -147,7 +147,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0ey-1o-RFu">
                                                         <rect key="frame" x="0.0" y="9.5" width="18.5" height="16.5"/>
-                                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                                        <color key="tintColor" red="0.14694450589999999" green="1" blue="0.25623345879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lenght, m" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YJb-Ue-qLx">
                                                         <rect key="frame" x="70.5" y="0.0" width="135.5" height="35"/>
@@ -157,7 +157,7 @@
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYS-ms-TPA">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="m" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYS-ms-TPA">
                                                         <rect key="frame" x="258" y="0.5" width="86" height="34"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -175,7 +175,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PiC-DL-kJp">
                                                         <rect key="frame" x="0.0" y="9.5" width="18.5" height="16.5"/>
-                                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                                        <color key="tintColor" red="0.14694450589999999" green="1" blue="0.25623345879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight, t" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RVG-Fx-rR1">
                                                         <rect key="frame" x="64.5" y="0.0" width="118.5" height="35"/>
@@ -185,7 +185,7 @@
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     </label>
-                                                    <textField opaque="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-1I-j9K">
+                                                    <textField opaque="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="tn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-1I-j9K">
                                                         <rect key="frame" x="229" y="0.5" width="115" height="34"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -207,7 +207,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstItem="LzD-BE-c93" firstAttribute="leading" secondItem="UOk-2R-2nG" secondAttribute="leading" constant="10" id="1IH-vW-8ci"/>
                                     <constraint firstAttribute="bottom" secondItem="LzD-BE-c93" secondAttribute="bottom" constant="10" id="9y9-52-sNq"/>
@@ -235,7 +235,7 @@
                             <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="oCr-l0-4tk" secondAttribute="trailing" constant="110" id="yc7-gO-E9Q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="pipe calculator" id="cGQ-vw-rcF"/>
+                    <navigationItem key="navigationItem" title="Pipe calculator" id="cGQ-vw-rcF"/>
                     <connections>
                         <outlet property="bigView" destination="UOk-2R-2nG" id="dYM-as-dPx"/>
                         <outlet property="but" destination="oCr-l0-4tk" id="SE5-qX-ie5"/>
@@ -329,8 +329,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="F6s-T6-7jc">
+                                <rect key="frame" x="105" y="347.5" width="204" height="32"/>
+                                <color key="backgroundColor" red="0.90431923479999998" green="0.45425441750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <segments>
+                                    <segment title="BYN"/>
+                                    <segment title="USD"/>
+                                    <segment title="EUR"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControl:" destination="4Zb-if-NxN" eventType="valueChanged" id="p4k-I2-SvF"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kBo-rz-znL">
+                                <rect key="frame" x="150" y="253.5" width="114" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="priceTextField:" destination="4Zb-if-NxN" eventType="editingChanged" id="eL0-9n-Zcq"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="уу" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ob-ua-DiC">
+                                <rect key="frame" x="25" y="446" width="23.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EGp-bT-oTP">
+                                <rect key="frame" x="53.5" y="451.5" width="17" height="18"/>
+                                <color key="tintColor" red="0.14694450589999999" green="1" blue="0.25623345879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter price in BYN" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZi-9b-v6j">
+                                <rect key="frame" x="50" y="302.5" width="314" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ууу" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy3-Ey-cH7">
+                                <rect key="frame" x="25" y="398.5" width="35.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="g1f-E3-qW3">
+                                <rect key="frame" x="65.5" y="405.5" width="17" height="18"/>
+                                <color key="tintColor" red="0.14694450589999999" green="1" blue="0.25623345879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pipe parameters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pw2-a1-C25">
+                                <rect key="frame" x="25" y="73" width="130.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGp-nD-68b">
-                                <rect key="frame" x="25" y="73" width="364" height="125"/>
+                                <rect key="frame" x="25" y="103.5" width="364" height="125"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5JB-1A-kJH">
                                         <rect key="frame" x="10" y="10" width="344" height="105"/>
@@ -360,62 +417,14 @@
                                     <constraint firstAttribute="bottom" secondItem="5JB-1A-kJH" secondAttribute="bottom" constant="10" id="tas-EH-wQz"/>
                                 </constraints>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="F6s-T6-7jc">
-                                <rect key="frame" x="105" y="317" width="204" height="32"/>
-                                <segments>
-                                    <segment title="BYN"/>
-                                    <segment title="USD"/>
-                                    <segment title="EUR"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segmentControl:" destination="4Zb-if-NxN" eventType="valueChanged" id="p4k-I2-SvF"/>
-                                </connections>
-                            </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kBo-rz-znL">
-                                <rect key="frame" x="150" y="223" width="114" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <connections>
-                                    <action selector="priceTextField:" destination="4Zb-if-NxN" eventType="editingChanged" id="eL0-9n-Zcq"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="уу" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ob-ua-DiC">
-                                <rect key="frame" x="25" y="415.5" width="23.5" height="27.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter price in BYN" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZi-9b-v6j">
-                                <rect key="frame" x="50" y="272" width="314" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ууу" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy3-Ey-cH7">
-                                <rect key="frame" x="25" y="368" width="35.5" height="27.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="g1f-E3-qW3">
-                                <rect key="frame" x="65.5" y="375" width="17" height="18"/>
-                                <color key="tintColor" red="0.14694450589999999" green="1" blue="0.25623345879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EGp-bT-oTP">
-                                <rect key="frame" x="53.5" y="422" width="17" height="18"/>
-                                <color key="tintColor" red="0.14694450589999999" green="1" blue="0.25623345879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ti4-cV-GAY"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="EGp-nD-68b" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="25" id="0Md-Yr-eM9"/>
+                            <constraint firstItem="EGp-nD-68b" firstAttribute="top" secondItem="pw2-a1-C25" secondAttribute="bottom" constant="10" id="2Vn-Tj-MB3"/>
                             <constraint firstItem="qy3-Ey-cH7" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="25" id="3YC-iu-xhY"/>
+                            <constraint firstItem="pw2-a1-C25" firstAttribute="top" secondItem="ti4-cV-GAY" secondAttribute="top" constant="25" id="4m5-Ec-4xm"/>
                             <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="WZi-9b-v6j" secondAttribute="trailing" constant="50" id="5Jj-aO-82n"/>
                             <constraint firstItem="WZi-9b-v6j" firstAttribute="top" secondItem="kBo-rz-znL" secondAttribute="bottom" constant="15" id="9oT-eN-6yp"/>
                             <constraint firstItem="kBo-rz-znL" firstAttribute="top" secondItem="EGp-nD-68b" secondAttribute="bottom" constant="25" id="BiS-En-rgJ"/>
@@ -426,9 +435,9 @@
                             <constraint firstItem="WZi-9b-v6j" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="50" id="JGl-GQ-zId"/>
                             <constraint firstItem="EGp-bT-oTP" firstAttribute="leading" secondItem="3ob-ua-DiC" secondAttribute="trailing" constant="5" id="NlS-KZ-owu"/>
                             <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="EGp-nD-68b" secondAttribute="trailing" constant="25" id="Orp-SQ-7bB"/>
-                            <constraint firstItem="EGp-bT-oTP" firstAttribute="top" secondItem="g1f-E3-qW3" secondAttribute="bottom" constant="27" id="P6k-g6-0J0"/>
                             <constraint firstItem="F6s-T6-7jc" firstAttribute="top" secondItem="WZi-9b-v6j" secondAttribute="bottom" constant="15" id="Qdy-kR-iMJ"/>
-                            <constraint firstItem="EGp-nD-68b" firstAttribute="top" secondItem="ti4-cV-GAY" secondAttribute="top" constant="25" id="YMx-2D-1Ih"/>
+                            <constraint firstItem="EGp-bT-oTP" firstAttribute="top" secondItem="qy3-Ey-cH7" secondAttribute="bottom" constant="24.5" id="Udh-bd-kZ8"/>
+                            <constraint firstItem="pw2-a1-C25" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="25" id="c13-Yu-3RS"/>
                             <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="kBo-rz-znL" secondAttribute="trailing" constant="150" id="kU4-tO-itO"/>
                             <constraint firstItem="g1f-E3-qW3" firstAttribute="top" secondItem="WZi-9b-v6j" secondAttribute="bottom" constant="72" id="sY3-c3-ke8"/>
                             <constraint firstItem="3ob-ua-DiC" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="25" id="t2x-N7-Stp"/>
@@ -438,15 +447,17 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="currency" leftItemsSupplementBackButton="YES" id="76u-RK-wjf">
-                        <barButtonItem key="backBarButtonItem" title="back" id="zb1-hJ-V8a"/>
+                        <barButtonItem key="backBarButtonItem" id="zb1-hJ-V8a"/>
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="back" destination="zb1-hJ-V8a" id="opC-OV-lKY"/>
                         <outlet property="eurArrow" destination="EGp-bT-oTP" id="ekg-lS-YLV"/>
                         <outlet property="eurLabel" destination="3ob-ua-DiC" id="QBC-I1-Oa5"/>
                         <outlet property="lenghtHeightLabel" destination="k0F-5f-5yg" id="88z-NP-gJN"/>
                         <outlet property="pipeLabel" destination="XYo-Js-ceK" id="Zgb-9b-zZ9"/>
+                        <outlet property="pipeParam" destination="pw2-a1-C25" id="cmT-AM-xWU"/>
                         <outlet property="priceTextField" destination="kBo-rz-znL" id="zss-v5-Cgp"/>
                         <outlet property="segmentConrol" destination="F6s-T6-7jc" id="j6m-jn-pya"/>
                         <outlet property="totalPriceLabel" destination="WZi-9b-v6j" id="ixE-wF-44z"/>
@@ -484,11 +495,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
