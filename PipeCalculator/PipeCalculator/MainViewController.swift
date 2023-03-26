@@ -73,9 +73,15 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     @IBAction private func segmentControll(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
+            bigView.animation = Animations.shake.rawValue
+            bigView.force = 0.25
+            bigView.animate()
             segmentCaseOne()
         case 1:
             segmentCaseTwo()
+            bigView.animation = Animations.shake.rawValue
+            bigView.force = 0.25
+            bigView.animate()
         default: print("lol")
         }
     }
@@ -157,6 +163,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             diametrTextField.animation = Animations.shake.rawValue
             diametrTextField.force = 0.25
             diametrTextField.animate()
+            heightTextField.text?.removeAll()
             ok.alpha = 0
             return
         }
@@ -174,6 +181,9 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
               Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: ".")) != nil
                 
         else {
+            tolshinaTextField.animation = Animations.shake.rawValue
+            tolshinaTextField.force = 0.25
+            tolshinaTextField.animate()
             okThick.alpha = 0
             tolshinaTextField.text?.removeAll()
             but.isEnabled = false
@@ -192,9 +202,13 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
    
     private func dlina() {
-        guard Float(dlinaTextField.text!) != nil,
+        guard Float(dlinaTextField.text!.replacingOccurrences(of: ",", with: ".")) != nil,
               Float(dlinaTextField.text!.replacingOccurrences(of: ",", with: ".")) ?? 0 <= 100
-        else { dlinaTextField.text?.removeAll()
+        else {
+            dlinaTextField.animation = Animations.shake.rawValue
+            dlinaTextField.force = 0.25
+            dlinaTextField.animate()
+            dlinaTextField.text?.removeAll()
             heightTextField.text?.removeAll()
             okLenght.alpha = 0
             return
