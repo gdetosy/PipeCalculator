@@ -85,7 +85,7 @@ final class CurrencyViewController: UIViewController {
     }
     
     private func priceTfAction() {
-        guard let price = Float(priceTextField.text!) else { priceTextField.text?.removeAll()
+        guard let price = Float(priceTextField.text!.replacingOccurrences(of: ",", with: ".")) else { priceTextField.text?.removeAll()
             totalPriceLabel.text = "Enter price in BYN"
             currency.finishPrice = 0
             return

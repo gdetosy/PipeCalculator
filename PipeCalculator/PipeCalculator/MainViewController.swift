@@ -4,8 +4,8 @@
 //
 //  Created by tosy on 28.01.23.
 //
-import Spring
 import Alamofire
+import Spring
 import SwiftyJSON
 import UIKit
 
@@ -13,9 +13,9 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     var array: [String] = []
     var arrayBefore: [String] = []
     let url = Url()
-    @IBOutlet weak var smallView: UIView!
+    @IBOutlet var smallView: UIView!
     
-    @IBOutlet weak var bigView: SpringView!
+    @IBOutlet var bigView: SpringView!
     var currency = Currency()
     
     @IBOutlet var okThick: UIImageView!
@@ -36,13 +36,13 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
    
     @IBOutlet var dlinaLabel: UILabel!
     
-    @IBOutlet var diametrTextField: UITextField!
+    @IBOutlet var diametrTextField: SpringTextField!
     
-    @IBOutlet var tolshinaTextField: UITextField!
+    @IBOutlet var tolshinaTextField: SpringTextField!
     
-    @IBOutlet var dlinaTextField: UITextField!
+    @IBOutlet var dlinaTextField: SpringTextField!
     
-    @IBOutlet var heightTextField: UITextField!
+    @IBOutlet var heightTextField: SpringTextField!
     
     @IBOutlet var heightMetr: UILabel!
     
@@ -74,8 +74,6 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         switch sender.selectedSegmentIndex {
         case 0:
             segmentCaseOne()
-            bigView.animation = Animations.shake.rawValue
-            bigView.animate()
         case 1:
             segmentCaseTwo()
         default: print("lol")
@@ -94,9 +92,9 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     // MARK: - formula rascheta massa
     
     private func massa() {
-        guard let diametr = Float(diametrTextField.text!),
-              let stenka = Float(tolshinaTextField.text!),
-              let metraj = Float(dlinaTextField.text!)
+        guard let diametr = Float(diametrTextField.text!.replacingOccurrences(of: ",", with: ".")),
+              let stenka = Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: ".")),
+              let metraj = Float(dlinaTextField.text!.replacingOccurrences(of: ",", with: "."))
         else { return }
         let massa1 = ((diametr - stenka) * stenka * 0.02466 * metraj) / 1000
         let heightMetrs = ((diametr - stenka) * stenka * 0.02466 * 1) / 1000
@@ -106,9 +104,9 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func lenght() {
-        guard let diametr = Float(diametrTextField.text!),
-              let stenka = Float(tolshinaTextField.text!),
-              let massa = Float(dlinaTextField.text!)
+        guard let diametr = Float(diametrTextField.text!.replacingOccurrences(of: ",", with: ".")),
+              let stenka = Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: ".")),
+              let massa = Float(dlinaTextField.text!.replacingOccurrences(of: ",", with: "."))
         else { return }
         let metraj1 = massa * 1000 / ((diametr - stenka) * 0.0246 * stenka)
         let heightMetrs = ((diametr - stenka) * stenka * 0.02466 * 1) / 1000
@@ -152,15 +150,17 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
 //    MARK: - func for IBActions
    
     private func diametr() {
-
-        
-        
-        guard let diametr = Float(diametrTextField.text!),
-              Float(diametrTextField.text!) ?? 0 > 0
+        guard let diametr = Float(diametrTextField.text!.replacingOccurrences(of: ",", with: ".")),
+            
+              diametr > 0, diametr <= 325
         else { diametrTextField.text?.removeAll(); heightMetr.text = "1 m weight ="
+            diametrTextField.animation = Animations.shake.rawValue
+            diametrTextField.force = 0.25
+            diametrTextField.animate()
             ok.alpha = 0
             return
         }
+        print(diametr)
         ok.alpha = 1
         if dlinaLabel.text == "Lenght, m" {
             massa()
@@ -169,8 +169,9 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func tolshina() {
-        guard Float(tolshinaTextField.text!) ?? 0 < Float(diametrTextField.text!) ?? 0,
-              Float(tolshinaTextField.text!) != nil
+        guard Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: ".")) ?? 0 < Float(diametrTextField.text!.replacingOccurrences(of: ",", with: ".")) ?? 0,
+              Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: ".")) ?? 0 <= 15,
+              Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: ".")) != nil
                 
         else {
             okThick.alpha = 0
@@ -191,7 +192,9 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
    
     private func dlina() {
-        guard Float(dlinaTextField.text!) != nil else { dlinaTextField.text?.removeAll()
+        guard Float(dlinaTextField.text!) != nil,
+              Float(dlinaTextField.text!.replacingOccurrences(of: ",", with: ".")) ?? 0 <= 100
+        else { dlinaTextField.text?.removeAll()
             heightTextField.text?.removeAll()
             okLenght.alpha = 0
             return
@@ -213,11 +216,6 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             but.isEnabled = true
             okWeght.alpha = 1
         }
-//        guard Float(heightTextField.text!) != nil else { heightTextField.text?.removeAll()
-//            but.isEnabled = false
-//            okWeght.alpha = 0
-//            return
-//        }
     }
     
     private func about() {
@@ -230,10 +228,10 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let editScreen = storyboard.instantiateViewController(withIdentifier:
                 "CurrencyViewController") as! CurrencyViewController
-            editScreen.currency.diametr = Float(diametrTextField.text!)!
-            editScreen.currency.tolshina = Float(tolshinaTextField.text!)!
-            editScreen.currency.dlina = Float(dlinaTextField.text!)!
-            editScreen.currency.height = Float(heightTextField.text!)!
+            editScreen.currency.diametr = Float(diametrTextField.text!.replacingOccurrences(of: ",", with: "."))!
+            editScreen.currency.tolshina = Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: "."))!
+            editScreen.currency.dlina = Float(dlinaTextField.text!.replacingOccurrences(of: ",", with: "."))!
+            editScreen.currency.height = Float(heightTextField.text!.replacingOccurrences(of: ",", with: "."))!
             editScreen.currency.usd = currency.usd
             editScreen.currency.eur = currency.eur
             editScreen.currency.eurBeforeDay = currency.eurBeforeDay
@@ -243,10 +241,10 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let editScreen = storyboard.instantiateViewController(withIdentifier:
                 "PriceViewController") as! PriceViewController
-            editScreen.currency.diametr = Float(diametrTextField.text!)!
-            editScreen.currency.tolshina = Float(tolshinaTextField.text!)!
-            editScreen.currency.dlina = Float(dlinaTextField.text!)!
-            editScreen.currency.height = Float(heightTextField.text!)!
+            editScreen.currency.diametr = Float(diametrTextField.text!.replacingOccurrences(of: ",", with: "."))!
+            editScreen.currency.tolshina = Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: "."))!
+            editScreen.currency.dlina = Float(dlinaTextField.text!.replacingOccurrences(of: ",", with: "."))!
+            editScreen.currency.height = Float(heightTextField.text!.replacingOccurrences(of: ",", with: "."))!
             self.navigationController?.pushViewController(editScreen, animated: true)
         }
     }
@@ -285,24 +283,5 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         backgroundImage.image = UIImage(named: "background2")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
-//        diametrTextField.font = UIFont(name: "MoonFlower", size: 30)
-//        diametrLbl.font = UIFont(name: "MoonFlower", size: 50)
-//        thicknessLbl.font = UIFont(name: "MoonFlower", size: 50)
-//        dlinaLabel.font = UIFont(name: "MoonFlower", size: 50)
-//        heightLabel.font = UIFont(name: "MoonFlower", size: 50)
-//        heightMetr.font = UIFont(name: "MoonFlower", size: 30)
-//        dlinaTextField.font = UIFont(name: "MoonFlower", size: 30)
-//        heightTextField.font = UIFont(name: "MoonFlower", size: 30)
-//        tolshinaTextField.font = UIFont(name: "MoonFlower", size: 30)
-//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont(name: "MoonFlower", size: 30) as Any]
-//        let segment = [NSAttributedString.Key.font: UIFont(name: "MoonFlower", size: 25)]
-//        UISegmentedControl.appearance().setTitleTextAttributes(segment as [NSAttributedString.Key : Any], for: UIControl.State.normal)
-//
-//        let attributedText = NSAttributedString(string: "Calculate the price", attributes: [NSAttributedString.Key.font: UIFont(name: "Minecrafter", size: 13)!])
-//        but.setAttributedTitle(attributedText, for: .normal)
     }
 }
-
-
-
-

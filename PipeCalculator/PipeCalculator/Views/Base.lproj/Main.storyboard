@@ -51,7 +51,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JfE-Rv-ZRl">
-                                <rect key="frame" x="145" y="477.5" width="124" height="32"/>
+                                <rect key="frame" x="145" y="457.5" width="124" height="32"/>
                                 <segments>
                                     <segment title="Weight"/>
                                     <segment title="Lenght"/>
@@ -61,7 +61,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meQ-Av-dwS">
-                                <rect key="frame" x="269" y="476" width="37" height="34.5"/>
+                                <rect key="frame" x="269" y="455.5" width="37" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=" ?"/>
                                 <connections>
@@ -69,21 +69,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCr-l0-4tk">
-                                <rect key="frame" x="110" y="530.5" width="194" height="34.5"/>
+                                <rect key="frame" x="110" y="510" width="194" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Calculate the price"/>
                                 <connections>
                                     <action selector="raschet:" destination="i4b-LU-7hj" eventType="touchUpInside" id="wVl-EU-0O2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pipe parameters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7l-ME-0a7">
-                                <rect key="frame" x="25" y="117" width="185" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pipe parameters" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7l-ME-0a7">
+                                <rect key="frame" x="25" y="102" width="269" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOk-2R-2nG" customClass="SpringView" customModule="Spring">
-                                <rect key="frame" x="25" y="157" width="364" height="300.5"/>
+                                <rect key="frame" x="25" y="142" width="364" height="300.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="LzD-BE-c93">
                                         <rect key="frame" x="10" y="10" width="344" height="280.5"/>
@@ -102,12 +102,12 @@
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118.33333333333334" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaW-mF-PiK">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118.33333333333334" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaW-mF-PiK" customClass="SpringTextField" customModule="Spring">
                                                         <rect key="frame" x="225.5" y="0.5" width="118.5" height="34"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="url"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="url"/>
                                                         <connections>
                                                             <action selector="diametr:" destination="i4b-LU-7hj" eventType="editingChanged" id="oBU-BP-GI4"/>
                                                             <action selector="toggleBoldface:" destination="igZ-1I-j9K" eventType="editingChanged" id="Yi1-22-Ny6"/>
@@ -129,7 +129,7 @@
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ePB-7w-fV0">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ePB-7w-fV0" customClass="SpringTextField" customModule="Spring">
                                                         <rect key="frame" x="226" y="0.5" width="118" height="34"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -157,7 +157,7 @@
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="m" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYS-ms-TPA">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="m" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYS-ms-TPA" customClass="SpringTextField" customModule="Spring">
                                                         <rect key="frame" x="258" y="0.5" width="86" height="34"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -185,7 +185,7 @@
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                                     </label>
-                                                    <textField opaque="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="tn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-1I-j9K">
+                                                    <textField opaque="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" placeholderIntrinsicWidth="118" placeholderIntrinsicHeight="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="tn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igZ-1I-j9K" customClass="SpringTextField" customModule="Spring">
                                                         <rect key="frame" x="229" y="0.5" width="115" height="34"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -221,13 +221,13 @@
                         <constraints>
                             <constraint firstItem="meQ-Av-dwS" firstAttribute="leading" secondItem="JfE-Rv-ZRl" secondAttribute="trailing" id="65j-hg-eLq"/>
                             <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="JfE-Rv-ZRl" secondAttribute="trailing" constant="145" id="E5X-cZ-ucL"/>
-                            <constraint firstItem="meQ-Av-dwS" firstAttribute="top" secondItem="UOk-2R-2nG" secondAttribute="bottom" constant="18.5" id="LlL-YQ-a3j"/>
+                            <constraint firstItem="meQ-Av-dwS" firstAttribute="top" secondItem="UOk-2R-2nG" secondAttribute="bottom" constant="13" id="LlL-YQ-a3j"/>
                             <constraint firstItem="JfE-Rv-ZRl" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="145" id="Rzf-Vj-RHO"/>
-                            <constraint firstItem="JfE-Rv-ZRl" firstAttribute="top" secondItem="UOk-2R-2nG" secondAttribute="bottom" constant="20" id="Vfh-CX-RHj"/>
+                            <constraint firstItem="JfE-Rv-ZRl" firstAttribute="top" secondItem="UOk-2R-2nG" secondAttribute="bottom" constant="15" id="Vfh-CX-RHj"/>
                             <constraint firstItem="UOk-2R-2nG" firstAttribute="top" secondItem="Y7l-ME-0a7" secondAttribute="bottom" constant="10" id="Vh0-Sy-ctq"/>
                             <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="UOk-2R-2nG" secondAttribute="trailing" constant="25" id="e9K-LA-X0q"/>
-                            <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="Y7l-ME-0a7" secondAttribute="trailing" constant="204" id="eGC-Ws-WZg"/>
-                            <constraint firstItem="Y7l-ME-0a7" firstAttribute="top" secondItem="k14-MY-CoE" secondAttribute="top" constant="25" id="meS-Fq-FrV"/>
+                            <constraint firstItem="k14-MY-CoE" firstAttribute="trailing" secondItem="Y7l-ME-0a7" secondAttribute="trailing" constant="120" id="eGC-Ws-WZg"/>
+                            <constraint firstItem="Y7l-ME-0a7" firstAttribute="top" secondItem="k14-MY-CoE" secondAttribute="top" constant="10" id="meS-Fq-FrV"/>
                             <constraint firstItem="UOk-2R-2nG" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="25" id="p35-tr-8Kf"/>
                             <constraint firstItem="oCr-l0-4tk" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="110" id="uqy-1S-NAn"/>
                             <constraint firstItem="Y7l-ME-0a7" firstAttribute="leading" secondItem="k14-MY-CoE" secondAttribute="leading" constant="25" id="wFB-Me-xaF"/>

@@ -106,3 +106,4 @@ let yesterday = Date().dayBefore
 let beforeDay = calendar.dateComponents([.day], from: yesterday).day!
 let monthBefore = calendar.dateComponents([.month], from: yesterday).month!
 let year = calendar.dateComponents([.year], from: date).year!
+
