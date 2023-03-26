@@ -4,7 +4,7 @@
 //
 //  Created by tosy on 28.01.23.
 //
-
+import Spring
 import Alamofire
 import SwiftyJSON
 import UIKit
@@ -15,7 +15,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     let url = Url()
     @IBOutlet weak var smallView: UIView!
     
-    @IBOutlet weak var bigView: UIView!
+    @IBOutlet weak var bigView: SpringView!
     var currency = Currency()
     
     @IBOutlet var okThick: UIImageView!
@@ -74,15 +74,17 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         switch sender.selectedSegmentIndex {
         case 0:
             segmentCaseOne()
-            
+            bigView.animation = Animations.shake.rawValue
+            bigView.animate()
         case 1:
             segmentCaseTwo()
         default: print("lol")
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         getPrice(url: url.url)
         getPriceBefore(url: url.urlBeforeDay)
         self.hideKeyboardWhenTappedAround()
