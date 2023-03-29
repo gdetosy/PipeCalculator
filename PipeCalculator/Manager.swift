@@ -60,7 +60,7 @@ extension MainViewController: alert {
     }
 
     func alert1() {
-        let alert = UIAlertController(title: "calculation formula", message: "The pipe calculator calculates the weight of a round electric-welded pipe using the formula:                                     Pipe length = mass * 1000 / ((pipe diameter - wall thickness) * 0.0246 * wall thickness)",
+        let alert = UIAlertController(title: "Calculation formula", message: "The pipe calculator calculates the weight of a round electric-welded pipe using the formula:                                     Pipe length = mass * 1000 / ((pipe diameter - wall thickness) * 0.0246 * wall thickness)",
                                       preferredStyle: UIAlertController.Style.alert)
 
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

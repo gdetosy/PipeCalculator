@@ -292,7 +292,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
 
     private func viewSettings() {
-       
+        dlinaLabel.text = "Lenght, m"
         bigView.layer.cornerRadius = 17
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "ing")
