@@ -85,7 +85,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         default: print("lol")
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -177,7 +177,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     
     private func tolshina() {
         guard Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: ".")) ?? 0 < Float(diametrTextField.text!.replacingOccurrences(of: ",", with: ".")) ?? 0,
-              Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: ".")) ?? 0 <= 15,
+              Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: ".")) ?? 0 <= 20,
               Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: ".")) != nil
                 
         else {
@@ -292,9 +292,10 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
 
     private func viewSettings() {
-        bigView.layer.cornerRadius = 10
+       
+        bigView.layer.cornerRadius = 17
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background2")
+        backgroundImage.image = UIImage(named: "ing")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }

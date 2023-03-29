@@ -97,7 +97,7 @@ final class CurrencyViewController: UIViewController {
     
     private func currencyViewSetting() {
         back.title = "back"
-        views.layer.cornerRadius = 10
+        views.layer.cornerRadius = 20
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "new")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill

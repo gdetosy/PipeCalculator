@@ -8,10 +8,10 @@
 import Alamofire
 import SwiftyJSON
 import UIKit
-
+import Spring
 final class SplashViewController: UIViewController {
     let urlDate = string()
-    @IBOutlet var label: UILabel!
+    @IBOutlet var label: SpringLabel!
 
     override func viewDidLoad() {
         getQoute(url: urlDate)
@@ -31,8 +31,11 @@ final class SplashViewController: UIViewController {
         AF.request(url).responseJSON { [weak self] response in switch response.result {
         case .success(let value):
             let json = JSON(value)
-            self?.label.text = "\(json["text"])"
-            
+            self?.label.text = """
+            On this day in history:
+            \(json["text"])
+            """
+
         case .failure:
             self?.label.text = "\(self!.text)" + " " + "Steve Jobs"
         }
@@ -40,7 +43,15 @@ final class SplashViewController: UIViewController {
     }
 
     func viewSetting() {
-        label.font = UIFont(name: "MoonFlower", size: 50)
+//        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+//        backgroundImage.image = UIImage(named: "ing")
+//        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+//        self.view.insertSubview(backgroundImage, at: 0)
+//        label.font = UIFont(name: "MoonFlower", size: 50)
+        label.animation = Animations.zoomIn.rawValue
+        label.delay = 0.3
+        label.animate()
+
     }
 
 }
