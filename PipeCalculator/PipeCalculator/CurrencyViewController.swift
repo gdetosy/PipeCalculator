@@ -12,6 +12,8 @@ import UIKit
 final class CurrencyViewController: UIViewController {
     var currency = Currency()
     
+    @IBOutlet weak var curView: UIView!
+    
     @IBOutlet weak var back: UIBarButtonItem!
     
     @IBOutlet weak var pipeParam: UILabel!
@@ -97,6 +99,7 @@ final class CurrencyViewController: UIViewController {
     
     private func currencyViewSetting() {
         back.title = "back"
+        curView.layer.cornerRadius = 20
         views.layer.cornerRadius = 20
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "1")
