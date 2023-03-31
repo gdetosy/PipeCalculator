@@ -36,6 +36,7 @@ class PriceViewController: UIViewController {
 
     private func priceTF() {
         guard let price = Float(priceTextField.text!.replacingOccurrences(of: ",", with: ".")) else { priceTextField.text?.removeAll()
+            
             currency.finishPrice = 0
             return
         }

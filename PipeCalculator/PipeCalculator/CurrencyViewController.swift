@@ -8,7 +8,7 @@
 import Alamofire
 import SwiftyJSON
 import UIKit
-
+import Spring
 final class CurrencyViewController: UIViewController {
     var currency = Currency()
     
@@ -25,7 +25,7 @@ final class CurrencyViewController: UIViewController {
     
     @IBOutlet var lenghtHeightLabel: UILabel!
     
-    @IBOutlet var priceTextField: UITextField!
+    @IBOutlet var priceTextField: SpringTextField!
     
     @IBOutlet var segmentConrol: UISegmentedControl!
     
@@ -88,6 +88,9 @@ final class CurrencyViewController: UIViewController {
     
     private func priceTfAction() {
         guard let price = Float(priceTextField.text!.replacingOccurrences(of: ",", with: ".")) else { priceTextField.text?.removeAll()
+            priceTextField.animation = Animations.shake.rawValue
+            priceTextField.force = 0.25
+            priceTextField.animate()
             totalPriceLabel.text = "Enter price in BYN"
             currency.finishPrice = 0
             return
