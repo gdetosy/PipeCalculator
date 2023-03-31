@@ -99,16 +99,16 @@ final class CurrencyViewController: UIViewController {
         back.title = "back"
         views.layer.cornerRadius = 20
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "new")
+        backgroundImage.image = UIImage(named: "1")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         currMinusEur()
-        totalPriceLabel.font = UIFont(name: "MoonFlower", size: 48)
-        pipeLabel.font = UIFont(name: "MoonFlower", size: 43)
-        lenghtHeightLabel.font = UIFont(name: "MoonFlower", size: 43)
-        usdLabel.font = UIFont(name: "MoonFlower", size: 43)
-        eurLabel.font = UIFont(name: "MoonFlower", size: 43)
-        priceTextField.font = UIFont(name: "MoonFlower", size: 43)
+//        totalPriceLabel.font = UIFont(name: "MoonFlower", size: 48)
+//        pipeLabel.font = UIFont(name: "MoonFlower", size: 43)
+//        lenghtHeightLabel.font = UIFont(name: "MoonFlower", size: 43)
+//        usdLabel.font = UIFont(name: "MoonFlower", size: 43)
+//        eurLabel.font = UIFont(name: "MoonFlower", size: 43)
+//        priceTextField.font = UIFont(name: "MoonFlower", size: 43)
         currMinusUsd()
     }
     
