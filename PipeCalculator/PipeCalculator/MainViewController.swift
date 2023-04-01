@@ -171,7 +171,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         }
         print(diametr)
         ok.alpha = 1
-        if dlinaLabel.text == "Length, m        " {
+        if dlinaLabel.text == "Length, m" {
             massa()
         } else
         { lenght() }
@@ -192,12 +192,14 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             okWeght.alpha = 0
             heightTextField.text?.removeAll()
             heightMetr.text = " "
+            heightMetr.animation = Animations.fadeOut.rawValue
+            heightMetr.animate()
             return
         }
         
         okThick.alpha = 1
         
-        if dlinaLabel.text == "Length, m        " {
+        if dlinaLabel.text == "Length, m" {
             massa()
         } else
         { lenght() }
@@ -216,7 +218,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             return
         }
         okLenght.alpha = 1
-        if dlinaLabel.text == "Length, m        " {
+        if dlinaLabel.text == "Length, m" {
             massa()
         } else
         { lenght() }
@@ -235,7 +237,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func about() {
-        if dlinaLabel.text == "Length, m        " { alert() }
+        if dlinaLabel.text == "Length, m" { alert() }
         else { alert1() }
     }
     
@@ -244,15 +246,28 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let editScreen = storyboard.instantiateViewController(withIdentifier:
                 "CurrencyViewController") as! CurrencyViewController
-            editScreen.currency.diametr = Float(diametrTextField.text!.replacingOccurrences(of: ",", with: "."))!
-            editScreen.currency.tolshina = Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: "."))!
-            editScreen.currency.dlina = Float(dlinaTextField.text!.replacingOccurrences(of: ",", with: "."))!
-            editScreen.currency.height = Float(heightTextField.text!.replacingOccurrences(of: ",", with: "."))!
-            editScreen.currency.usd = currency.usd
-            editScreen.currency.eur = currency.eur
-            editScreen.currency.eurBeforeDay = currency.eurBeforeDay
-            editScreen.currency.usdBeforeDay = currency.usdBeforeDay
-            self.navigationController?.pushViewController(editScreen, animated: true)
+            if dlinaLabel.text == "Length, m" {
+                editScreen.currency.diametr = Float(diametrTextField.text!.replacingOccurrences(of: ",", with: "."))!
+                editScreen.currency.tolshina = Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: "."))!
+                editScreen.currency.dlina = Float(dlinaTextField.text!.replacingOccurrences(of: ",", with: "."))!
+                editScreen.currency.height = Float(heightTextField.text!.replacingOccurrences(of: ",", with: "."))!
+                editScreen.currency.usd = currency.usd
+                editScreen.currency.eur = currency.eur
+                editScreen.currency.eurBeforeDay = currency.eurBeforeDay
+                editScreen.currency.usdBeforeDay = currency.usdBeforeDay
+                self.navigationController?.pushViewController(editScreen, animated: true)
+            } else {
+                editScreen.currency.diametr = Float(diametrTextField.text!.replacingOccurrences(of: ",", with: "."))!
+                editScreen.currency.tolshina = Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: "."))!
+                editScreen.currency.height = Float(dlinaTextField.text!.replacingOccurrences(of: ",", with: "."))!
+                editScreen.currency.dlina = Float(heightTextField.text!.replacingOccurrences(of: ",", with: "."))!
+                editScreen.currency.usd = currency.usd
+                editScreen.currency.eur = currency.eur
+                editScreen.currency.eurBeforeDay = currency.eurBeforeDay
+                editScreen.currency.usdBeforeDay = currency.usdBeforeDay
+                self.navigationController?.pushViewController(editScreen, animated: true)
+            }
+        
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let editScreen = storyboard.instantiateViewController(withIdentifier:
@@ -266,13 +281,19 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func segmentCaseOne() {
-        dlinaLabel.text = "Length, m        "
-        heightLabel.text = "Weight, t        "
+        dlinaLabel.text = "Length, m"
+        heightLabel.text = "Weight, t"
         diametrTextField.text?.removeAll()
         tolshinaTextField.text?.removeAll()
         dlinaTextField.text?.removeAll()
         heightTextField.text?.removeAll()
+        heightTextField.attributedPlaceholder = NSAttributedString(
+            string: "tn")
+        dlinaTextField.attributedPlaceholder = NSAttributedString(
+            string: "m")
         heightMetr.text = " "
+        heightMetr.animation = Animations.fadeOut.rawValue
+        heightMetr.animate()
         height()
         ok.alpha = 0
         okThick.alpha = 0
@@ -283,18 +304,24 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         ok.alpha = 0
         okThick.alpha = 0
         okLenght.alpha = 0
-        dlinaLabel.text = "Weight, t        "
-        heightLabel.text = "Length, m        "
+        dlinaLabel.text = "Weight, t"
+        heightLabel.text = "Length, m"
         diametrTextField.text?.removeAll()
         tolshinaTextField.text?.removeAll()
         dlinaTextField.text?.removeAll()
         heightTextField.text?.removeAll()
+        heightTextField.attributedPlaceholder = NSAttributedString(
+            string: "m")
+        dlinaTextField.attributedPlaceholder = NSAttributedString(
+            string: "tn")
         heightMetr.text = " "
+        heightMetr.animation = Animations.fadeOut.rawValue
+        heightMetr.animate()
         height()
     }
 
     private func viewSettings() {
-        dlinaLabel.text = "Length, m        "
+        dlinaLabel.text = "Length, m"
         bigView.layer.cornerRadius = 17
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "ing")

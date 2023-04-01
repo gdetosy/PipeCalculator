@@ -11,7 +11,7 @@ import UIKit
 import Spring
 final class CurrencyViewController: UIViewController {
     var currency = Currency()
-    
+    var gameTimer: Timer?
     @IBOutlet weak var pipeLbl: UILabel!
     
     @IBOutlet weak var lengthLbl: UILabel!
@@ -21,6 +21,7 @@ final class CurrencyViewController: UIViewController {
     @IBOutlet weak var weightLabel: UILabel!
     
     
+    @IBOutlet weak var urlBtn: SpringButton!
     
     
     @IBOutlet weak var curView: UIView!
@@ -109,6 +110,7 @@ final class CurrencyViewController: UIViewController {
     }
     
     private func currencyViewSetting() {
+        urlBtn.animation = Animations.pop.rawValue
         back.title = "back"
         curView.layer.cornerRadius = 20
         views.layer.cornerRadius = 20
@@ -117,12 +119,6 @@ final class CurrencyViewController: UIViewController {
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         currMinusEur()
-//        totalPriceLabel.font = UIFont(name: "MoonFlower", size: 48)
-//        pipeLabel.font = UIFont(name: "MoonFlower", size: 43)
-//        lenghtHeightLabel.font = UIFont(name: "MoonFlower", size: 43)
-//        usdLabel.font = UIFont(name: "MoonFlower", size: 43)
-//        eurLabel.font = UIFont(name: "MoonFlower", size: 43)
-//        priceTextField.font = UIFont(name: "MoonFlower", size: 43)
         currMinusUsd()
     }
     
