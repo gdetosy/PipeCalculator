@@ -44,7 +44,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var heightTextField: SpringTextField!
     
-    @IBOutlet var heightMetr: UILabel!
+    @IBOutlet var heightMetr: SpringLabel!
     
     @IBAction private func diametr(_ sender: UITextField) {
         diametr()
@@ -106,6 +106,8 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         let heightMetrs = ((diametr - stenka) * stenka * 0.02466 * 1) / 1000
         let kg = (diametr - stenka) * stenka * 0.02466
         heightMetr.text = "1 m weight = \(round(heightMetrs * 100000) / 100000) t = \(kg) kg."
+        heightMetr.animation = Animations.fadeIn.rawValue
+        heightMetr.animate()
         heightTextField.text = "\(round(massa1 * 100000) / 100000)"
     }
     
@@ -119,6 +121,8 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         let kg = (diametr - stenka) * stenka * 0.02466
         heightTextField.text = "\(round(metraj1 * 100000) / 100000)"
         heightMetr.text = "1 m weight = \(round(heightMetrs * 100000) / 100000) t = \(kg) kg."
+        heightMetr.animation = Animations.fadeIn.rawValue
+        heightMetr.animate()
     }
 
     //  MARK: - Zapros kursov valut

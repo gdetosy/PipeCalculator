@@ -12,6 +12,17 @@ import Spring
 final class CurrencyViewController: UIViewController {
     var currency = Currency()
     
+    @IBOutlet weak var pipeLbl: UILabel!
+    
+    @IBOutlet weak var lengthLbl: UILabel!
+    
+    @IBOutlet weak var weightLbl: UILabel!
+    
+    @IBOutlet weak var weightLabel: UILabel!
+    
+    
+    
+    
     @IBOutlet weak var curView: UIView!
     
     @IBOutlet weak var back: UIBarButtonItem!
@@ -63,12 +74,9 @@ final class CurrencyViewController: UIViewController {
     }
     
     private func getParametrs() {
-        pipeLabel.text = "Steel pipe: \(currency.diametr) x \(currency.tolshina) mm"        
-        lenghtHeightLabel.text =
-        """
-      Thickness = \(currency.dlina)m
-      weight = \(currency.height) tn
-      """
+        pipeLabel.text = " \(currency.diametr) x \(currency.tolshina) mm"
+        lenghtHeightLabel.text = " \(currency.dlina) m"
+        weightLabel.text = "\(currency.height) tn"
         usdLabel.text = "1 USD = \(currency.usd) BYN | \(round((Float(currency.usd)! - Float(currency.usdBeforeDay)!) * 10000) / 10000)"
         eurLabel.text = "1 EUR = \(currency.eur) BYN | \(round((Float(currency.eur)! - Float(currency.eurBeforeDay)!) * 10000) / 10000)"
     }

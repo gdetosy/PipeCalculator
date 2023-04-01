@@ -28,6 +28,7 @@ func string() -> String {
 struct Url {
     let url = "https://www.nbrb.by/api/exrates/rates?periodicity=0"
     let urlBeforeDay = "https://www.nbrb.by/api/exrates/rates?ondate=\(year)-\(monthBefore)-\(beforeDay)&periodicity=0"
+    let urlPipe = "https://aksvil.by/truby-stalnyye/"
 }
 
 struct Currency {
