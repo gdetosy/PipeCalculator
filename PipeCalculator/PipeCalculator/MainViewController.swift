@@ -121,8 +121,6 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         let kg = (diametr - stenka) * stenka * 0.02466
         heightTextField.text = "\(round(metraj1 * 100000) / 100000)"
         heightMetr.text = "1 m weight = \(round(heightMetrs * 100000) / 100000) t = \(kg) kg."
-        heightMetr.animation = Animations.fadeIn.rawValue
-        heightMetr.animate()
     }
 
     //  MARK: - Zapros kursov valut
@@ -163,7 +161,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         guard let diametr = Float(diametrTextField.text!.replacingOccurrences(of: ",", with: ".")),
             
               diametr > 0, diametr <= 325
-        else { diametrTextField.text?.removeAll(); heightMetr.text = "1 m weight ="
+        else { diametrTextField.text?.removeAll(); heightMetr.text = " "
             diametrTextField.animation = Animations.shake.rawValue
             diametrTextField.force = 0.25
             diametrTextField.animate()
@@ -173,7 +171,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         }
         print(diametr)
         ok.alpha = 1
-        if dlinaLabel.text == "Lenght, m" {
+        if dlinaLabel.text == "Length, m        " {
             massa()
         } else
         { lenght() }
@@ -193,13 +191,13 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             but.isEnabled = false
             okWeght.alpha = 0
             heightTextField.text?.removeAll()
-            heightMetr.text = "1 m weight ="
+            heightMetr.text = " "
             return
         }
         
         okThick.alpha = 1
         
-        if dlinaLabel.text == "Lenght, m" {
+        if dlinaLabel.text == "Length, m        " {
             massa()
         } else
         { lenght() }
@@ -218,7 +216,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             return
         }
         okLenght.alpha = 1
-        if dlinaLabel.text == "Lenght, m" {
+        if dlinaLabel.text == "Length, m        " {
             massa()
         } else
         { lenght() }
@@ -237,7 +235,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func about() {
-        if dlinaLabel.text == "Lenght, m" { alert() }
+        if dlinaLabel.text == "Length, m        " { alert() }
         else { alert1() }
     }
     
@@ -268,13 +266,13 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func segmentCaseOne() {
-        dlinaLabel.text = "Lenght, m"
-        heightLabel.text = "Weight, t"
+        dlinaLabel.text = "Length, m        "
+        heightLabel.text = "Weight, t        "
         diametrTextField.text?.removeAll()
         tolshinaTextField.text?.removeAll()
         dlinaTextField.text?.removeAll()
         heightTextField.text?.removeAll()
-        heightMetr.text = "1 m weight ="
+        heightMetr.text = " "
         height()
         ok.alpha = 0
         okThick.alpha = 0
@@ -285,18 +283,18 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
         ok.alpha = 0
         okThick.alpha = 0
         okLenght.alpha = 0
-        dlinaLabel.text = "Weight, t"
-        heightLabel.text = "Lenght, m"
+        dlinaLabel.text = "Weight, t        "
+        heightLabel.text = "Length, m        "
         diametrTextField.text?.removeAll()
         tolshinaTextField.text?.removeAll()
         dlinaTextField.text?.removeAll()
         heightTextField.text?.removeAll()
-        heightMetr.text = "1 m weight ="
+        heightMetr.text = " "
         height()
     }
 
     private func viewSettings() {
-        dlinaLabel.text = "Lenght, m"
+        dlinaLabel.text = "Length, m        "
         bigView.layer.cornerRadius = 17
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "ing")
