@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		71F350921BB8469E053688C6 /* Pods_PipeCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E56CA2B5889FCB5691BE1E /* Pods_PipeCalculator.framework */; };
 		9624BC9829A4FB2600644288 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624BC9729A4FB2600644288 /* CurrencyViewController.swift */; };
+		965B8B7D29D850D000EADC12 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965B8B7C29D850D000EADC12 /* WebViewController.swift */; };
 		96AF1ADC29A8DD8100AD1CB3 /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF1ADB29A8DD8100AD1CB3 /* PriceViewController.swift */; };
 		96AF1B1F29B8FB4C00AD1CB3 /* 8bitfont.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 96AF1B1E29B8FB4C00AD1CB3 /* 8bitfont.TTF */; };
 		96AF1B2529B90B1300AD1CB3 /* Minecrafter.Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96AF1B2429B90B1200AD1CB3 /* Minecrafter.Reg.ttf */; };
@@ -31,6 +32,7 @@
 		8648DC04F9C497AE65723F9C /* Pods-PipeCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PipeCalculator.debug.xcconfig"; path = "Target Support Files/Pods-PipeCalculator/Pods-PipeCalculator.debug.xcconfig"; sourceTree = "<group>"; };
 		86ADB2D0140D98A82AD1CF1E /* Pods-PipeCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PipeCalculator.release.xcconfig"; path = "Target Support Files/Pods-PipeCalculator/Pods-PipeCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		9624BC9729A4FB2600644288 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
+		965B8B7C29D850D000EADC12 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		96AF1ADB29A8DD8100AD1CB3 /* PriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
 		96AF1B1E29B8FB4C00AD1CB3 /* 8bitfont.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = 8bitfont.TTF; path = ../../../../../Downloads/04b_30/8bitfont.TTF; sourceTree = "<group>"; };
 		96AF1B2429B90B1200AD1CB3 /* Minecrafter.Reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Minecrafter.Reg.ttf; path = ../../../../../Downloads/minecrafter/Minecrafter.Reg.ttf; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				96B6C5FA2985A93600787122 /* MainViewController.swift */,
 				9624BC9729A4FB2600644288 /* CurrencyViewController.swift */,
 				96AF1ADB29A8DD8100AD1CB3 /* PriceViewController.swift */,
+				965B8B7C29D850D000EADC12 /* WebViewController.swift */,
 				96B6C5F92985959600787122 /* Views */,
 				96B6C5ED2985951F00787122 /* Assets.xcassets */,
 				96AF1B2429B90B1200AD1CB3 /* Minecrafter.Reg.ttf */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96B6C5E92985951A00787122 /* SplashViewController.swift in Sources */,
+				965B8B7D29D850D000EADC12 /* WebViewController.swift in Sources */,
 				9624BC9829A4FB2600644288 /* CurrencyViewController.swift in Sources */,
 				96FD9A0429D0A1C1001E13BC /* Animation.swift in Sources */,
 				96B6C5E52985951A00787122 /* AppDelegate.swift in Sources */,

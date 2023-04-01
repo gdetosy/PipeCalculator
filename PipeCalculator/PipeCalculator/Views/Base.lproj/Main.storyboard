@@ -497,6 +497,14 @@
                                     <action selector="segmentControl:" destination="4Zb-if-NxN" eventType="valueChanged" id="p4k-I2-SvF"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9y-FP-IBK">
+                                <rect key="frame" x="170" y="530.5" width="75" height="34.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <connections>
+                                    <segue destination="hhy-QW-zQQ" kind="show" identifier="web" id="Oy3-l7-vHb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ti4-cV-GAY"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -519,9 +527,12 @@
                             <constraint firstItem="pw2-a1-C25" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="25" id="c13-Yu-3RS"/>
                             <constraint firstItem="r4f-v8-15m" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="25" id="edc-MO-3No"/>
                             <constraint firstItem="vsQ-LK-pXn" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="25" id="gpK-7t-b3Q"/>
+                            <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="A9y-FP-IBK" secondAttribute="trailing" constant="169" id="jGJ-qW-dEK"/>
                             <constraint firstItem="ti4-cV-GAY" firstAttribute="trailing" secondItem="kBo-rz-znL" secondAttribute="trailing" constant="150" id="kU4-tO-itO"/>
                             <constraint firstItem="kBo-rz-znL" firstAttribute="top" secondItem="WZi-9b-v6j" secondAttribute="bottom" constant="8" symbolic="YES" id="mIF-80-AhZ"/>
+                            <constraint firstItem="ti4-cV-GAY" firstAttribute="bottom" secondItem="A9y-FP-IBK" secondAttribute="bottom" constant="248" id="vCq-FP-oFo"/>
                             <constraint firstItem="kBo-rz-znL" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="150" id="vnh-wM-HW7"/>
+                            <constraint firstItem="A9y-FP-IBK" firstAttribute="leading" secondItem="ti4-cV-GAY" secondAttribute="leading" constant="170" id="y73-Xp-5VT"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -549,6 +560,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTd-2g-VNk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2281.1594202898555" y="-292.63392857142856"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="YvE-xw-O5d">
+            <objects>
+                <viewController id="hhy-QW-zQQ" customClass="WebViewController" customModule="PipeCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Ml-mI-yep">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNt-Zq-vXP">
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2MK-Ed-d2w"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PNt-Zq-vXP" firstAttribute="top" secondItem="2MK-Ed-d2w" secondAttribute="top" id="ATR-fJ-hRP"/>
+                            <constraint firstItem="PNt-Zq-vXP" firstAttribute="leading" secondItem="2MK-Ed-d2w" secondAttribute="leading" id="Gk4-KP-6C7"/>
+                            <constraint firstItem="2MK-Ed-d2w" firstAttribute="bottom" secondItem="PNt-Zq-vXP" secondAttribute="bottom" id="Z5U-ns-gqx"/>
+                            <constraint firstItem="2MK-Ed-d2w" firstAttribute="trailing" secondItem="PNt-Zq-vXP" secondAttribute="trailing" id="jY1-cJ-Du9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VeM-VZ-b8u"/>
+                    <connections>
+                        <outlet property="webView" destination="PNt-Zq-vXP" id="bf2-6L-EaK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zkJ-O0-nkz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2539" y="381"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OID-vF-Gbb">
