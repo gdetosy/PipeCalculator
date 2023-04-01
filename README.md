@@ -9,4 +9,5 @@ I used next frameWorks:
 
 3) Spring animation
 
-![IMG_3975](https://user-images.githubusercontent.com/116091217/229305501-95a2c265-7c33-4e39-86cf-417d8b5f941a.PNG)
+
+![IMG_3975](https://user-images.githubusercontent.com/116091217/229305659-18bc299f-17a5-4996-9e03-13e0f1a87074.PNG)
