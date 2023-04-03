@@ -6,30 +6,32 @@
 //
 
 import UIKit
+import Spring
 
 class PriceViewController: UIViewController {
     var currency = Currency()
     
-    @IBOutlet weak var views: UIView!
+    @IBOutlet var views: UIView!
     
-    @IBOutlet weak var weightLbl: UILabel!
+    @IBOutlet var weightLbl: UILabel!
+    
     @IBOutlet var pipeLabel: UILabel!
     
     @IBOutlet var lenghtHeightLabel: UILabel!
    
-    @IBOutlet var priceTextField: UITextField!
+    @IBOutlet var priceTextField: SpringTextField!
     
-    @IBOutlet var totalPriceLabel: UILabel!
+    @IBOutlet var totalPriceLabel: SpringLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      priceSettings()
+        priceSettings()
         getParametrs()
-        self.hideKeyboardWhenTappedAround() 
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func priceTextField(_ sender: UITextField) {
-       priceTF()
+        priceTF()
     }
 
     private func getParametrs() {
@@ -39,8 +41,13 @@ class PriceViewController: UIViewController {
     }
 
     private func priceTF() {
-        guard let price = Float(priceTextField.text!.replacingOccurrences(of: ",", with: ".")) else { priceTextField.text?.removeAll()
-            
+        anime()
+        priceTextField.animation = Animations.shake.rawValue
+        priceTextField.force = 0.25
+        priceTextField.animate()
+        guard let price = Float(priceTextField.text!.replacingOccurrences(of: ",", with: ".")) else {
+            totalPriceLabel.text = "Enter price in BYN"
+            priceTextField.text?.removeAll()
             currency.finishPrice = 0
             return
         }
@@ -48,15 +55,20 @@ class PriceViewController: UIViewController {
         currency.finishPrice = totalPrice
         totalPriceLabel.text = "Price \(totalPrice) BYN"
     }
+
     func priceSettings() {
         views.layer.cornerRadius = 20
-        
         
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "off")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
-    
+    private func anime() {
+        totalPriceLabel.animation = Animations.pop.rawValue
+        totalPriceLabel.force = 0.25
+        totalPriceLabel.animate()
+    }
     
 }
+
