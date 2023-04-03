@@ -19,7 +19,7 @@ Views in App:
 
 ![IMG_3975 2](https://user-images.githubusercontent.com/116091217/229558836-500452b4-b3a0-4a1f-afb5-c9ed9017f785.PNG)
 
-3) Convertor 
+3) Convertor with Api currency
 
 ![IMG_3980 2](https://user-images.githubusercontent.com/116091217/229558805-ba34e946-38e5-49fb-9bfc-f317300b4099.PNG)
 
