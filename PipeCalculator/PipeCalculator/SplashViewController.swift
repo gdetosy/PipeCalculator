@@ -43,11 +43,6 @@ final class SplashViewController: UIViewController {
     }
 
     func viewSetting() {
-//        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-//        backgroundImage.image = UIImage(named: "ing")
-//        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-//        self.view.insertSubview(backgroundImage, at: 0)
-//        label.font = UIFont(name: "MoonFlower", size: 50)
         label.animation = Animations.zoomIn.rawValue
         label.delay = 0.3
         label.animate()

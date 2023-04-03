@@ -77,7 +77,7 @@ final class CurrencyViewController: UIViewController {
         lenghtHeightLabel.text = " \(currency.dlina) m"
         weightLabel.text = "\(currency.height) tn"
         usdLabel.text = "1 USD = \(currency.usd) BYN | \(round((Float(currency.usd)! - Float(currency.usdBeforeDay)!) * 10000) / 10000)"
-        eurLabel.text = "1 EUR = \(currency.eur) BYN | \(round((Float(currency.eur)! - Float(currency.eurBeforeDay)!) * 10000) / 10000)"
+        eurLabel.text = "1 EUR  = \(currency.eur) BYN | \(round((Float(currency.eur)! - Float(currency.eurBeforeDay)!) * 10000) / 10000)"
     }
     
     private func segmention() {

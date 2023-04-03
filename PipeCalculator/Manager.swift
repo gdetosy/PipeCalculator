@@ -18,10 +18,6 @@ func string() -> String {
     let date = Date()
     let day = calendar.dateComponents([.day], from: date).day!
     let month = calendar.dateComponents([.month], from: date).month!
-    print(day)
-    print(date)
-    print(url)
-    print(month)
     return url
 }
 

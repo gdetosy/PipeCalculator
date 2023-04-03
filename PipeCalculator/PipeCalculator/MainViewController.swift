@@ -133,7 +133,6 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             self?.currency.eur = "\(json[9, "Cur_OfficialRate"])"
             self?.array.append("\(json[7, "Cur_OfficialRate"])")
             self?.array.append("\(json[9, "Cur_OfficialRate"])")
-            print(self!.array)
         case .failure:
             print("error")
         }
@@ -148,7 +147,6 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
             self?.currency.eurBeforeDay = "\(json[9, "Cur_OfficialRate"])"
             self?.arrayBefore.append("\(json[7, "Cur_OfficialRate"])")
             self?.arrayBefore.append("\(json[9, "Cur_OfficialRate"])")
-            print(self!.arrayBefore)
         case .failure:
             print("error")
         }
@@ -158,8 +156,8 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
 //    MARK: - func for IBActions
    
     private func diametr() {
+      
         guard let diametr = Float(diametrTextField.text!.replacingOccurrences(of: ",", with: ".")),
-            
               diametr > 0, diametr <= 325
         else { diametrTextField.text?.removeAll(); heightMetr.text = " "
             diametrTextField.animation = Animations.shake.rawValue
@@ -178,6 +176,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func tolshina() {
+       
         guard Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: ".")) ?? 0 < Float(diametrTextField.text!.replacingOccurrences(of: ",", with: ".")) ?? 0,
               Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: ".")) ?? 0 <= 20,
               Float(tolshinaTextField.text!.replacingOccurrences(of: ",", with: ".")) != nil
@@ -208,6 +207,7 @@ final class MainViewController: UIViewController, UITextFieldDelegate {
     private func dlina() {
         guard Float(dlinaTextField.text!.replacingOccurrences(of: ",", with: ".")) != nil,
               Float(dlinaTextField.text!.replacingOccurrences(of: ",", with: ".")) ?? 0 <= 100
+        
         else {
             dlinaTextField.animation = Animations.shake.rawValue
             dlinaTextField.force = 0.25

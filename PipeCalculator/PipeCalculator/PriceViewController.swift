@@ -10,6 +10,9 @@ import UIKit
 class PriceViewController: UIViewController {
     var currency = Currency()
     
+    @IBOutlet weak var views: UIView!
+    
+    @IBOutlet weak var weightLbl: UILabel!
     @IBOutlet var pipeLabel: UILabel!
     
     @IBOutlet var lenghtHeightLabel: UILabel!
@@ -20,6 +23,7 @@ class PriceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      priceSettings()
         getParametrs()
         self.hideKeyboardWhenTappedAround() 
     }
@@ -29,9 +33,9 @@ class PriceViewController: UIViewController {
     }
 
     private func getParametrs() {
-        pipeLabel.text = " Труба \(currency.diametr) x \(currency.tolshina) мм Сталь 3пс"
-        
-        lenghtHeightLabel.text = "Длинна \(currency.dlina)м, вес  \(currency.height)тн"
+        pipeLabel.text = " \(currency.diametr) x \(currency.tolshina) mm"
+        weightLbl.text = " \(currency.height) tn"
+        lenghtHeightLabel.text = " \(currency.dlina) m"
     }
 
     private func priceTF() {
@@ -42,6 +46,17 @@ class PriceViewController: UIViewController {
         }
         let totalPrice = (round((currency.height * price) * 1000) / 1000)
         currency.finishPrice = totalPrice
-        totalPriceLabel.text = "Цена \(totalPrice) рублей без НДС"
+        totalPriceLabel.text = "Price \(totalPrice) BYN"
     }
+    func priceSettings() {
+        views.layer.cornerRadius = 20
+        
+        
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "off")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+    }
+    
+    
 }
