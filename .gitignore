@@ -89,6 +89,13 @@ fastlane/test_output
 
 iOSInjectionProject/
 Podfile
+
+Podfile.lock
+Pods-PipeCalculator-umbrella.h
+Pods-PipeCalculator-Info.plist
+*.xcworkspacedata
+PipeCalculator/PipeCalculator.xcworkspace
+PipeCalculator/Pods
 *.lock
 contents.xcworkspacedata
 IDEWorkspaceChecks.plist
@@ -113,3 +120,4 @@ KeyboardLayoutConstraint.swift
 *.pch
 *.swift
 LoadingView.xib
+
