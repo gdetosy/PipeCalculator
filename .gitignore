@@ -88,3 +88,28 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+Podfile
+*.lock
+contents.xcworkspacedata
+IDEWorkspaceChecks.plist
+Package.resolved
+Spring.podspec.json
+project.pbxproj
+LICENSE
+README.md
+AsyncButton.swift
+AsyncImageView.swift
+AutoTextView.swift
+BlurView.swift
+DesignableButton.swift
+DesignableImageView.swift
+DesignableLabel.swift
+DesignableTabBarController.swift
+DesignableTextField.swift
+DesignableTextView.swift
+DesignableView.swift
+ImageLoader.swift
+KeyboardLayoutConstraint.swift
+*.pch
+*.swift
+LoadingView.xib
