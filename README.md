@@ -1,6 +1,11 @@
 # PipeCalculator
 My App Pipe Calculator.
 
+The pipe calculator calculates the weight of a round electric-welded pipe using the formula:
+Mass = ((Diameter - Wall) × Wall x
+0.02466 × footage)/1000.
+The possibility of reverse calculation from mass to meters is also implemented and additional calculations are provided for calculating the cost of pipesю
+
 I used next frameWorks:
 
 1) Alamofire
