@@ -16,7 +16,7 @@ I used next frameWorks:
 
 Views in App:
 
-1) HandMade Launchscreen with APi 
+1) HandMade Launchscreen  
 
 ![IMG_3977 2](https://user-images.githubusercontent.com/116091217/229558861-e9c97e2c-d9fa-4d11-892e-bab03fdfb42f.PNG)
 
@@ -24,7 +24,7 @@ Views in App:
 
 ![IMG_3975 2](https://user-images.githubusercontent.com/116091217/229558836-500452b4-b3a0-4a1f-afb5-c9ed9017f785.PNG)
 
-3) Convertor with Api currency
+3) Online convertor usd-byn-eur 
 
 ![IMG_3980 2](https://user-images.githubusercontent.com/116091217/229558805-ba34e946-38e5-49fb-9bfc-f317300b4099.PNG)
 
